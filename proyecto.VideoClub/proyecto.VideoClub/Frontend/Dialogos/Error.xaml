@@ -1,0 +1,107 @@
+﻿<Window x:Class="proyecto.VideoClub.Frontend.Dialogos.Error"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
+        mc:Ignorable="d"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        FontSize="14"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        Title="Login" Height="500" Width="800"
+        Icon="/Recursos/Img/v.png">
+
+    <Grid Margin="20"
+          >
+
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="1"
+                              Opacity="0.4"
+                              />
+        </Grid.Effect>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Parte izquierda-->
+        <Border CornerRadius="15,0,0,15" 
+                MouseDown="Border_MouseDown">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/Recursos/Img/cinta.jpeg"/>
+            </Border.Background>
+        </Border>
+        <!--Parte Derecha-->
+        <Border Grid.Column="1"
+                    Background="White"
+                    CornerRadius="0 15 15 0"
+                    MouseDown="Border_MouseDown">
+
+            <!--Boton de cierre x-->
+            <Grid>
+
+                <mat:PackIcon  x:Name="Cerrar" MouseDown="Cerrar_MouseDown"  MouseEnter="Cerrar_MouseEnter" MouseLeave="Cerrar_MouseLeave"
+                    Kind="Close"
+                              Foreground="Black"
+                              VerticalAlignment="Top"
+                              Width="25"
+                              Height="25"
+                              Background="Transparent"
+                              HorizontalAlignment="Right"
+                              Opacity="0.3"
+                              Margin="0 10 10 0"/>
+
+                <!--Titulo-->
+                <TextBlock  FontSize="35" Foreground="#01579a"  TextDecorations="" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,85,0">!Un</TextBlock>
+                <TextBlock  FontSize="35" Foreground="#9a010b"  FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="85,30,0,0">error!</TextBlock>
+
+                <!--Descripcion-->
+
+                <StackPanel VerticalAlignment="Center"
+                            Margin="10 0">
+                    <TextBlock TextAlignment="Center"
+                               Margin="0 0 0 15"
+                               Foreground="#01579a"
+                               FontWeight="Bold"
+                               FontSize="16"
+                               Style="{StaticResource MaterialDesignTextBlock}">
+                        
+                        <LineBreak/>
+                        La contraseña o el usuario es incorrecto.<LineBreak/>
+                        <LineBreak/>
+                        Por favor, vuelve a intentarlo.
+                    </TextBlock>
+
+
+
+
+
+
+
+                    <Button x:Name="btnAceptar" Click="btnAceptar_Click"
+                                                Margin="15"              
+                                Content="Aceptar" 
+                                Background="#01579a"
+                                BorderBrush="Transparent"
+                                Width="90"
+                                Height="35"
+                                mat:ButtonAssist.CornerRadius="10"/>
+
+
+
+                </StackPanel>
+
+
+            </Grid>
+
+        </Border>
+    </Grid>
+
+</Window>

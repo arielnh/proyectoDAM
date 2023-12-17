@@ -1,0 +1,120 @@
+﻿<Window x:Class="proyecto.VideoClub.Frontend.Dialogos.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        FontSize="14"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        Title="Login" Height="500" Width="800"
+        Icon="/Recursos/Img/v.png">
+
+    <Grid Margin="20"
+          >
+
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="1"
+                              Opacity="0.4"
+                              />
+        </Grid.Effect>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Parte izquierda-->
+        <Border CornerRadius="15,0,0,15"
+                MouseDown="Border_MouseDown">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/Recursos/Img/cat2.jpeg"/>
+            </Border.Background>
+        </Border>
+
+        <!--Parte Derecha-->
+        <Border Grid.Column="1"
+                    Background="White"
+                    CornerRadius="0 15 15 0"
+                    MouseDown="Border_MouseDown">
+
+            <!--Boton de cierre x-->
+            <Grid>
+
+                <mat:PackIcon  x:Name="Cerrar" MouseDown="Cerrar_MouseDown"  MouseEnter="Cerrar_MouseEnter" MouseLeave="Cerrar_MouseLeave"
+                    Kind="Close"
+                              Foreground="Black"
+                              VerticalAlignment="Top"
+                              Width="25"
+                              Height="25"
+                              Background="Transparent"
+                              HorizontalAlignment="Right"
+                              Opacity="0.3"
+                              Margin="0 10 10 0"/>
+
+                <!--Titulo-->
+                <TextBlock  FontSize="35" Foreground="#01579a"  TextDecorations="" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,105,0">VÍDEO</TextBlock>
+                <TextBlock  FontSize="35" Foreground="#9a010b"  FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="105,30,0,0">CLUB</TextBlock>
+
+                <!--Login-->
+
+                <StackPanel VerticalAlignment="Center"
+                            Margin="45 0">
+                    <TextBox x:Name="txtUsuario" TextChanged="txtUsuario_TextChanged"
+                             
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             mat:HintAssist.Hint="Nombre de usuario"
+                             mat:HintAssist.FloatingOffset="0,-20"
+                             BorderBrush="#01579a"
+                             BorderThickness="0 0 0 1.5"/>
+
+                    <PasswordBox x:Name="txtPass" PasswordChanged="txtPass_PasswordChanged"
+                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                             mat:HintAssist.Hint="Contraseña"
+                             mat:HintAssist.FloatingOffset="0,-20"
+                             Margin=" 0 20"
+                             BorderBrush="#01579a"
+                             BorderThickness="0 0 0 1.5"/>
+
+                    <TextBlock FontSize="11"
+                               Margin="0 20">
+                        <Run Foreground="Gray">¿Has olvidado la contraseña?</Run>
+                        <Run Foreground="#01579a" Name="ResetPss" MouseDown="ResetPss_MouseDown" MouseEnter="ResetPss_MouseEnter" MouseLeave="ResetPss_MouseLeave">Pulsa aquí.</Run>
+                    </TextBlock>
+
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnEntrar" Click="btnEntrar_Click"
+                                                              
+                                Content="Entrar" 
+                                Background="#01579a"
+                                BorderBrush="Transparent"
+                                Width="90"
+                                Height="35"
+                                mat:ButtonAssist.CornerRadius="10"/>
+                        <Button Content="Registrarse" 
+                                Foreground="#01579a"
+                                Width="120"
+                                Height="35"
+                                Margin="5 0 0 0"
+                                Style="{StaticResource MaterialDesignFlatButton}"
+                                mat:ButtonAssist.CornerRadius="10"/>
+
+                    </StackPanel>
+                </StackPanel>
+
+
+            </Grid>
+
+        </Border>
+    </Grid>
+
+</Window>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="videoclubModelStoreContainer" CdmEntityContainer="videoclubEntities">
+    <EntitySetMapping Name="actor">
+      <EntityTypeMapping TypeName="videoclubModel.actor">
+        <MappingFragment StoreEntitySet="actor">
+          <ScalarProperty Name="id_actor" ColumnName="id_actor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido_1" ColumnName="apellido_1" />
+          <ScalarProperty Name="apellido_2" ColumnName="apellido_2" />
+          <ScalarProperty Name="oscar" ColumnName="oscar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="alquiler">
+      <EntityTypeMapping TypeName="videoclubModel.alquiler">
+        <MappingFragment StoreEntitySet="alquiler">
+          <ScalarProperty Name="id_alquiler" ColumnName="id_alquiler" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="fecha_alquiler" ColumnName="fecha_alquiler" />
+          <ScalarProperty Name="fecha_prev_devolucion" ColumnName="fecha_prev_devolucion" />
+          <ScalarProperty Name="fecha_devolucion" ColumnName="fecha_devolucion" />
+          <ScalarProperty Name="recargo" ColumnName="recargo" />
+          <ScalarProperty Name="devuelto" ColumnName="devuelto" />
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genero">
+      <EntityTypeMapping TypeName="videoclubModel.genero">
+        <MappingFragment StoreEntitySet="genero">
+          <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incidencia">
+      <EntityTypeMapping TypeName="videoclubModel.incidencia">
+        <MappingFragment StoreEntitySet="incidencia">
+          <ScalarProperty Name="id_incidencia" ColumnName="id_incidencia" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="asunto" ColumnName="asunto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_tipo_inc" ColumnName="id_tipo_inc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="juego">
+      <EntityTypeMapping TypeName="videoclubModel.juego">
+        <MappingFragment StoreEntitySet="juego">
+          <ScalarProperty Name="id_juego" ColumnName="id_juego" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="plataforma" ColumnName="plataforma" />
+          <ScalarProperty Name="doblado" ColumnName="doblado" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="distribuidora" ColumnName="distribuidora" />
+          <ScalarProperty Name="desarolladora" ColumnName="desarolladora" />
+          <ScalarProperty Name="multijugador" ColumnName="multijugador" />
+          <ScalarProperty Name="tipo_alquiler" ColumnName="tipo_alquiler" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pelicula">
+      <EntityTypeMapping TypeName="videoclubModel.pelicula">
+        <MappingFragment StoreEntitySet="pelicula">
+          <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="titulo_original" ColumnName="titulo_original" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="sinopsis" ColumnName="sinopsis" />
+          <ScalarProperty Name="director" ColumnName="director" />
+          <ScalarProperty Name="formato" ColumnName="formato" />
+          <ScalarProperty Name="tipo_alquiler" ColumnName="tipo_alquiler" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permiso">
+      <EntityTypeMapping TypeName="videoclubModel.permiso">
+        <MappingFragment StoreEntitySet="permiso">
+          <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+          <ScalarProperty Name="acciones" ColumnName="acciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="videoclubModel.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+          <ScalarProperty Name="id_juego" ColumnName="id_juego" />
+          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="portada" ColumnName="portada" />
+          <ScalarProperty Name="año" ColumnName="año" />
+          <ScalarProperty Name="idioma" ColumnName="idioma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="videoclubModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="rol1" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_alquiler">
+      <EntityTypeMapping TypeName="videoclubModel.tipo_alquiler">
+        <MappingFragment StoreEntitySet="tipo_alquiler">
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="recargo" ColumnName="recargo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_incidencia">
+      <EntityTypeMapping TypeName="videoclubModel.tipo_incidencia">
+        <MappingFragment StoreEntitySet="tipo_incidencia">
+          <ScalarProperty Name="id_tipo_inc" ColumnName="id_tipo_inc" />
+          <ScalarProperty Name="incidencia" ColumnName="incidencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="videoclubModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido_1" ColumnName="apellido_1" />
+          <ScalarProperty Name="apellido_2" ColumnName="apellido_2" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="videoclubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="actor">
+    <Key>
+      <PropertyRef Name="id_actor" />
+    </Key>
+    <Property Name="id_actor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="oscar" Type="Int32" />
+  </EntityType>
+  <EntityType Name="alquiler">
+    <Key>
+      <PropertyRef Name="id_alquiler" />
+    </Key>
+    <Property Name="id_alquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_producto" Type="Int32" />
+    <Property Name="id_usuario" Type="Int32" />
+    <Property Name="fecha_alquiler" Type="DateTime" />
+    <Property Name="fecha_prev_devolucion" Type="DateTime" />
+    <Property Name="fecha_devolucion" Type="DateTime" />
+    <Property Name="recargo" Type="Int32" />
+    <Property Name="devuelto" Type="Boolean" />
+    <Property Name="id_tipo" Type="Int32" />
+    <NavigationProperty Name="producto" Relationship="Self.alquiler_ibfk_1" FromRole="alquiler" ToRole="producto" />
+    <NavigationProperty Name="usuario" Relationship="Self.alquiler_ibfk_2" FromRole="alquiler" ToRole="usuario" />
+    <NavigationProperty Name="tipo_alquiler" Relationship="Self.alquiler_ibfk_3" FromRole="alquiler" ToRole="tipo_alquiler" />
+  </EntityType>
+  <EntityType Name="genero">
+    <Key>
+      <PropertyRef Name="id_genero" />
+    </Key>
+    <Property Name="id_genero" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="incidencia">
+    <Key>
+      <PropertyRef Name="id_incidencia" />
+    </Key>
+    <Property Name="id_incidencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_usuario" Type="Int32" />
+    <Property Name="asunto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="id_tipo_inc" Type="Int32" />
+    <NavigationProperty Name="usuario" Relationship="Self.incidencia_ibfk_1" FromRole="incidencia" ToRole="usuario" />
+    <NavigationProperty Name="tipo_incidencia" Relationship="Self.incidencia_ibfk_2" FromRole="incidencia" ToRole="tipo_incidencia" />
+  </EntityType>
+  <EntityType Name="juego">
+    <Key>
+      <PropertyRef Name="id_juego" />
+    </Key>
+    <Property Name="id_juego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="plataforma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="doblado" Type="Boolean" />
+    <Property Name="genero" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="distribuidora" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="desarolladora" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="multijugador" Type="Boolean" />
+    <Property Name="tipo_alquiler" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="producto" Relationship="Self.producto_ibfk_2" FromRole="juego" ToRole="producto" />
+  </EntityType>
+  <EntityType Name="pelicula">
+    <Key>
+      <PropertyRef Name="id_pelicula" />
+    </Key>
+    <Property Name="id_pelicula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="titulo_original" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="duracion" Type="Int32" />
+    <Property Name="sinopsis" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="formato" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_alquiler" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="producto" Relationship="Self.producto_ibfk_1" FromRole="pelicula" ToRole="producto" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="id_permiso" />
+    </Key>
+    <Property Name="id_permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="acciones" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="id_producto" />
+    </Key>
+    <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_pelicula" Type="Int32" />
+    <Property Name="id_juego" Type="Int32" />
+    <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="portada" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="año" Type="DateTime" />
+    <Property Name="idioma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_1" FromRole="producto" ToRole="alquiler" />
+    <NavigationProperty Name="juego" Relationship="Self.producto_ibfk_2" FromRole="producto" ToRole="juego" />
+    <NavigationProperty Name="pelicula" Relationship="Self.producto_ibfk_1" FromRole="producto" ToRole="pelicula" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="id_rol" />
+    </Key>
+    <Property Name="id_rol" Type="Int32" Nullable="false" />
+    <Property Name="rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="usuario" Relationship="Self.usuario_ibfk_1" FromRole="rol" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="tipo_alquiler">
+    <Key>
+      <PropertyRef Name="id_tipo" />
+    </Key>
+    <Property Name="id_tipo" Type="Int32" Nullable="false" />
+    <Property Name="precio" Type="Double" />
+    <Property Name="duracion" Type="Int32" />
+    <Property Name="recargo" Type="Int32" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_3" FromRole="tipo_alquiler" ToRole="alquiler" />
+  </EntityType>
+  <EntityType Name="tipo_incidencia">
+    <Key>
+      <PropertyRef Name="id_tipo_inc" />
+    </Key>
+    <Property Name="id_tipo_inc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="incidencia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="incidencia1" Relationship="Self.incidencia_ibfk_2" FromRole="tipo_incidencia" ToRole="incidencia" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" />
+    <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_rol" Type="Int32" />
+    <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_2" FromRole="usuario" ToRole="alquiler" />
+    <NavigationProperty Name="incidencia" Relationship="Self.incidencia_ibfk_1" FromRole="usuario" ToRole="incidencia" />
+    <NavigationProperty Name="rol" Relationship="Self.usuario_ibfk_1" FromRole="usuario" ToRole="rol" />
+  </EntityType>
+  <Association Name="alquiler_ibfk_1">
+    <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+    <End Role="alquiler" Type="Self.alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="alquiler">
+        <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="alquiler_ibfk_2">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="alquiler" Type="Self.alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="alquiler">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="alquiler_ibfk_3">
+    <End Role="tipo_alquiler" Type="Self.tipo_alquiler" Multiplicity="0..1" />
+    <End Role="alquiler" Type="Self.alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_alquiler">
+        <PropertyRef Name="id_tipo" />
+      </Principal>
+      <Dependent Role="alquiler">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="incidencia_ibfk_1">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="incidencia" Type="Self.incidencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="incidencia">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="incidencia_ibfk_2">
+    <End Role="tipo_incidencia" Type="Self.tipo_incidencia" Multiplicity="0..1" />
+    <End Role="incidencia" Type="Self.incidencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_incidencia">
+        <PropertyRef Name="id_tipo_inc" />
+      </Principal>
+      <Dependent Role="incidencia">
+        <PropertyRef Name="id_tipo_inc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="producto_ibfk_2">
+    <End Role="juego" Type="Self.juego" Multiplicity="0..1" />
+    <End Role="producto" Type="Self.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="juego">
+        <PropertyRef Name="id_juego" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="id_juego" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="producto_ibfk_1">
+    <End Role="pelicula" Type="Self.pelicula" Multiplicity="0..1" />
+    <End Role="producto" Type="Self.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pelicula">
+        <PropertyRef Name="id_pelicula" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="id_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usuario_ibfk_1">
+    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="id_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="videoclubEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="actor" EntityType="Self.actor" />
+    <EntitySet Name="alquiler" EntityType="Self.alquiler" />
+    <EntitySet Name="genero" EntityType="Self.genero" />
+    <EntitySet Name="incidencia" EntityType="Self.incidencia" />
+    <EntitySet Name="juego" EntityType="Self.juego" />
+    <EntitySet Name="pelicula" EntityType="Self.pelicula" />
+    <EntitySet Name="permiso" EntityType="Self.permiso" />
+    <EntitySet Name="producto" EntityType="Self.producto" />
+    <EntitySet Name="rol" EntityType="Self.rol" />
+    <EntitySet Name="tipo_alquiler" EntityType="Self.tipo_alquiler" />
+    <EntitySet Name="tipo_incidencia" EntityType="Self.tipo_incidencia" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="alquiler_ibfk_1" Association="Self.alquiler_ibfk_1">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="alquiler" EntitySet="alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="alquiler_ibfk_2" Association="Self.alquiler_ibfk_2">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="alquiler" EntitySet="alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="alquiler_ibfk_3" Association="Self.alquiler_ibfk_3">
+      <End Role="tipo_alquiler" EntitySet="tipo_alquiler" />
+      <End Role="alquiler" EntitySet="alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="incidencia_ibfk_1" Association="Self.incidencia_ibfk_1">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="incidencia" EntitySet="incidencia" />
+    </AssociationSet>
+    <AssociationSet Name="incidencia_ibfk_2" Association="Self.incidencia_ibfk_2">
+      <End Role="tipo_incidencia" EntitySet="tipo_incidencia" />
+      <End Role="incidencia" EntitySet="incidencia" />
+    </AssociationSet>
+    <AssociationSet Name="producto_ibfk_2" Association="Self.producto_ibfk_2">
+      <End Role="juego" EntitySet="juego" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="producto_ibfk_1" Association="Self.producto_ibfk_1">
+      <End Role="pelicula" EntitySet="pelicula" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="usuario_ibfk_1" Association="Self.usuario_ibfk_1">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
