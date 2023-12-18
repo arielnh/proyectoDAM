@@ -9,7 +9,7 @@ Tambien facilita la gesión de los alquileres, clientes y el control de stock.
 ## Construido con 🛠️
 
 - Visual Studio
-- .Net
+- .NET
 - C#
 - MySQL
 
