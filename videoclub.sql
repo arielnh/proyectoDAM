@@ -17,11 +17,10 @@ oscar INT(2)
 -- PELICULAS 
 
 CREATE TABLE pelicula (id_pelicula INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-titulo VARCHAR(50),
 titulo_original varchar(50),
 pais varchar (30),
 duracion int,
-sinopsis varchar (300),
+sinopsis varchar (500),
 director varchar (50),
 formato varchar(30),
 tipo_alquiler varchar (30)
@@ -52,7 +51,6 @@ foreign key (id_pelicula) references pelicula (id_pelicula)
 -- JUEGOS
 
 CREATE TABLE juego (id_juego int not null primary key AUTO_INCREMENT,
-titulo VARCHAR(50),
 plataforma varchar(30),
 doblado boolean,
 genero varchar (30),
@@ -70,6 +68,7 @@ id_pelicula int,
 FOREIGN KEY (id_pelicula) REFERENCES pelicula (id_pelicula),
 id_juego int,
 FOREIGN KEY (id_juego) REFERENCES juego (id_juego),
+titulo VARCHAR(50),
 disponibilidad varchar(30),
 estado varchar (30),
 portada varchar (100),
@@ -157,10 +156,18 @@ INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`) VALUES ('admin', 'a
 
 -- ACTOR
 	-- Ryan Gosling
-INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Ryan', 'Gosling', '', 0)
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Ryan', 'Gosling', '', 0);
 
 -- PELICULA
-
+INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
+'Blade Runner 2049', 'Estados Unidos', '163', 'Ubicada treinta años después de la película original, la historia describe a un
+ blade runner replicante llamado K descubriendo los restos de una mujer replicante que en algún momento del pasado estuvo embarazada,
+ lo cual es aparentemente imposible. Para evitar una posible guerra entre humanos y replicantes, K se encarga secretamente de encontrar
+ al niño y destruir toda evidencia relacionada con él, llevándolo a descubrir que este está vinculado al desaparecido blade runner
+ Rick Deckard.', 'Denis Villeneuve', 'Blu-Ray');
+ 
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, `cantidad`) VALUES (
+ '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', '4');
 
 
 
