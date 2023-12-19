@@ -21,7 +21,6 @@ namespace proyecto.VideoClub.Backend.Modelo
         }
     
         public int id_juego { get; set; }
-        public string titulo { get; set; }
         public string plataforma { get; set; }
         public Nullable<bool> doblado { get; set; }
         public string genero { get; set; }

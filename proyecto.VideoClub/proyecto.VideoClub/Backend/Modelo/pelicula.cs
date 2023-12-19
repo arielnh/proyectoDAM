@@ -21,7 +21,6 @@ namespace proyecto.VideoClub.Backend.Modelo
         }
     
         public int id_pelicula { get; set; }
-        public string titulo { get; set; }
         public string titulo_original { get; set; }
         public string pais { get; set; }
         public Nullable<int> duracion { get; set; }

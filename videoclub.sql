@@ -37,7 +37,7 @@ foreign key (id_pelicula) references pelicula (id_pelicula)
 
 -- GENEROS
 
-CREATE TABLE genero (id_genero int NOT NULL PRIMARY KEY,
+CREATE TABLE genero (id_genero int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(30) UNIQUE);
 
 -- GENEROS TIENE
@@ -88,7 +88,7 @@ nombre varchar (30)
 );
 -- ROLES
 
-CREATE TABLE rol (id_rol int not null primary key,
+CREATE TABLE rol (id_rol int not null primary key AUTO_INCREMENT,
 rol varchar (30) UNIQUE
 );
 
@@ -151,12 +151,49 @@ foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
 
 -- INSERTAR DATOS
 
-INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`) VALUES ('admin', 'admin');
+-- ROL 
+INSERT INTO `videoclub`.`rol` (`rol`) VALUES ('Administrador');
+INSERT INTO `videoclub`.`rol` (`rol`) VALUES ('Dependiente');
+INSERT INTO `videoclub`.`rol` (`rol`) VALUES ('Cliente');
+INSERT INTO `videoclub`.`rol` (`rol`) VALUES ('Usuario Público');
 
+-- PERMISOS
+INSERT INTO `videoclub`.`permiso` (`acciones`) VALUES ('Gestionar Productos');
+INSERT INTO `videoclub`.`permiso` (`acciones`) VALUES ('Alquileres y Devoluciones');
+INSERT INTO `videoclub`.`permiso` (`acciones`) VALUES ('Consultar Disponibilidad');
+INSERT INTO `videoclub`.`permiso` (`acciones`) VALUES ('Reservar');
+INSERT INTO `videoclub`.`permiso` (`acciones`) VALUES ('Añadir Clientes');
+INSERT INTO `videoclub`.`permiso` (`acciones`) VALUES ('Añadir Dependientes');
+
+-- PERMISOS ADMINISTRADOR
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (1,1);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (1,2);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (1,3);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (1,4);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (1,5);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (1,6);
+
+-- PERMISOS DEPENDIENTE
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (2,1);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (2,2);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (2,3);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (2,4);
+
+-- PERMISO CLIENTE
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (3,3);
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (3,4);
+
+-- PERMISO USUARIO PÚBLICO
+INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
+
+-- ADMIN
+
+INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`, id_rol) VALUES ('admin', 'admin', 1);
 
 -- ACTOR
 	-- Ryan Gosling
 INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Ryan', 'Gosling', '', 0);
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Emma', 'Stone', '', 0);
 
 -- PELICULA
 INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
@@ -166,8 +203,29 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  al niño y destruir toda evidencia relacionada con él, llevándolo a descubrir que este está vinculado al desaparecido blade runner
  Rick Deckard.', 'Denis Villeneuve', 'Blu-Ray');
  
+ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
+'La La Land', 'Estados Unidos', '128', 'La película cuenta la historia de Mia, una empleada de un bar que aspira a ser actriz y Sebastian,
+ un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades,
+ gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
+ 
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, `cantidad`) VALUES (
  '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', '4');
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, `cantidad`) VALUES (
+ '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', '7');
+ 
+ INSERT INTO videoclub.genero (nombre) VALUES ('neo-noir');
+ INSERT INTO videoclub.genero (nombre) VALUES ('ciencia-ficción');
+ INSERT INTO videoclub.genero (nombre) VALUES ('musical');
+ INSERT INTO videoclub.genero (nombre) VALUES ('comedia');
+ INSERT INTO videoclub.genero (nombre) VALUES ('drama');
+ 
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,1);
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,2);
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,3);
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,4);
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,5);
+ 
+
 
 
 

@@ -31,7 +31,7 @@
     <Key>
       <PropertyRef Name="id_genero" />
     </Key>
-    <Property Name="id_genero" Type="Int32" Nullable="false" />
+    <Property Name="id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="incidencia">
@@ -51,7 +51,6 @@
       <PropertyRef Name="id_juego" />
     </Key>
     <Property Name="id_juego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="plataforma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="doblado" Type="Boolean" />
     <Property Name="genero" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -66,11 +65,10 @@
       <PropertyRef Name="id_pelicula" />
     </Key>
     <Property Name="id_pelicula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="titulo_original" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="pais" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="duracion" Type="Int32" />
-    <Property Name="sinopsis" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="sinopsis" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="formato" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="tipo_alquiler" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -90,11 +88,13 @@
     <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_pelicula" Type="Int32" />
     <Property Name="id_juego" Type="Int32" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="portada" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="año" Type="DateTime" />
     <Property Name="idioma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" />
     <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_1" FromRole="producto" ToRole="alquiler" />
     <NavigationProperty Name="juego" Relationship="Self.producto_ibfk_2" FromRole="producto" ToRole="juego" />
     <NavigationProperty Name="pelicula" Relationship="Self.producto_ibfk_1" FromRole="producto" ToRole="pelicula" />
@@ -103,7 +103,7 @@
     <Key>
       <PropertyRef Name="id_rol" />
     </Key>
-    <Property Name="id_rol" Type="Int32" Nullable="false" />
+    <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="usuario" Relationship="Self.usuario_ibfk_1" FromRole="rol" ToRole="usuario" />
   </EntityType>

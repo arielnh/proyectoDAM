@@ -23,11 +23,13 @@ namespace proyecto.VideoClub.Backend.Modelo
         public int id_producto { get; set; }
         public Nullable<int> id_pelicula { get; set; }
         public Nullable<int> id_juego { get; set; }
+        public string titulo { get; set; }
         public string disponibilidad { get; set; }
         public string estado { get; set; }
         public string portada { get; set; }
         public Nullable<System.DateTime> año { get; set; }
         public string idioma { get; set; }
+        public Nullable<int> cantidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alquiler> alquiler { get; set; }

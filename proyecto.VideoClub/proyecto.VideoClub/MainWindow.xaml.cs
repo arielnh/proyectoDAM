@@ -42,5 +42,10 @@ namespace proyecto.VideoClub
         {
 
         }
+
+        private void TodosU_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

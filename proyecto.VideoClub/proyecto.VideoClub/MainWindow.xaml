@@ -4,7 +4,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:proyecto.VideoClub"
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
@@ -65,7 +64,7 @@
                     </Grid.ColumnDefinitions>
              
                     <Image Stretch="Fill" Source="/Recursos/Img/controller.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
-                    
+
                     <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="150" HorizontalAlignment="Left" Header="Juegos" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
                               Background="{x:Null}" Foreground="White" 
@@ -74,6 +73,26 @@
                             <ListViewItem Content="Todos" Padding="30 5" x:Name="TodosJ" Foreground="White" Selected="Todas_Selected" />
                             <ListViewItem Content="Nuevas" Padding="30 10 0 0" Foreground="White"/>
                             <ListViewItem Content="Alquiladas" Padding="30 10 0 0" Foreground="White"/>
+                        </ListView>
+                    </Expander>
+                </Grid>
+
+                <!--Tercera parte Juegos-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="7*"/>
+                    </Grid.ColumnDefinitions>
+
+                   
+
+                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="150" HorizontalAlignment="Left" Header="Usuarios" Margin="30 0"
+                              Style="{StaticResource MaterialDesignExpander}" 
+                              Background="{x:Null}" Foreground="White" 
+                              >
+                        <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListViewItem Content="Listar todos" Padding="30 5" x:Name="TodosU" Foreground="White" Selected="TodosU_Selected" />
+                            <ListViewItem Content="Añadir" Padding="30 10 0 0" Foreground="White"/>
                         </ListView>
                     </Expander>
                 </Grid>

@@ -13,8 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.MVVM;
 using System.ComponentModel;
 

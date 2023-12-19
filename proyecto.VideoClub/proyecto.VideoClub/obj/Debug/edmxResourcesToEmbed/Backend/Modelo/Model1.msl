@@ -50,7 +50,6 @@
       <EntityTypeMapping TypeName="videoclubModel.juego">
         <MappingFragment StoreEntitySet="juego">
           <ScalarProperty Name="id_juego" ColumnName="id_juego" />
-          <ScalarProperty Name="titulo" ColumnName="titulo" />
           <ScalarProperty Name="plataforma" ColumnName="plataforma" />
           <ScalarProperty Name="doblado" ColumnName="doblado" />
           <ScalarProperty Name="genero" ColumnName="genero" />
@@ -65,7 +64,6 @@
       <EntityTypeMapping TypeName="videoclubModel.pelicula">
         <MappingFragment StoreEntitySet="pelicula">
           <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
-          <ScalarProperty Name="titulo" ColumnName="titulo" />
           <ScalarProperty Name="titulo_original" ColumnName="titulo_original" />
           <ScalarProperty Name="pais" ColumnName="pais" />
           <ScalarProperty Name="duracion" ColumnName="duracion" />
@@ -90,11 +88,13 @@
           <ScalarProperty Name="id_producto" ColumnName="id_producto" />
           <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
           <ScalarProperty Name="id_juego" ColumnName="id_juego" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
           <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="portada" ColumnName="portada" />
           <ScalarProperty Name="año" ColumnName="año" />
           <ScalarProperty Name="idioma" ColumnName="idioma" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

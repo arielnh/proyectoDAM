@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
-        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Background="{x:Null}"
@@ -100,7 +99,7 @@
                                 Width="90"
                                 Height="35"
                                 mat:ButtonAssist.CornerRadius="10"/>
-                        <Button Content="Registrarse" 
+                        <Button Content="Ver catálogo" 
                                 Foreground="#01579a"
                                 Width="120"
                                 Height="35"

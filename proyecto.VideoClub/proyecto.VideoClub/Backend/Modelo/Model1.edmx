@@ -45,7 +45,7 @@ advertencia 6013: La tabla o vista 'def.videoclub.contiene_permiso' no tiene def
           <Key>
             <PropertyRef Name="id_genero" />
           </Key>
-          <Property Name="id_genero" Type="int" Nullable="false" />
+          <Property Name="id_genero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errores durante la generación:
@@ -69,7 +69,6 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
             <PropertyRef Name="id_juego" />
           </Key>
           <Property Name="id_juego" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="titulo" Type="varchar" MaxLength="50" />
           <Property Name="plataforma" Type="varchar" MaxLength="30" />
           <Property Name="doblado" Type="bool" />
           <Property Name="genero" Type="varchar" MaxLength="30" />
@@ -83,11 +82,10 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
             <PropertyRef Name="id_pelicula" />
           </Key>
           <Property Name="id_pelicula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="titulo" Type="varchar" MaxLength="50" />
           <Property Name="titulo_original" Type="varchar" MaxLength="50" />
           <Property Name="pais" Type="varchar" MaxLength="30" />
           <Property Name="duracion" Type="int" />
-          <Property Name="sinopsis" Type="varchar" MaxLength="300" />
+          <Property Name="sinopsis" Type="varchar" MaxLength="500" />
           <Property Name="director" Type="varchar" MaxLength="50" />
           <Property Name="formato" Type="varchar" MaxLength="30" />
           <Property Name="tipo_alquiler" Type="varchar" MaxLength="30" />
@@ -106,17 +104,19 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
           <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_pelicula" Type="int" />
           <Property Name="id_juego" Type="int" />
+          <Property Name="titulo" Type="varchar" MaxLength="50" />
           <Property Name="disponibilidad" Type="varchar" MaxLength="30" />
           <Property Name="estado" Type="varchar" MaxLength="30" />
           <Property Name="portada" Type="varchar" MaxLength="100" />
           <Property Name="año" Type="date" />
           <Property Name="idioma" Type="varchar" MaxLength="30" />
+          <Property Name="cantidad" Type="int" />
         </EntityType>
         <EntityType Name="rol">
           <Key>
             <PropertyRef Name="id_rol" />
           </Key>
-          <Property Name="id_rol" Type="int" Nullable="false" />
+          <Property Name="id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="rol" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="tipo_alquiler">
@@ -348,7 +348,7 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
           <Key>
             <PropertyRef Name="id_genero" />
           </Key>
-          <Property Name="id_genero" Type="Int32" Nullable="false" />
+          <Property Name="id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="incidencia">
@@ -368,7 +368,6 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
             <PropertyRef Name="id_juego" />
           </Key>
           <Property Name="id_juego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="plataforma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="doblado" Type="Boolean" />
           <Property Name="genero" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -383,11 +382,10 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
             <PropertyRef Name="id_pelicula" />
           </Key>
           <Property Name="id_pelicula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="titulo_original" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="pais" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="duracion" Type="Int32" />
-          <Property Name="sinopsis" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="sinopsis" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="formato" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="tipo_alquiler" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -407,11 +405,13 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
           <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_pelicula" Type="Int32" />
           <Property Name="id_juego" Type="Int32" />
+          <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="portada" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="año" Type="DateTime" />
           <Property Name="idioma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" />
           <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_1" FromRole="producto" ToRole="alquiler" />
           <NavigationProperty Name="juego" Relationship="Self.producto_ibfk_2" FromRole="producto" ToRole="juego" />
           <NavigationProperty Name="pelicula" Relationship="Self.producto_ibfk_1" FromRole="producto" ToRole="pelicula" />
@@ -420,7 +420,7 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
           <Key>
             <PropertyRef Name="id_rol" />
           </Key>
-          <Property Name="id_rol" Type="Int32" Nullable="false" />
+          <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="usuario" Relationship="Self.usuario_ibfk_1" FromRole="rol" ToRole="usuario" />
         </EntityType>
@@ -659,7 +659,6 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
             <EntityTypeMapping TypeName="videoclubModel.juego">
               <MappingFragment StoreEntitySet="juego">
                 <ScalarProperty Name="id_juego" ColumnName="id_juego" />
-                <ScalarProperty Name="titulo" ColumnName="titulo" />
                 <ScalarProperty Name="plataforma" ColumnName="plataforma" />
                 <ScalarProperty Name="doblado" ColumnName="doblado" />
                 <ScalarProperty Name="genero" ColumnName="genero" />
@@ -674,7 +673,6 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
             <EntityTypeMapping TypeName="videoclubModel.pelicula">
               <MappingFragment StoreEntitySet="pelicula">
                 <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
-                <ScalarProperty Name="titulo" ColumnName="titulo" />
                 <ScalarProperty Name="titulo_original" ColumnName="titulo_original" />
                 <ScalarProperty Name="pais" ColumnName="pais" />
                 <ScalarProperty Name="duracion" ColumnName="duracion" />
@@ -699,11 +697,13 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
                 <ScalarProperty Name="id_producto" ColumnName="id_producto" />
                 <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
                 <ScalarProperty Name="id_juego" ColumnName="id_juego" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
                 <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="portada" ColumnName="portada" />
                 <ScalarProperty Name="año" ColumnName="año" />
                 <ScalarProperty Name="idioma" ColumnName="idioma" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
