@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS videoclub;
 CREATE DATABASE videoclub;
 USE videoclub;
 
--- crear tablas
+-- CREAR TABLAS
 
 -- ACTORES
 
@@ -93,7 +93,7 @@ CREATE TABLE rol (id_rol int not null primary key,
 rol varchar (30) UNIQUE
 );
 
--- CLIENTES
+-- USUARIOS
 
 CREATE TABLE usuario (id_usuario int not null primary key AUTO_INCREMENT,
 nombre varchar (30),
@@ -149,6 +149,18 @@ descripcion varchar (300),
 id_tipo_inc int,
 foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
 );
+
+-- INSERTAR DATOS
+
+INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`) VALUES ('admin', 'admin');
+
+
+-- ACTOR
+	-- Ryan Gosling
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Ryan', 'Gosling', '', 0)
+
+-- PELICULA
+
 
 
 
