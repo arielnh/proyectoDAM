@@ -37,10 +37,10 @@
         <Grid>
 
             <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaPeliculas}"
-                  AutoGenerateColumns="False" ColumnWidth="*" CanUserAddRows="False"
+                  AutoGenerateColumns="False" ColumnWidth="*" CanUserAddRows="False" IsReadOnly="True"
                   >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding modelopelicula.titulo}" />
+                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo_original}" />
                 </DataGrid.Columns>
 
             </DataGrid>

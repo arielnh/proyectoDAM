@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Backend\Servicios\Base\IServicioGenerico.cs" />
     <Compile Include="Backend\Servicios\Base\ServicioGenerico.cs" />
+    <Compile Include="Backend\Servicios\PeliculaServicio.cs" />
     <Compile Include="Backend\Servicios\UsuarioServicio.cs" />
     <Compile Include="Frontend\ControlUsuario\UCPeliculas.xaml.cs">
       <DependentUpon>UCPeliculas.xaml</DependentUpon>
