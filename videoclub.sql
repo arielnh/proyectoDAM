@@ -73,9 +73,12 @@ disponibilidad varchar(30),
 estado varchar (30),
 portada varchar (100),
 año date,
-idioma varchar (30),
-cantidad int
+idioma varchar (30)
 );
+
+
+
+
 
 -- TIPO ALQUILER
 
@@ -126,6 +129,7 @@ id_tipo int,
 FOREIGN KEY (id_tipo) REFERENCES tipo_alquiler (id_tipo)
 );
 
+-- PERMISOS
 CREATE TABLE permiso (id_permiso int not null primary key auto_increment,
 acciones varchar(30)
 );
@@ -136,9 +140,11 @@ id_permiso int,
 foreign key (id_permiso) references permiso (id_permiso)
 );
 
+-- INCIDENCIA
 create table tipo_incidencia (id_tipo_inc int not null primary key auto_increment,
 incidencia varchar (30)
 );
+
 
 create table incidencia (id_incidencia int not null primary key auto_increment,
 id_usuario int,
@@ -147,6 +153,16 @@ asunto varchar (30),
 descripcion varchar (300),
 id_tipo_inc int,
 foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
+);
+
+-- ITEMS
+CREATE TABLE item (id_item int not null primary key AUTO_INCREMENT,
+id_producto int,
+FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
+ubicacion varchar (100),
+numero int,
+id_incidencia int,
+FOREIGN KEY (id_incidencia) REFERENCES incidencia (id_incidencia)
 );
 
 -- INSERTAR DATOS
@@ -208,10 +224,11 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades,
  gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
  
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, `cantidad`) VALUES (
- '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', '4');
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, `cantidad`) VALUES (
- '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', '7');
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`) VALUES (
+ '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español');
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`) VALUES (
+ '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español');
+ 
  
  INSERT INTO videoclub.genero (nombre) VALUES ('neo-noir');
  INSERT INTO videoclub.genero (nombre) VALUES ('ciencia-ficción');

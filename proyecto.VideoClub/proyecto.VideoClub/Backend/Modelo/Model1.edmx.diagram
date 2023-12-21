@@ -4,24 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5e3494e1e1b04f26bc392ee210649fbb" Name="Diagram1">
-        <EntityTypeShape EntityType="videoclubModel.actor" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.alquiler" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.genero" Width="1.5" PointX="2.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.incidencia" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.juego" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.pelicula" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.permiso" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.producto" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.rol" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.tipo_alquiler" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.tipo_incidencia" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.usuario" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="c225628248b841178c1be9b9dace23d9" Name="Diagram1">
+        <EntityTypeShape EntityType="videoclubModel.actor" Width="1.5" PointX="5.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.alquiler" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.genero" Width="1.5" PointX="7.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.incidencia" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.item" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.juego" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.pelicula" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.permiso" Width="1.5" PointX="7.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.producto" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.rol" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.tipo_alquiler" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.tipo_incidencia" Width="1.5" PointX="3.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.usuario" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
         <AssociationConnector Association="videoclubModel.alquiler_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.alquiler_ibfk_2" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.alquiler_ibfk_3" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.incidencia_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.incidencia_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="videoclubModel.item_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="videoclubModel.item_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.producto_ibfk_2" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.producto_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.usuario_ibfk_1" ManuallyRouted="false" />

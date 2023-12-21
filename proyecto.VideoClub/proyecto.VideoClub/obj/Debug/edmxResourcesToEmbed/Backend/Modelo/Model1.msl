@@ -46,6 +46,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="item">
+      <EntityTypeMapping TypeName="videoclubModel.item">
+        <MappingFragment StoreEntitySet="item">
+          <ScalarProperty Name="id_item" ColumnName="id_item" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="id_incidencia" ColumnName="id_incidencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="juego">
       <EntityTypeMapping TypeName="videoclubModel.juego">
         <MappingFragment StoreEntitySet="juego">
@@ -94,7 +105,6 @@
           <ScalarProperty Name="portada" ColumnName="portada" />
           <ScalarProperty Name="año" ColumnName="año" />
           <ScalarProperty Name="idioma" ColumnName="idioma" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

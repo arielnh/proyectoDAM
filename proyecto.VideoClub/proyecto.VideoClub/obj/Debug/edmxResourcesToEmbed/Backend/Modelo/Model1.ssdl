@@ -59,6 +59,16 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
     <Property Name="descripcion" Type="varchar" MaxLength="300" />
     <Property Name="id_tipo_inc" Type="int" />
   </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="id_item" />
+    </Key>
+    <Property Name="id_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_producto" Type="int" />
+    <Property Name="ubicacion" Type="varchar" MaxLength="100" />
+    <Property Name="numero" Type="int" />
+    <Property Name="id_incidencia" Type="int" />
+  </EntityType>
   <EntityType Name="juego">
     <Key>
       <PropertyRef Name="id_juego" />
@@ -105,7 +115,6 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
     <Property Name="portada" Type="varchar" MaxLength="100" />
     <Property Name="año" Type="date" />
     <Property Name="idioma" Type="varchar" MaxLength="30" />
-    <Property Name="cantidad" Type="int" />
   </EntityType>
   <EntityType Name="rol">
     <Key>
@@ -225,6 +234,30 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="item_ibfk_1">
+    <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="item_ibfk_2">
+    <End Role="incidencia" Type="Self.incidencia" Multiplicity="0..1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="incidencia">
+        <PropertyRef Name="id_incidencia" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="id_incidencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="producto_ibfk_1">
     <End Role="pelicula" Type="Self.pelicula" Multiplicity="0..1" />
     <End Role="producto" Type="Self.producto" Multiplicity="*" />
@@ -266,6 +299,7 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
     <EntitySet Name="alquiler" EntityType="Self.alquiler" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="genero" EntityType="Self.genero" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="incidencia" EntityType="Self.incidencia" Schema="videoclub" store:Type="Tables" />
+    <EntitySet Name="item" EntityType="Self.item" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="juego" EntityType="Self.juego" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="pelicula" EntityType="Self.pelicula" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="permiso" EntityType="Self.permiso" Schema="videoclub" store:Type="Tables" />
@@ -293,6 +327,14 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
     <AssociationSet Name="incidencia_ibfk_2" Association="Self.incidencia_ibfk_2">
       <End Role="tipo_incidencia" EntitySet="tipo_incidencia" />
       <End Role="incidencia" EntitySet="incidencia" />
+    </AssociationSet>
+    <AssociationSet Name="item_ibfk_1" Association="Self.item_ibfk_1">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="item" EntitySet="item" />
+    </AssociationSet>
+    <AssociationSet Name="item_ibfk_2" Association="Self.item_ibfk_2">
+      <End Role="incidencia" EntitySet="incidencia" />
+      <End Role="item" EntitySet="item" />
     </AssociationSet>
     <AssociationSet Name="producto_ibfk_1" Association="Self.producto_ibfk_1">
       <End Role="pelicula" EntitySet="pelicula" />

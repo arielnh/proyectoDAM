@@ -14,6 +14,12 @@ namespace proyecto.VideoClub.Backend.Modelo
     
     public partial class incidencia
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public incidencia()
+        {
+            this.item = new HashSet<item>();
+        }
+    
         public int id_incidencia { get; set; }
         public Nullable<int> id_usuario { get; set; }
         public string asunto { get; set; }
@@ -22,5 +28,7 @@ namespace proyecto.VideoClub.Backend.Modelo
     
         public virtual usuario usuario { get; set; }
         public virtual tipo_incidencia tipo_incidencia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<item> item { get; set; }
     }
 }

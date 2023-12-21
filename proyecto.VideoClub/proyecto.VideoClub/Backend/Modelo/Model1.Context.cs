@@ -29,6 +29,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public virtual DbSet<alquiler> alquiler { get; set; }
         public virtual DbSet<genero> genero { get; set; }
         public virtual DbSet<incidencia> incidencia { get; set; }
+        public virtual DbSet<item> item { get; set; }
         public virtual DbSet<juego> juego { get; set; }
         public virtual DbSet<pelicula> pelicula { get; set; }
         public virtual DbSet<permiso> permiso { get; set; }
