@@ -15,7 +15,7 @@ namespace proyecto.VideoClub.Backend.Servicios
     public class UsuarioServicio : ServicioGenerico<usuario>
     {
         private DbContext contexto;
-        private const int PROFESOR = 1;
+      
         /*
          * Se almacena el usuario que ha iniciado sesión
          */

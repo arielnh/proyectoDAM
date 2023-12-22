@@ -167,7 +167,9 @@
     </Compile>
     <Compile Include="Backend\Servicios\Base\IServicioGenerico.cs" />
     <Compile Include="Backend\Servicios\Base\ServicioGenerico.cs" />
+    <Compile Include="Backend\Servicios\JuegoServicio.cs" />
     <Compile Include="Backend\Servicios\PeliculaServicio.cs" />
+    <Compile Include="Backend\Servicios\ProductoServicio.cs" />
     <Compile Include="Backend\Servicios\UsuarioServicio.cs" />
     <Compile Include="Frontend\ControlUsuario\UCPeliculas.xaml.cs">
       <DependentUpon>UCPeliculas.xaml</DependentUpon>
@@ -186,7 +188,9 @@
   <ItemGroup>
     <Compile Include="MVVM\Base\MVBase.cs" />
     <Compile Include="MVVM\Base\MVBaseCRUD.cs" />
+    <Compile Include="MVVM\MVJuego.cs" />
     <Compile Include="MVVM\MVPelicula.cs" />
+    <Compile Include="MVVM\MVProducto.cs" />
     <Compile Include="MVVM\MVUsuario.cs" />
     <Compile Include="MVVM\Base\PropertyChangedDataError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

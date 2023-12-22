@@ -5,27 +5,31 @@ using proyecto.VideoClub.Backend.Servicios;
 
 namespace proyecto.VideoClub.MVVM
 {
-    class MVPelicula : MVBaseCRUD<pelicula>
+    class MVJuego: MVBaseCRUD<juego>
     {
         //Base de datos
         private videoclubEntities vcEnt;
 
         //Servicios
-        private PeliculaServicio peliServ;
-        public MVPelicula(videoclubEntities vcEnt)
+        private JuegoServicio jueServ;
+        public MVJuego(videoclubEntities vcEnt)
         {
-            
+
             this.vcEnt = vcEnt;
             inicializa();
         }
 
         private void inicializa()
         {
-            peliServ = new PeliculaServicio(vcEnt);
-            servicio = peliServ;
+            jueServ = new JuegoServicio(vcEnt);
+            servicio = jueServ;
         }
 
         //Propiedades públicas para listar
-        public List<pelicula> listaPeliculas { get { return peliServ.getAll().ToList(); } }
+        public List<juego> listaJuegos { get { return jueServ.getAll().ToList(); } }
     }
+}
+
+{
+}
 }

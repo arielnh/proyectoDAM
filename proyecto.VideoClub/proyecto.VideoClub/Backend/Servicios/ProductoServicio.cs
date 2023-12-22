@@ -2,13 +2,9 @@
 using proyecto.VideoClub.Backend.Servicios.Base;
 using proyecto.VideoClub.Backend.Modelo;
 
-
 namespace proyecto.VideoClub.Backend.Servicios
 {
-    /*
-     * Clase que contiene las reglas de negocio de la clase Pelicula
-     */
-    class PeliculaServicio : ServicioGenerico<pelicula>
+    class ProductoServicio: ServicioGenerico<producto>
     {
         private videoclubEntities contexto;
 
@@ -16,7 +12,7 @@ namespace proyecto.VideoClub.Backend.Servicios
         /*
          * Constructor
          */
-        public PeliculaServicio(videoclubEntities context) : base(context)
+        public ProductoServicio(videoclubEntities context) : base(context)
         {
             contexto = context;
         }
@@ -27,10 +23,10 @@ namespace proyecto.VideoClub.Backend.Servicios
          */
         public int getLastId()
         {
-            pelicula art = contexto.Set<pelicula>().OrderByDescending(a => a.id_pelicula).FirstOrDefault();
-            return art.id_pelicula;
+            producto art = contexto.Set<producto>().OrderByDescending(a => a.id_producto).FirstOrDefault();
+            return art.id_producto;
         }
 
-        
+
     }
 }
