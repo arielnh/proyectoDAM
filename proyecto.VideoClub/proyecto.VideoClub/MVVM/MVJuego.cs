@@ -30,6 +30,4 @@ namespace proyecto.VideoClub.MVVM
     }
 }
 
-{
-}
-}
+
