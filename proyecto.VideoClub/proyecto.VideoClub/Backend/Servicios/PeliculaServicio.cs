@@ -27,8 +27,8 @@ namespace proyecto.VideoClub.Backend.Servicios
          */
         public int getLastId()
         {
-            pelicula art = contexto.Set<pelicula>().OrderByDescending(a => a.id_pelicula).FirstOrDefault();
-            return art.id_pelicula;
+            pelicula pe = contexto.Set<pelicula>().OrderByDescending(p => p.id_pelicula).FirstOrDefault();
+            return pe.id_pelicula;
         }
 
         

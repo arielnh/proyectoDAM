@@ -242,6 +242,16 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,4);
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,5);
  
+ -- JUEGO
+ 
+ INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
+ VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
+    
+INSERT INTO videoclub.producto (id_juego, titulo)
+VALUES (1,'Lies of P');
+ 
+ 
+ 
 
 
 

@@ -23,8 +23,8 @@ namespace proyecto.VideoClub.Backend.Servicios
          */
         public int getLastId()
         {
-            producto art = contexto.Set<producto>().OrderByDescending(a => a.id_producto).FirstOrDefault();
-            return art.id_producto;
+            producto pr = contexto.Set<producto>().OrderByDescending(p => p.id_producto).FirstOrDefault();
+            return pr.id_producto;
         }
 
 
