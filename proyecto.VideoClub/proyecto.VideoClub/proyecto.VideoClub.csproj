@@ -103,6 +103,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\Dialogos\NuevaPelicula.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frontend\Dialogos\NuevoJuego.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frontend\Dialogos\NuevoUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -179,6 +191,15 @@
     </Compile>
     <Compile Include="Frontend\Dialogos\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Dialogos\NuevaPelicula.xaml.cs">
+      <DependentUpon>NuevaPelicula.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Dialogos\NuevoJuego.xaml.cs">
+      <DependentUpon>NuevoJuego.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Dialogos\NuevoUsuario.xaml.cs">
+      <DependentUpon>NuevoUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

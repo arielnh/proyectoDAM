@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:proyecto.VideoClub"
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Icon="/Recursos/Img/v.png"
+        Icon="/Recursos/Img/popcorn.png"
         WindowStartupLocation="CenterScreen"
         
         Title="VIDEO CLUB" Height="540" Width="960">
@@ -114,9 +114,9 @@
                               Background="{x:Null}" Foreground="White" 
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                            <ListViewItem Content="Añadir Película" Padding="30 5" Foreground="White" />
-                            <ListViewItem Content="Añadir Juego" Padding="30 10 0 0" Foreground="White"/>
-                            <ListViewItem Content="Añadir Usuario" Padding="30 10 0 0" Foreground="White"/>
+                            <ListViewItem Content="Añadir Película" Padding="30 5" Foreground="White" x:Name="NewPeli" MouseLeftButtonUp="NewPeli_Selected"/>
+                            <ListViewItem Content="Añadir Juego" Padding="30 10 0 0" Foreground="White" x:Name="NewJuego" MouseLeftButtonUp="NewJuego_Selected"/>
+                            <ListViewItem Content="Añadir Usuario" Padding="30 10 0 0" Foreground="White" x:Name="NewUser" MouseLeftButtonUp="NewUser_Selected"/>
                             <ListViewItem Content="Listar Usuarios" Padding="30 10 0 0" Foreground="White"/>
                             <ListViewItem Content="Listar Reservas" Padding="30 10 0 0" Foreground="White"/>
                             

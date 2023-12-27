@@ -14,7 +14,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
         Title="Login" Height="500" Width="800"
-        Icon="/Recursos/Img/v.png">
+        Icon="/Recursos/Img/popcorn.png">
 
     <Grid Margin="20"
           >

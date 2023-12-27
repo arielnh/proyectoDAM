@@ -1,6 +1,8 @@
 ﻿using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.Frontend.ControlUsuario;
+using proyecto.VideoClub.Frontend.Dialogos;
 using System.Windows;
+using System.Configuration;
 
 namespace proyecto.VideoClub
 {
@@ -9,7 +11,7 @@ namespace proyecto.VideoClub
     {
         private usuario usuLogin;
         private videoclubEntities vcEnt;
-        
+      
 
         public MainWindow(videoclubEntities ent, usuario usu)
         {
@@ -17,6 +19,7 @@ namespace proyecto.VideoClub
             usuLogin = usu;
             InitializeComponent();
 
+            
         }
 
         
@@ -39,6 +42,32 @@ namespace proyecto.VideoClub
         private void TodosU_Selected(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void NewUser_Selected(object sender, RoutedEventArgs e)
+        {
+
+            NuevoUsuario ventana = new NuevoUsuario(vcEnt);
+            ventana.ShowDialog();
+
+
+          
+        }
+
+        private void NewPeli_Selected(object sender, RoutedEventArgs e)
+        {
+
+            NuevaPelicula ventana = new NuevaPelicula(vcEnt);
+            ventana.ShowDialog();
+           
+        }
+
+        private void NewJuego_Selected(object sender, RoutedEventArgs e)
+        {
+
+            NuevoJuego ventana = new NuevoJuego(vcEnt);
+            ventana.ShowDialog();
+            
         }
     }
 }
