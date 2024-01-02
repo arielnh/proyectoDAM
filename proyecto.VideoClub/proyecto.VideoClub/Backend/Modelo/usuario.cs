@@ -9,10 +9,12 @@
 
 namespace proyecto.VideoClub.Backend.Modelo
 {
+    using proyecto.VideoClub.MVVM;
     using System;
     using System.Collections.Generic;
-    
-    public partial class usuario
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class usuario : PropertyChangedDataError
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public usuario()
@@ -22,21 +24,28 @@ namespace proyecto.VideoClub.Backend.Modelo
         }
     
         public int id_usuario { get; set; }
+        [Required]
         public string nombre { get; set; }
+        [Required]
         public string apellido_1 { get; set; }
         public string apellido_2 { get; set; }
         public string direccion { get; set; }
         public string mail { get; set; }
+        [Required]
         public string telefono { get; set; }
         public Nullable<System.DateTime> fecha_nacimiento { get; set; }
+        [Required]
         public string usuario1 { get; set; }
+        [Required]
         public string contraseña { get; set; }
+        
         public int id_rol { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alquiler> alquiler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<incidencia> incidencia { get; set; }
+        [Required]
         public virtual rol rol { get; set; }
     }
 }

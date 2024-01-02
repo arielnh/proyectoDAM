@@ -92,7 +92,7 @@ nombre varchar (30)
 -- ROLES
 
 CREATE TABLE rol (id_rol int not null primary key AUTO_INCREMENT,
-rol varchar (30) UNIQUE
+rol varchar (30) UNIQUE not null
 );
 
 -- USUARIOS
@@ -107,9 +107,8 @@ telefono varchar (30),
 fecha_nacimiento date,
 usuario varchar (30) UNIQUE,
 contraseña varchar (30),
-
-id_rol int,
-FOREIGN KEY (id_rol) REFERENCES rol (id_rol)
+id_rol int not null,
+FOREIGN KEY (id_rol) REFERENCES rol (id_rol) 
 
 );
 
