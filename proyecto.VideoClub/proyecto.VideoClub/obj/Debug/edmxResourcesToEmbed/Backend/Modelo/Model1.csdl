@@ -153,7 +153,7 @@
     <Property Name="fecha_nacimiento" Type="DateTime" />
     <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="id_rol" Type="Int32" />
+    <Property Name="id_rol" Type="Int32" Nullable="false" />
     <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_2" FromRole="usuario" ToRole="alquiler" />
     <NavigationProperty Name="incidencia" Relationship="Self.incidencia_ibfk_1" FromRole="usuario" ToRole="incidencia" />
     <NavigationProperty Name="rol" Relationship="Self.usuario_ibfk_1" FromRole="usuario" ToRole="rol" />
@@ -267,7 +267,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="usuario_ibfk_1">
-    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
     <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="rol">

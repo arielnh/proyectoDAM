@@ -154,7 +154,7 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
     <Property Name="fecha_nacimiento" Type="date" />
     <Property Name="usuario" Type="varchar" MaxLength="30" />
     <Property Name="contraseña" Type="varchar" MaxLength="30" />
-    <Property Name="id_rol" Type="int" />
+    <Property Name="id_rol" Type="int" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
 error 6004: Una relación hace referencia a la tabla 'def.videoclub.actuan', pero no se encuentra la tabla.
@@ -283,7 +283,7 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
     </ReferentialConstraint>
   </Association>
   <Association Name="usuario_ibfk_1">
-    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
     <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="rol">

@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using proyecto.VideoClub.Backend.Modelo;
+using proyecto.VideoClub.MVVM;
+using proyecto.VideoClub.Backend.Servicios;
+
 
 namespace proyecto.VideoClub.Frontend.Dialogos
 {
@@ -19,20 +23,34 @@ namespace proyecto.VideoClub.Frontend.Dialogos
     /// </summary>
     public partial class NuevoUsuario : Window
     {
-        public NuevoUsuario(object vCEnt)
+        private videoclubEntities vcEnt;
+        private MVUsuario mvUsu;
+        public NuevoUsuario(videoclubEntities ent)
         {
+            
             InitializeComponent();
+            vcEnt = ent;
+            mvUsu = new MVUsuario(vcEnt);
+            DataContext = mvUsu;
         }
 
         private void btnGuardarUsuario_Click(object sender, RoutedEventArgs e)
         {
 
+            if (mvUsu.guarda)
+            {
+                MessageBox.Show("Todo guardado correctamente.","Guardar Usuario", MessageBoxButton.OK);
+                DialogResult = true;
+            }
+            else
+            {
+                MessageBox.Show("Se ha producido un error.","Guardar Usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
-            
         }
     }
 }

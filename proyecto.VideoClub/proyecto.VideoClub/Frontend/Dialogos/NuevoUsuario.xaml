@@ -21,39 +21,111 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#01579a" />
         
         <!--Parte Superior-->
         <TextBlock Text="Nuevo Usuario" Grid.ColumnSpan="2" Margin="20" FontSize="28" Foreground="White" FontWeight="ExtraBold"/>
-        <Image Source="/Recursos/img/usr.png" Height="32" Grid.Column="1" HorizontalAlignment="Left" Margin="150,0,0,0" />
+        <Image Source="/Recursos/img/usr.png" Height="32" Grid.Column="1" HorizontalAlignment="Left" Margin="90,0,0,0" />
         
-        <TextBlock Grid.Row="1" Text="Los campos con este formato son obligatorios" 
+        <TextBlock Grid.Row="1" Text="Los campos en negrita son obligatorios" 
                    FontSize="10" Margin="20,10,0,20" Grid.ColumnSpan="2"
                    FontWeight="Bold" FontStyle="Italic"/>
-        
-            <!--Nombre-->
+
+        <!--Parte Inferior-->
+        <!--Nombre-->
         <TextBlock Grid.Row="2" Text="Nombre" Margin="20,10,20,0" VerticalAlignment="Center" 
-                   FontWeight="Bold" FontStyle="Italic"/>
+                   FontWeight="Bold" />
         <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtNombre" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"
-                 Text="{Binding usuario.nombre, ValidatesOnDataErrors=True,
+                 Text="{Binding usuarioNuevo.nombre, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
 
         <!--Apellido-->
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Apellido" Margin="20,10,20,0" VerticalAlignment="Center" 
-                   FontWeight="Bold" FontStyle="Italic" />
+                   FontWeight="Bold"  />
         <TextBox Grid.Row="2" Grid.Column="3"  x:Name="txtApellido" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"
-                 Text="{Binding usuario.nombre, ValidatesOnDataErrors=True,
+                 Text="{Binding usuarioNuevo.apellido_1, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Apellido 2-->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Segundo apellido" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   />
+        <TextBox Grid.Row="3" Grid.Column="1"  x:Name="txtApellido2" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding usuarioNuevo.apellido_2, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Mail-->
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="Mail" Margin="20,10,20,0" VerticalAlignment="Center" 
+                    />
+        <TextBox Grid.Row="3" Grid.Column="3"  x:Name="txtMail" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding usuarioNuevo.mail, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Direccion-->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Dirección" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   />
+        <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtDireccion" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding usuarioNuevo.direccion, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+
+        <!--Telefono-->
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="Teléfono" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <TextBox Grid.Row="4" Grid.Column="3"  x:Name="txtTelefono" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding usuarioNuevo.telefono, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+
+        <!--Fecha Nacimiento-->
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Fecha de nacimiento" Margin="20,10,20,0" VerticalAlignment="Center" 
+                    />
+        <DatePicker Grid.Row="5" Grid.Column="1"  x:Name="txtFechaNac" Height="30" Margin="20,10,20,0" Language ="es-Es"
+                 Style="{StaticResource MaterialDesignDatePicker}" Width="200"
+                 Text="{Binding usuarioNuevo.fecha_nacimiento, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Usuario-->
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="Usuario" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <TextBox Grid.Row="5" Grid.Column="3"  x:Name="txtUsuario" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding usuarioNuevo.usuario1, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Contraseña-->
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Contraseña" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtContr" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding usuarioNuevo.contraseña, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Rol-->
+        <TextBlock Grid.Row="6" Grid.Column="2" Text="Rol" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <ComboBox Grid.Row="6" Grid.Column="3"  x:Name="txtRol" Height="30" Margin="20,10,20,0"
+                  ItemsSource="{Binding listaRol}" DisplayMemberPath="rol1"
+                  Style="{StaticResource MaterialDesignComboBox}" Width="200"
+                  Text="{Binding usuarioNuevo.rol, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
-        <Button Grid.Column="3" Grid.Row="4" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
+        <Button Grid.Column="3" Grid.Row="7" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
                 x:Name="btnGuardarUsuario" Click="btnGuardarUsuario_Click" Background="#01579a"  BorderBrush="Transparent"/>
-        <Button Grid.Column="3" Grid.Row="4" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
+        <Button Grid.Column="3" Grid.Row="7" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
                 x:Name="btnCancelar" Click="btnCancelar_Click"
                 Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
     </Grid>

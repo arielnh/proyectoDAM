@@ -8,31 +8,49 @@ using System.Threading.Tasks;
 
 namespace proyecto.VideoClub.MVVM
 {
-    internal class MVUsuario : MVBase
+    internal class MVUsuario : MVBaseCRUD<usuario>
     {
         // VARIABLES PRIVADAS
         //Base de datos
-        private videoclubEntities vCEnt;
+        private videoclubEntities vcEnt;
         //Servicios
-        private UsuarioServicio usrServ;
+        private UsuarioServicio usuServ;
+        private RolServicio rolServ;
+
+        private usuario usuNuevo;
        
 
         //CONSTRUCTOR
         public MVUsuario(videoclubEntities ent)
         {
-            vCEnt = ent;
+            vcEnt = ent;
             inicializa();
         }
 
         private void inicializa()
         {
-            usrServ = new UsuarioServicio(vCEnt);
-            
+            usuServ = new UsuarioServicio(vcEnt);
+            rolServ = new RolServicio(vcEnt);
+            servicio = usuServ;
+            usuNuevo = new usuario();
+
         }
 
         //VARIABLES PUBLICAS
 
-        
+        public List<rol> listaRol { get { return rolServ.getAll().ToList(); } }
+
+        public usuario usuarioNuevo
+        {
+            get { return usuNuevo; }
+            set
+            {
+                usuNuevo = value;
+                NotifyPropertyChanged(nameof(usuarioNuevo));
+            }
+        }
+        public bool guarda { get { return add(usuarioNuevo); } }
+
     }
 
 }

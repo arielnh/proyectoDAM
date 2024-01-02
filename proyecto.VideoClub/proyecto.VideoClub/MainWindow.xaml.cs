@@ -6,23 +6,23 @@ using System.Configuration;
 
 namespace proyecto.VideoClub
 {
-    
+
     public partial class MainWindow : Window
     {
         private usuario usuLogin;
         private videoclubEntities vcEnt;
-      
 
+        public MainWindow()
+        {
+            InitializeComponent();
+            vcEnt = new videoclubEntities();
+        }
         public MainWindow(videoclubEntities ent, usuario usu)
         {
             vcEnt = ent;
             usuLogin = usu;
             InitializeComponent();
-
-            
         }
-
-        
 
         private void Todas_Selected(object sender, RoutedEventArgs e)
         {
@@ -51,7 +51,7 @@ namespace proyecto.VideoClub
             ventana.ShowDialog();
 
 
-          
+
         }
 
         private void NewPeli_Selected(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace proyecto.VideoClub
 
             NuevaPelicula ventana = new NuevaPelicula(vcEnt);
             ventana.ShowDialog();
-           
+
         }
 
         private void NewJuego_Selected(object sender, RoutedEventArgs e)
@@ -67,7 +67,7 @@ namespace proyecto.VideoClub
 
             NuevoJuego ventana = new NuevoJuego(vcEnt);
             ventana.ShowDialog();
-            
+
         }
     }
 }

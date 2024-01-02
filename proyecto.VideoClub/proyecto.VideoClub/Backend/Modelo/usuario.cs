@@ -31,7 +31,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public Nullable<System.DateTime> fecha_nacimiento { get; set; }
         public string usuario1 { get; set; }
         public string contraseña { get; set; }
-        public Nullable<int> id_rol { get; set; }
+        public int id_rol { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alquiler> alquiler { get; set; }
