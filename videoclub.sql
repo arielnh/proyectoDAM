@@ -205,10 +205,18 @@ INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
 
 INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`, id_rol) VALUES ('admin', 'admin', 1);
 
+
 -- ACTOR
 	-- Ryan Gosling
 INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Ryan', 'Gosling', '', 0);
 INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Emma', 'Stone', '', 0);
+
+ INSERT INTO videoclub.genero (nombre) VALUES ('neo-noir');
+ INSERT INTO videoclub.genero (nombre) VALUES ('ciencia-ficción');
+ INSERT INTO videoclub.genero (nombre) VALUES ('musical');
+ INSERT INTO videoclub.genero (nombre) VALUES ('comedia');
+ INSERT INTO videoclub.genero (nombre) VALUES ('drama');
+ INSERT INTO videoclub.genero (nombre) VALUES ('crimen');
 
 -- PELICULA
 INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
@@ -228,12 +236,18 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
  '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
  
+ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
+ 'Drive', 'Estados Unidos', '100', 'Durante el día, Driver es conductor especialista de cine, pero de noche se convierte en chófer para delincuentes.
+ El mundo de Driver cambia el día en que conoce a Irene, una vecina que tiene un hijo pequeño y a su marido en la cárcel.', 'Nicolas Winding Refn','Blue-Ray'
+ );
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ '3', 'Drive', 'Disponible','Disponible', '2011-09-01', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'
+ );
+
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,1);
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,5);
+ INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,6);
  
- INSERT INTO videoclub.genero (nombre) VALUES ('neo-noir');
- INSERT INTO videoclub.genero (nombre) VALUES ('ciencia-ficción');
- INSERT INTO videoclub.genero (nombre) VALUES ('musical');
- INSERT INTO videoclub.genero (nombre) VALUES ('comedia');
- INSERT INTO videoclub.genero (nombre) VALUES ('drama');
  
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,1);
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,2);

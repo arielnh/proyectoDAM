@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
         mc:Ignorable="d"
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Icon="/Recursos/Img/popcorn.png"
         Title="Nuevo Usuario" Height="450" Width="800">
     <Grid>
@@ -123,10 +125,10 @@
 
 
 
-        <Button Grid.Column="3" Grid.Row="7" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
+        <Button Grid.Column="3" Grid.Row="7" IsDefault="True" Margin="40,40,20,20" Content="Guardar" HorizontalAlignment="Left" 
                 x:Name="btnGuardarUsuario" Click="btnGuardarUsuario_Click" Background="#01579a"  BorderBrush="Transparent"/>
-        <Button Grid.Column="3" Grid.Row="7" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
-                x:Name="btnCancelar" Click="btnCancelar_Click"
+        <Button Grid.Column="3" Grid.Row="7" IsCancel="True" Margin="20,40,40,20" Content="Cancelar" HorizontalAlignment="Right"
+                x:Name="btnCancelar" Click="btnCancelar_Click" Foreground="#9a010b"
                 Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
     </Grid>
 </Window>

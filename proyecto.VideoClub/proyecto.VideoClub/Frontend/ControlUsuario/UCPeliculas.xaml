@@ -17,21 +17,16 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
             </Grid.ColumnDefinitions>
-            <TextBlock Text="NUESTRO CATALOGO DE PELÍCULAS" FontSize="16" Margin="10,10,0,10"/>
-           
+
+            <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#fbfdf2" />
+            <TextBlock Text="NUESTRO CATALOGO" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
+            <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
+       
 
         <!--La tabla de info-->
         <Grid>
@@ -39,10 +34,8 @@
             <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaProductos}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                   >
-                
+
                 <DataGrid.Columns>
-                    
-                    
 
                     <!--Portada-->
 
@@ -55,13 +48,10 @@
                     </DataGridTemplateColumn>
 
                     <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo}" />
-                   
-                    
+
+
                 </DataGrid.Columns>
-
             </DataGrid>
-
-
         </Grid>
     </DockPanel>
 </UserControl>

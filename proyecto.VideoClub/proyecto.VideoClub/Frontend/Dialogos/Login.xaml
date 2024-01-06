@@ -35,13 +35,13 @@
         <Border CornerRadius="15,0,0,15"
                 MouseDown="Border_MouseDown">
             <Border.Background>
-                <ImageBrush Stretch="Fill" ImageSource="/Recursos/Img/cat2.jpeg"/>
+                <ImageBrush Stretch="Fill" ImageSource="/Recursos/Img/portada4.jpeg"/>
             </Border.Background>
         </Border>
 
         <!--Parte Derecha-->
         <Border Grid.Column="1"
-                    Background="White"
+                    Background="#fbfdf2"
                     CornerRadius="0 15 15 0"
                     MouseDown="Border_MouseDown">
 
