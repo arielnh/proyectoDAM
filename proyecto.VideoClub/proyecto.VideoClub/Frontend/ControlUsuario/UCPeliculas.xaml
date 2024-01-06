@@ -36,11 +36,27 @@
         <!--La tabla de info-->
         <Grid>
 
-            <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaPeliculas}"
-                  AutoGenerateColumns="False" ColumnWidth="*" CanUserAddRows="False" IsReadOnly="True"
+            <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaProductos}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                   >
+                
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo_original}" />
+                    
+                    
+
+                    <!--Portada-->
+
+                    <DataGridTemplateColumn Header="PORTADA">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding portada}"  Width="100px"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo}" />
+                   
+                    
                 </DataGrid.Columns>
 
             </DataGrid>

@@ -71,7 +71,7 @@ FOREIGN KEY (id_juego) REFERENCES juego (id_juego),
 titulo VARCHAR(50),
 disponibilidad varchar(30),
 estado varchar (30),
-portada varchar (100),
+portada varchar (300),
 año date,
 idioma varchar (30)
 );
@@ -223,10 +223,10 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades,
  gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
  
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`) VALUES (
- '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español');
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`) VALUES (
- '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español');
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
  
  
  INSERT INTO videoclub.genero (nombre) VALUES ('neo-noir');
@@ -246,8 +246,8 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
  VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
     
-INSERT INTO videoclub.producto (id_juego, titulo)
-VALUES (1,'Lies of P');
+INSERT INTO videoclub.producto (id_juego, titulo, portada)
+VALUES (1,'Lies of P', 'https://cdn.mobygames.com/9e67a262-5659-11ee-ac00-02420a0001c6.webp');
  
  
  

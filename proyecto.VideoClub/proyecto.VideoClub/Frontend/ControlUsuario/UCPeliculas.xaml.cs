@@ -11,12 +11,14 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     {
         private videoclubEntities vcEnt;
         private MVPelicula mvPelicula;
+        private MVProducto mvProducto;
         public UCPeliculas(videoclubEntities ent)
         {
             InitializeComponent();
             vcEnt = ent;
             mvPelicula = new MVPelicula(vcEnt);
-            DataContext = mvPelicula;
+            mvProducto = new MVProducto(vcEnt);
+            DataContext = mvProducto;
         }
     }
 }
