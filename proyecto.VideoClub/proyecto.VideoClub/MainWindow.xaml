@@ -128,7 +128,7 @@
             </StackPanel>
         </Grid>
         <Grid x:Name="gridCentral">
-
+            <Image Source="/Recursos/Img/MWin.jpeg"/>
         </Grid>
     </DockPanel>
 </Window>

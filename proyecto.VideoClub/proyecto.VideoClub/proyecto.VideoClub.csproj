@@ -252,11 +252,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\img\v.png" />
     <Resource Include="Recursos\img\controller.png" />
     <Resource Include="Recursos\img\popcorn.png" />
-    <Resource Include="Recursos\img\cinta2.png" />
-    <Resource Include="Recursos\img\cinta.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -279,7 +276,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Recursos\img\portada4.jpeg" />
+    <Resource Include="Recursos\img\MWin.jpeg" />
+    <Resource Include="Recursos\img\error1.jpeg" />
+    <Resource Include="Recursos\img\login.jpeg" />
     <Resource Include="Recursos\img\catalog.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

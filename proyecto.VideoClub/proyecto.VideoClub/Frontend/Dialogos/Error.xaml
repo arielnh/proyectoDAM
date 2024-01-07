@@ -28,14 +28,14 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
         <!--Parte izquierda-->
         <Border CornerRadius="15,0,0,15" 
                 MouseDown="Border_MouseDown">
             <Border.Background>
-                <ImageBrush Stretch="Fill" ImageSource="/Recursos/Img/cinta.jpeg"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Recursos/Img/error1.jpeg"/>
             </Border.Background>
         </Border>
         <!--Parte Derecha-->
@@ -65,9 +65,9 @@
                 <!--Descripcion-->
 
                 <StackPanel VerticalAlignment="Center"
-                            Margin="10 0">
+                            Margin="8">
                     <TextBlock TextAlignment="Center"
-                               Margin="0 0 0 15"
+                               Margin="0 0 8 15"
                                Foreground="#01579a"
                                FontWeight="Bold"
                                FontSize="16"
@@ -79,14 +79,8 @@
                         Por favor, vuelve a intentarlo.
                     </TextBlock>
 
-
-
-
-
-
-
                     <Button x:Name="btnAceptar" Click="btnAceptar_Click"
-                                                Margin="15"              
+                                                Margin="8"              
                                 Content="Aceptar" 
                                 Background="#01579a"
                                 BorderBrush="Transparent"
