@@ -9,7 +9,7 @@ namespace proyecto.VideoClub.MVVM
     {
         //Base de datos
         private videoclubEntities vcEnt;
-
+        
     //Servicios
     private ProductoServicio prodServ;
     public MVProducto(videoclubEntities vcEnt)
@@ -25,8 +25,10 @@ namespace proyecto.VideoClub.MVVM
         servicio = prodServ;
     }
 
-    //Propiedades públicas para listar
-    public List<producto> listaProductos { get { return prodServ.getAll().ToList(); } }
-}
+        //Propiedades públicas para listar
+        public List<producto> listaPeliculas => prodServ.getPeliculas();
+        public List<producto> listaJuegos => prodServ.getJuegos();
+        public List<producto> listaProductos { get { return prodServ.getAll().ToList(); } }
+    }
 }
 

@@ -25,23 +25,23 @@
                 
                 
                
-                <!--Primera parte Catalogo-->
+                <!--Primera parte Peliculas-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
                     </Grid.ColumnDefinitions>
                     <!-- Ahora mostramos el icono de la sección -->
-                    <Image Stretch="Fill" Source="/Recursos/Img/catalog.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
+                    <Image Stretch="Fill" Source="/Recursos/Img/film.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
 
                     <!-- Utilizamos elcontrol Expander para la primera sección -->
                   
                     <Expander IsExpanded="False" Width="160"
                               Margin="30 0"
-                              
+                              x:Name="Peliculas"
                               Foreground="White"
                               HorizontalAlignment="Left" Style="{StaticResource MaterialDesignExpander}"
-                              Header="Productos"  Background="{x:Null}"
+                              Header="Peliculas"  Background="{x:Null}"
                               Grid.ColumnSpan="2"
                               >
                         <!-- Utilizamos este control para mostrar la lista de opciones de la
@@ -50,7 +50,7 @@
                              <ListView x:Name="ListViewMenu" Style ="{StaticResource MaterialDesignListView}"
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                   Foreground="White">
-                            <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="Todas" Selected="Todas_Selected" />
+                            <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="Todas" MouseLeftButtonUp="CatalogoPeliculas"  />
                             <ListViewItem Content="Alquiladas" Padding="30 5" Foreground="White"/>
                         </ListView>
                     </Expander>
@@ -58,7 +58,7 @@
                 </Grid>
                 
                
-                <!--Segunda parte Juegos
+                <!--Segunda parte Juegos -->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
@@ -69,16 +69,17 @@
 
                     <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="150" HorizontalAlignment="Left" Header="Juegos" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
-                              Background="{x:Null}" Foreground="White" 
+                              Background="{x:Null}" Foreground="White"
+                              x:Name="Juegos"
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                            <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="TodosJ" Foreground="White" Selected="Todas_Selected" />
-                            <ListViewItem Content="Nuevas" Padding="30 10 0 0" Foreground="White"/>
-                            <ListViewItem Content="Alquiladas" Padding="30 10 0 0" Foreground="White"/>
+                            <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="TodosJ" Foreground="White" MouseLeftButtonUp="CatalogoJuegos" />
+                            <ListViewItem Content="Nuevas" Padding="30 5" Foreground="White"/>
+                            <ListViewItem Content="Alquiladas" Padding="30 5" Foreground="White"/>
                         </ListView>
                     </Expander>
                 </Grid>
-                -->
+                
                 <!--Tercera parte USUARIO-->
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -92,9 +93,10 @@
                     <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Mi Perfil" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
                               Background="{x:Null}" Foreground="White" 
+                              x:Name="Perfil"
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                            <ListViewItem Content="Mis datos" Padding="30 5" x:Name="TodosU" Foreground="White" Selected="TodosU_Selected" />
+                            <ListViewItem Content="Mis datos" Padding="30 5" Foreground="White" />
                             <ListViewItem Content="Incidencias" Padding="30 5" Foreground="White"/>
                             <ListViewItem Content="Mis alquileres" Padding="30 5" Foreground="White"/>
                         </ListView>
@@ -114,6 +116,7 @@
                     <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Gestión" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
                               Background="{x:Null}" Foreground="White" 
+                              x:Name="Gestion"
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListViewItem Content="Añadir Película" Padding="30 5" Foreground="White" x:Name="NewPeli" MouseLeftButtonUp="NewPeli_Selected"/>

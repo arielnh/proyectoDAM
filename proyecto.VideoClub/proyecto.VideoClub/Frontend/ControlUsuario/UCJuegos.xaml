@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="proyecto.VideoClub.Frontend.ControlUsuario.UCPeliculas"
+﻿<UserControl x:Class="proyecto.VideoClub.Frontend.ControlUsuario.UCJuegos"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -26,12 +26,12 @@
             <TextBlock Text="NUESTRO CATÁLOGO" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
             <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
-       
+
 
         <!--La tabla de info-->
         <Grid>
 
-            <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaPeliculas}"
+            <DataGrid x:Name="dgListaJuegos" ItemsSource="{Binding listaJuegos}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                   >
 
@@ -48,7 +48,7 @@
                     </DataGridTemplateColumn>
 
                     <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo}" />
-                    <DataGridTextColumn Header="Sinopsis" Binding="{Binding pelicula.sinopsis}" />
+                    
 
 
                 </DataGrid.Columns>
@@ -56,3 +56,5 @@
         </Grid>
     </DockPanel>
 </UserControl>
+
+

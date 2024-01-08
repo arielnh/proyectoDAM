@@ -261,7 +261,7 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
     
 INSERT INTO videoclub.producto (id_juego, titulo, portada)
-VALUES (1,'Lies of P', 'https://cdn.mobygames.com/9e67a262-5659-11ee-ac00-02420a0001c6.webp');
+VALUES (1,'Lies of P', 'https://th.bing.com/th?id=OSK.95b919a998b2f719db8fbd7e6fad4dec&w=124&h=168&c=7&o=6&dpr=1.3&pid=SANGAM');
  
  
  

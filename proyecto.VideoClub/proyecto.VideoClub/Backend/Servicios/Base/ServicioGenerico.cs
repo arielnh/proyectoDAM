@@ -55,6 +55,8 @@ namespace proyecto.VideoClub.Backend.Servicios.Base
         {
             return _dbset.AsEnumerable<T>();
         }
+
+
         /*
          * Realiza un commit de la cache a la base de datos
          */

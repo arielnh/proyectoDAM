@@ -91,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Frontend\ControlUsuario\UCJuegos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\ControlUsuario\UCPeliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,6 +188,9 @@
     <Compile Include="Backend\Servicios\ProductoServicio.cs" />
     <Compile Include="Backend\Servicios\RolServicio.cs" />
     <Compile Include="Backend\Servicios\UsuarioServicio.cs" />
+    <Compile Include="Frontend\ControlUsuario\UCJuegos.xaml.cs">
+      <DependentUpon>UCJuegos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\ControlUsuario\UCPeliculas.xaml.cs">
       <DependentUpon>UCPeliculas.xaml</DependentUpon>
     </Compile>

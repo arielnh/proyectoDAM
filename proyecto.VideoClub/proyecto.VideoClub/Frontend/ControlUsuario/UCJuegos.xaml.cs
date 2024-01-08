@@ -5,17 +5,16 @@ using proyecto.VideoClub.MVVM;
 namespace proyecto.VideoClub.Frontend.ControlUsuario
 {
     /// <summary>
-    /// Lógica de interacción para UCPeliculas.xaml
+    /// Lógica de interacción para UCJuegos.xaml
     /// </summary>
-    public partial class UCPeliculas : UserControl
+    public partial class UCJuegos : UserControl
     {
         private videoclubEntities vcEnt;
         private MVProducto mvProducto;
-        public UCPeliculas(videoclubEntities ent)
+        public UCJuegos(videoclubEntities ent)
         {
             InitializeComponent();
             vcEnt = ent;
-          
             mvProducto = new MVProducto(vcEnt);
             DataContext = mvProducto;
         }

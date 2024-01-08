@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using proyecto.VideoClub.Backend.Servicios.Base;
 using proyecto.VideoClub.Backend.Modelo;
+using System.Collections.Generic;
 
 namespace proyecto.VideoClub.Backend.Servicios
 {
@@ -27,6 +28,23 @@ namespace proyecto.VideoClub.Backend.Servicios
             return pr.id_producto;
         }
 
+        /*
+         * Obtenemos la lista de Productos que son Peliculas
+         */
+        public List<producto> getPeliculas()
+        {
+            return contexto.Set<producto>().Where(p => p.id_pelicula > 0).ToList();
+
+        }
+
+        /*
+         * Obtenemos la lista de Productos que son Juegos
+         */
+        public List<producto> getJuegos()
+        {
+            return contexto.Set<producto>().Where(p => p.id_juego > 0).ToList();
+
+        }
 
     }
 }
