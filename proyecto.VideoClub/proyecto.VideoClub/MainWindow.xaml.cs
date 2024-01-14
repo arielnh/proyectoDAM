@@ -4,6 +4,7 @@ using proyecto.VideoClub.Frontend.Dialogos;
 using System.Windows;
 using System.Configuration;
 using System.Collections.Generic;
+using proyecto.VideoClub.Backend.Servicios;
 
 namespace proyecto.VideoClub
 {
@@ -12,11 +13,14 @@ namespace proyecto.VideoClub
     {
         private usuario usuLogin;
         private videoclubEntities vcEnt;
+        private UsuarioServicio servUsu;
+
 
         public MainWindow()
         {
             InitializeComponent();
             vcEnt = new videoclubEntities();
+            servUsu = new UsuarioServicio(vcEnt);
         }
         public MainWindow(videoclubEntities ent, usuario usu)
         {
@@ -115,6 +119,23 @@ namespace proyecto.VideoClub
         {
             CerrarSeleccion(4);
             UCUsuarios uc = new UCUsuarios(vcEnt);
+            // Lo colocaremos en el panel central de nuestra aplicación
+            // Si hay algo en el grid central lo borramos
+            if (gridCentral.Children != null) gridCentral.Children.Clear();
+            // Añadimos nuestro user control
+            gridCentral.Children.Add(uc);
+            Todas.IsSelected = false;
+        }
+
+        private void NewProduct_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+           
+        }
+
+        private void DatosUsu_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            CerrarSeleccion(3);
+            UCDatosUsuario uc = new UCDatosUsuario(vcEnt, usuLogin);
             // Lo colocaremos en el panel central de nuestra aplicación
             // Si hay algo en el grid central lo borramos
             if (gridCentral.Children != null) gridCentral.Children.Clear();

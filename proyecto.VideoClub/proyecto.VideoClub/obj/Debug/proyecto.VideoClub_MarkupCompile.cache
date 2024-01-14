@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\App.xaml
-9-220235663
+10-1754527384
 2709747203
-43-93509559
+44132813509
 29-1897899086
-Frontend\ControlUsuario\UCJuegos.xaml;Frontend\ControlUsuario\UCPeliculas.xaml;Frontend\ControlUsuario\UCUsuarios.xaml;Frontend\Dialogos\Error.xaml;Frontend\Dialogos\Login.xaml;Frontend\Dialogos\NuevaPelicula.xaml;Frontend\Dialogos\NuevoJuego.xaml;Frontend\Dialogos\NuevoUsuario.xaml;MainWindow.xaml;
+Frontend\ControlUsuario\UCDatosUsuario.xaml;Frontend\ControlUsuario\UCJuegos.xaml;Frontend\ControlUsuario\UCPeliculas.xaml;Frontend\ControlUsuario\UCUsuarios.xaml;Frontend\Dialogos\Error.xaml;Frontend\Dialogos\Login.xaml;Frontend\Dialogos\NuevaPelicula.xaml;Frontend\Dialogos\NuevoJuego.xaml;Frontend\Dialogos\NuevoUsuario.xaml;MainWindow.xaml;
 
 False
 

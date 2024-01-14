@@ -75,6 +75,19 @@ namespace proyecto.VideoClub.Backend.Servicios
             return usu;
         }
 
-       
+        
+        public usuario getUsuarioPorId(string usuario1)
+
+        {
+            usuario usu;
+            return usu = contexto.Set<usuario>().Where(u => u.usuario1 == usuario1).FirstOrDefault();
+
+        }
+
+        public List<usuario> getUsuario(string usu)
+        {
+            return contexto.Set<usuario>().Where(u => u.usuario1== usu).ToList();
+
+        }
     }
 }
