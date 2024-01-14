@@ -141,3 +141,5 @@ C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\NuevoUsuario.baml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCJuegos.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCJuegos.baml
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCUsuarios.g.cs
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCUsuarios.baml

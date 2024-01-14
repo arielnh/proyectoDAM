@@ -122,7 +122,7 @@
                             <ListViewItem Content="Añadir Película" Padding="30 5" Foreground="White" x:Name="NewPeli" MouseLeftButtonUp="NewPeli_Selected"/>
                             <ListViewItem Content="Añadir Juego" Padding="30 5" Foreground="White" x:Name="NewJuego" MouseLeftButtonUp="NewJuego_Selected"/>
                             <ListViewItem Content="Añadir Usuario" Padding="30 5" Foreground="White" x:Name="NewUser" MouseLeftButtonUp="NewUser_Selected"/>
-                            <ListViewItem Content="Listar Usuarios" Padding="30 5" Foreground="White"/>
+                            <ListViewItem Content="Listar Usuarios" Padding="30 5" Foreground="White" x:Name="ListUser" MouseLeftButtonUp="ListUser_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Reservas" Padding="30 5" Foreground="White"/>
                             
                         </ListView>

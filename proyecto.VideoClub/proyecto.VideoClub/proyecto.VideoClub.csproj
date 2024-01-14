@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\ControlUsuario\UCUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\Dialogos\Error.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -193,6 +197,9 @@
     </Compile>
     <Compile Include="Frontend\ControlUsuario\UCPeliculas.xaml.cs">
       <DependentUpon>UCPeliculas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ControlUsuario\UCUsuarios.xaml.cs">
+      <DependentUpon>UCUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\Dialogos\Error.xaml.cs">
       <DependentUpon>Error.xaml</DependentUpon>

@@ -39,6 +39,7 @@ namespace proyecto.VideoClub.MVVM
         //VARIABLES PUBLICAS
 
         public List<rol> listaRol { get { return rolServ.getAll().ToList(); } }
+        public List<usuario> listaUsuarios { get { return usuServ.getAll().ToList(); } }
 
         public usuario usuarioNuevo
         {

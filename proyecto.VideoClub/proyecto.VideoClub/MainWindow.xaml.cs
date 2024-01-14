@@ -105,12 +105,22 @@ namespace proyecto.VideoClub
 
                case 4:
                     Juegos.IsExpanded = false;
-                    Perfil.IsExpanded = false;
+                    Peliculas.IsExpanded = false;
                     Perfil.IsExpanded = false;
                     break;
             }
         }
 
-
+        private void ListUser_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            CerrarSeleccion(4);
+            UCUsuarios uc = new UCUsuarios(vcEnt);
+            // Lo colocaremos en el panel central de nuestra aplicación
+            // Si hay algo en el grid central lo borramos
+            if (gridCentral.Children != null) gridCentral.Children.Clear();
+            // Añadimos nuestro user control
+            gridCentral.Children.Add(uc);
+            Todas.IsSelected = false;
+        }
     }
 }
