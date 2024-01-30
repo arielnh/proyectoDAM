@@ -67,7 +67,7 @@
              
                     <Image Stretch="Fill" Source="/Recursos/Img/controller.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
 
-                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="150" HorizontalAlignment="Left" Header="Juegos" Margin="30 0"
+                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Juegos" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
                               Background="{x:Null}" Foreground="White"
                               x:Name="Juegos"

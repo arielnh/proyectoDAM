@@ -261,7 +261,14 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
     
 INSERT INTO videoclub.producto (id_juego, titulo, portada)
-VALUES (1,'Lies of P', 'https://th.bing.com/th?id=OSK.95b919a998b2f719db8fbd7e6fad4dec&w=124&h=168&c=7&o=6&dpr=1.3&pid=SANGAM');
+VALUES (1,'Lies of P', 'https://slug.vercel.app/s/juego');
+
+ INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
+ VALUES ('Play Station 5', true, 'rol', 'Larian Studios NV', 'Larian Studios NV', true); 
+    
+INSERT INTO videoclub.producto (id_juego, titulo, portada)
+VALUES (1,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
+
  
  
  

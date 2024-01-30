@@ -58,10 +58,15 @@ namespace proyecto.VideoClub
 
         private void NewUser_Selected(object sender, RoutedEventArgs e)
         {
+            gridCentral.Children.Clear();
             CerrarSeleccion(4);
             NuevoUsuario ventana = new NuevoUsuario(vcEnt);
             ventana.ShowDialog();
-           
+
+
+            
+
+
 
 
 
