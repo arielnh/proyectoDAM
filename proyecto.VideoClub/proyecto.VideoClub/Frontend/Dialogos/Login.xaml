@@ -92,20 +92,20 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="btnEntrar" Click="btnEntrar_Click"
-                                                   IsDefault="True"           
+                                IsDefault="True"           
                                 Content="Entrar" 
                                 Background="#01579a"
                                 BorderBrush="Transparent"
                                 Width="90"
                                 Height="35"
-                                mat:ButtonAssist.CornerRadius="10"/>
+                               />
                         <Button Content="Ver catálogo" 
                                 Foreground="#01579a"
                                 Width="120"
                                 Height="35"
                                 Margin="5 0 0 0"
                                 Style="{StaticResource MaterialDesignFlatButton}"
-                                mat:ButtonAssist.CornerRadius="10"/>
+                                />
 
                     </StackPanel>
                 </StackPanel>

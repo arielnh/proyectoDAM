@@ -1,0 +1,96 @@
+﻿<Window x:Class="proyecto.VideoClub.Frontend.Dialogos.NuevoProducto"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
+        xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Recursos/Img/popcorn.png"
+        Title="Nuevo Usuario" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#01579a" />
+
+        <!--Parte Superior-->
+        <TextBlock Text="Nuevo Producto" Grid.ColumnSpan="2" Margin="20" FontSize="28" Foreground="White" FontWeight="ExtraBold"/>
+       
+
+        <TextBlock Grid.Row="1" Text="Los campos con este formato son obligatorios" 
+                   FontSize="10" Margin="20,10,0,20" Grid.ColumnSpan="2"
+                   FontWeight="Bold" FontStyle="Italic"/>
+
+        <!--Nombre-->
+        <TextBlock Grid.Row="2" Text="Nombre" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtNombre" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding peliculaNuevo.titulo_original, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+        <!--tipo producto-->
+
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="Película o juego" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+
+
+        <Button Grid.Column="3" Grid.Row="2" IsDefault="True" Margin="-100 10 10 10" Content="Película" HorizontalAlignment="Center" 
+                x:Name="btnPeli" Click="btnPeli_Click" Background="#ddd"  Foreground="#333" Opacity="0.4" BorderBrush="Transparent"/>
+        
+        <Button Grid.Column="3" Grid.Row="2" IsDefault="True" Margin="100 10 10 10" Content="Juego" HorizontalAlignment="Center" 
+                x:Name="btnJue" Click="btnJue_Click" Background="#ddd" Foreground="#333" Opacity="0.4" BorderBrush="Transparent"/>
+        
+
+        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="Pelicula"  Visibility="Hidden" Text="Película" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+
+        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="Juego"  Visibility="Hidden" Text="Juego" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+
+        <ComboBox Grid.Row="3" Grid.Column="3" Visibility="Hidden"  x:Name="cbPelicula" Height="30" Margin="20,10,20,0"
+                  ItemsSource="{Binding listaPeliculasDB}" DisplayMemberPath="titulo_original"
+                  Style="{StaticResource MaterialDesignComboBox}" Width="200"
+                  SelectedItem="{Binding productoNuevo.pelicula, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <ComboBox Grid.Row="3" Grid.Column="3" Visibility="Hidden"  x:Name="cbJuego" Height="30" Margin="20,10,20,0"
+                  ItemsSource="{Binding listaJuegosDB}" DisplayMemberPath="id_juego"
+                  Style="{StaticResource MaterialDesignComboBox}" Width="200"
+                  SelectedItem="{Binding productoNuevo.juego, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+
+        <!--portada-->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Portada" Margin="20,10,20,0" VerticalAlignment="Center" 
+                    FontWeight="Bold" FontStyle="Italic"
+                   />
+        <TextBox Grid.Row="3" Grid.Column="1"  x:Name="txtPortada"  Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"  
+                 Text="{Binding productoNuevo.portada, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+        <Button Grid.Column="3" Grid.Row="6" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
+                x:Name="btnGuardarProd" Click="btnGuardarProd_Click" Background="#01579a"  BorderBrush="Transparent"/>
+        <Button Grid.Column="3" Grid.Row="6" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
+                x:Name="btnCancelar" Click="btnCancelar_Click" Foreground="#9a010b"
+                Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
+    </Grid>
+</Window>

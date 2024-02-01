@@ -123,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\Dialogos\NuevoProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\Dialogos\NuevoUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,6 +223,9 @@
     </Compile>
     <Compile Include="Frontend\Dialogos\NuevoJuego.xaml.cs">
       <DependentUpon>NuevoJuego.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Dialogos\NuevoProducto.xaml.cs">
+      <DependentUpon>NuevoProducto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\Dialogos\NuevoUsuario.xaml.cs">
       <DependentUpon>NuevoUsuario.xaml</DependentUpon>

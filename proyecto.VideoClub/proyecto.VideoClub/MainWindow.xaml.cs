@@ -134,7 +134,9 @@ namespace proyecto.VideoClub
 
         private void NewProduct_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-           
+            CerrarSeleccion(4);
+            NuevoProducto ventana = new NuevoProducto(vcEnt);
+            ventana.ShowDialog();
         }
 
         private void DatosUsu_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
