@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
+        xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         Icon="/Recursos/Img/popcorn.png"
@@ -14,8 +16,11 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
+           
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -35,20 +40,73 @@
         <!--Nombre-->
         <TextBlock Grid.Row="2" Text="Nombre" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtNombre" Height="30" Margin="20,10,20,0"
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtNombre" TextChanged="txtNombre_TextChanged" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"
-                 Text="{Binding usuario.nombre, ValidatesOnDataErrors=True,
+                 Text="{Binding peliculaNuevo.titulo_original, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+        <!--pais-->
+
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="País" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <TextBox Grid.Row="2" Grid.Column="3"  x:Name="txtPais" TextChanged="txtPais_TextChanged" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding peliculaNuevo.pais, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--duracion-->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Duración" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   
+                   />
+        <TextBox Grid.Row="3" Grid.Column="1"  x:Name="txtDuracion" TextChanged="txtDuracion_TextChanged" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"  
+                 Text="{Binding peliculaNuevo.duracion, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--director-->
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="Director" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"
+                    />
+       
+        <TextBox Grid.Row="3" Grid.Column="3"  x:Name="txtDirector" TextChanged="txtDirector_TextChanged" Height="30" Margin="20,10,20,0"
+                 
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding peliculaNuevo.director, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--formato-->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Formato" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"
+                   />
+        <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtDireccion" TextChanged="txtDireccion_TextChanged" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding peliculaNuevo.formato, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--tipo alquiler-->
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="Tipo de Alquiler" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <TextBox Grid.Row="4" Grid.Column="3"  x:Name="txtAlquiler" TextChanged="txtAlquiler_TextChanged" Height="30" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                 Text="{Binding peliculaNuevo.tipo_alquiler, ValidatesOnDataErrors=True,
+                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Sinopsis-->
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Sinopsis" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtSinopsis" TextChanged="txtSinopsis_TextChanged" Height="60" Margin="20,10,20,0"
+                 Style="{StaticResource MaterialDesignTextBox}" Width="200" AcceptsReturn="True" 
+                 Text="{Binding peliculaNuevo.sinopsis, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
 
-        
 
 
 
-        <Button Grid.Column="3" Grid.Row="4" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
+
+        <Button Grid.Column="3" Grid.Row="6" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
                 x:Name="btnGuardarPeli" Click="btnGuardarPeli_Click" Background="#01579a"  BorderBrush="Transparent"/>
-        <Button Grid.Column="3" Grid.Row="4" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
-                x:Name="btnCancelar" Click="btnCancelar_Click"
+        <Button Grid.Column="3" Grid.Row="6" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
+                x:Name="btnCancelar" Click="btnCancelar_Click" Foreground="#9a010b"
                 Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
     </Grid>
 </Window>

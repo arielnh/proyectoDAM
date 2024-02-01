@@ -10,6 +10,9 @@ namespace proyecto.VideoClub.MVVM
         //Base de datos
         private videoclubEntities vcEnt;
 
+        //Nueva pelicula
+        private pelicula peliNuevo;
+
         //Servicios
         private PeliculaServicio peliServ;
         public MVPelicula(videoclubEntities vcEnt)
@@ -23,9 +26,21 @@ namespace proyecto.VideoClub.MVVM
         {
             peliServ = new PeliculaServicio(vcEnt);
             servicio = peliServ;
+            peliNuevo = new pelicula();
         }
 
         //Propiedades públicas para listar
         public List<pelicula> listaPeliculas { get { return peliServ.getAll().ToList(); } }
+
+        public pelicula peliculaNuevo
+        {
+            get { return peliNuevo; }
+            set
+            {
+                peliNuevo = value;
+                NotifyPropertyChanged(nameof(peliNuevo));
+            }
+        }
+        public bool guarda { get { return add(peliNuevo); } }
     }
 }

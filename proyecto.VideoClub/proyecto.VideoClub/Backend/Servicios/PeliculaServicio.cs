@@ -1,6 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using proyecto.VideoClub.Backend.Servicios.Base;
 using proyecto.VideoClub.Backend.Modelo;
+using System.Data.Entity;
 
 
 namespace proyecto.VideoClub.Backend.Servicios
@@ -8,9 +13,9 @@ namespace proyecto.VideoClub.Backend.Servicios
     /*
      * Clase que contiene las reglas de negocio de la clase Pelicula
      */
-    class PeliculaServicio : ServicioGenerico<pelicula>
+   public class PeliculaServicio : ServicioGenerico<pelicula>
     {
-        private videoclubEntities contexto;
+        private DbContext contexto;
 
 
         /*

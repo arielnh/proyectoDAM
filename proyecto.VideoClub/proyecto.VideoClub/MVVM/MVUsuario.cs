@@ -48,12 +48,6 @@ namespace proyecto.VideoClub.MVVM
         public List<usuario> listaUsuarios { get { return usuServ.getAll().ToList(); } }
         public List<usuario> listaDatosUsuario { get { return usuServ.getUsuario(usuLogin.usuario1.ToString()); } }
 
-       
-
-       
-
-        
-
 
         public usuario usuarioNuevo
         {
