@@ -27,7 +27,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public string titulo_original { get; set; }
         [Required(ErrorMessage = "El campo pais es obligatorio")]
         public string pais { get; set; }
-       
+        [Required(ErrorMessage = "El campo duración solo acepta números")]
         public Nullable<int> duracion { get; set; }
         [Required(ErrorMessage = "El campo sinopsis es obligatorio")]
         public string sinopsis { get; set; }

@@ -55,7 +55,7 @@
 
         <!--duracion-->
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Duración" Margin="20,10,20,0" VerticalAlignment="Center" 
-                   
+                    FontWeight="Bold" FontStyle="Italic"
                    />
         <TextBox Grid.Row="3" Grid.Column="1"  x:Name="txtDuracion" TextChanged="txtDuracion_TextChanged" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"  

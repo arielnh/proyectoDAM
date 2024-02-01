@@ -35,6 +35,8 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         private void btnGuardarPeli_Click(object sender, RoutedEventArgs e)
         {
             
+
+
             if (mvPeli.guarda)
             {
                 MessageBox.Show("Todo guardado correctamente.", "Guardar Pelicula", MessageBoxButton.OK);
@@ -47,10 +49,12 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             
        
                 
+            }
         }
-    }
 
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+  
+
+    private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
         }
@@ -68,39 +72,60 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             }
         }
 
+        private void comprobarNumero()
+        {
+            int parsedValue;
+            if (!int.TryParse(txtDuracion.Text, out parsedValue))
+            {
+                btnGuardarPeli.IsEnabled = false;
+               // MessageBox.Show("El campo duración solo acepta minutos en numeros");
+                return;
+            }
+            else
+            {
+                btnGuardarPeli.IsEnabled = true;
+            }
+        }
+
         private void txtNombre_TextChanged(object sender, TextChangedEventArgs e)
         {
             comprobarBtn();
+            comprobarNumero();
         }
 
         private void txtPais_TextChanged(object sender, TextChangedEventArgs e)
         {
             comprobarBtn();
+            comprobarNumero();
         }
 
         private void txtDuracion_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+            comprobarNumero();
         }
 
         private void txtDirector_TextChanged(object sender, TextChangedEventArgs e)
         {
             comprobarBtn();
+            comprobarNumero();
         }
 
         private void txtDireccion_TextChanged(object sender, TextChangedEventArgs e)
         {
             comprobarBtn();
+            comprobarNumero();
         }
 
         private void txtAlquiler_TextChanged(object sender, TextChangedEventArgs e)
         {
             comprobarBtn();
+            comprobarNumero();
         }
 
         private void txtSinopsis_TextChanged(object sender, TextChangedEventArgs e)
         {
             comprobarBtn();
+            comprobarNumero();
         }
 
 
