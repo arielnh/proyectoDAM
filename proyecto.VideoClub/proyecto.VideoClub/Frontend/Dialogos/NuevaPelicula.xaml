@@ -77,14 +77,14 @@
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Formato" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic"
                    />
-        <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtDireccion" TextChanged="txtDireccion_TextChanged" Height="30" Margin="20,10,20,0"
+        <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtFormato" TextChanged="txtDireccion_TextChanged" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"
                  Text="{Binding peliculaNuevo.formato, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
         <!--tipo alquiler-->
         <TextBlock Grid.Row="4" Grid.Column="2" Text="Tipo de Alquiler" Margin="20,10,20,0" VerticalAlignment="Center" 
-                   FontWeight="Bold" FontStyle="Italic" />
+                  />
         <TextBox Grid.Row="4" Grid.Column="3"  x:Name="txtAlquiler" TextChanged="txtAlquiler_TextChanged" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"
                  Text="{Binding peliculaNuevo.tipo_alquiler, ValidatesOnDataErrors=True,

@@ -13,6 +13,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
     {
         private videoclubEntities vcEnt;
         private MVProducto mvProd;
+        private MVJuego mvJue;
        
 
         public NuevoProducto(videoclubEntities ent)
@@ -20,18 +21,12 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             InitializeComponent();
             vcEnt = ent;
             mvProd = new MVProducto(vcEnt);
+            mvJue = new MVJuego(vcEnt);
             DataContext = mvProd;
             peliculaSelect();
 
-
-
-
-
-
         }
-        
-        
-
+ 
 
         private void btnGuardarProd_Click(object sender, RoutedEventArgs e)
         {

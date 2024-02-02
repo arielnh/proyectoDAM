@@ -38,11 +38,11 @@
                    FontWeight="Bold" FontStyle="Italic"/>
 
         <!--Nombre-->
-        <TextBlock Grid.Row="2" Text="Nombre" Margin="20,10,20,0" VerticalAlignment="Center" 
+        <TextBlock Grid.Row="2" Text="Título" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic"/>
         <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtNombre" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200"
-                 Text="{Binding peliculaNuevo.titulo_original, ValidatesOnDataErrors=True,
+                 Text="{Binding peliculaNuevo.titulo, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
         <!--tipo producto-->
 

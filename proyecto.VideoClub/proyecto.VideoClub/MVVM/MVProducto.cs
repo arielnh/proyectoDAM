@@ -43,7 +43,7 @@ namespace proyecto.VideoClub.MVVM
     public List<producto> listaProductos { get { return prodServ.getAll().ToList(); } }
 
     public List<pelicula> listaPeliculasDB { get { return peliServ.getAll().ToList(); } }
-    public List<juego> listaJuegossDB { get { return jueServ.getAll().ToList(); } }
+    public List<juego> listaJuegosDB { get { return jueServ.getAll().ToList(); } }
 
     
 

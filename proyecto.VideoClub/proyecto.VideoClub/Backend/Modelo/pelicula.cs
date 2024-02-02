@@ -35,7 +35,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public string director { get; set; }
         [Required(ErrorMessage = "El campo formato es obligatorio")]
         public string formato { get; set; }
-        [Required(ErrorMessage = "El campo tipo de alquiler es obligatorio")]
+        
         public string tipo_alquiler { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

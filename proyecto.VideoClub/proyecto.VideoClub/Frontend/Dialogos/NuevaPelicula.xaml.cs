@@ -51,8 +51,8 @@ namespace proyecto.VideoClub.Frontend.Dialogos
 
         private void comprobarBtn()
         {
-            if (txtNombre.Text.Length > 0 && txtPais.Text.Length > 0 && txtDirector.Text.Length > 0 && txtDireccion.Text.Length > 0 &&
-                txtAlquiler.Text.Length> 0 && txtSinopsis.Text.Length> 0)
+            if (txtNombre.Text.Length > 0 && txtPais.Text.Length > 0 && txtDuracion.Text.Length > 0 && txtDirector.Text.Length > 0 &&
+                txtFormato.Text.Length> 0 && txtSinopsis.Text.Length> 0)
             {
                 btnGuardarPeli.IsEnabled = true;
             }

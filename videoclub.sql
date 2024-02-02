@@ -220,16 +220,10 @@ INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Emm
 
 -- PELICULA
 INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
-'Blade Runner 2049', 'Estados Unidos', '163', 'Ubicada treinta años después de la película original, la historia describe a un
- blade runner replicante llamado K descubriendo los restos de una mujer replicante que en algún momento del pasado estuvo embarazada,
- lo cual es aparentemente imposible. Para evitar una posible guerra entre humanos y replicantes, K se encarga secretamente de encontrar
- al niño y destruir toda evidencia relacionada con él, llevándolo a descubrir que este está vinculado al desaparecido blade runner
- Rick Deckard.', 'Denis Villeneuve', 'Blu-Ray');
+'Blade Runner 2049', 'Estados Unidos', '163', 'Ubicada treinta años después de la película original. La historia describe a un blade runner replicante llamado K descubriendo los restos de una mujer replicante que en algún momento del pasado estuvo embarazada, lo cual es aparentemente imposible. Para evitar una posible guerra entre humanos y replicantes, K se encarga secretamente de encontrar al niño y destruir toda evidencia relacionada con él.', 'Denis Villeneuve', 'Blu-Ray');
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
-'La La Land', 'Estados Unidos', '128', 'La película cuenta la historia de Mia, una empleada de un bar que aspira a ser actriz y Sebastian,
- un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades,
- gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
+'La La Land', 'Estados Unidos', '128', 'La película cuenta la historia de Mia, una empleada de un bar que aspira a ser actriz y Sebastian, un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades, gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
  
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
  '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
@@ -237,8 +231,7 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
- 'Drive', 'Estados Unidos', '100', 'Durante el día, Driver es conductor especialista de cine, pero de noche se convierte en chófer para delincuentes.
- El mundo de Driver cambia el día en que conoce a Irene, una vecina que tiene un hijo pequeño y a su marido en la cárcel.', 'Nicolas Winding Refn','Blue-Ray'
+ 'Drive', 'Estados Unidos', '100', 'Durante el día, Driver es conductor especialista de cine, pero de noche se convierte en chófer para delincuentes. El mundo de Driver cambia el día en que conoce a Irene, una vecina que tiene un hijo pequeño y a su marido en la cárcel.', 'Nicolas Winding Refn','Blue-Ray'
  );
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
  '3', 'Drive', 'Disponible','Disponible', '2011-09-01', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'

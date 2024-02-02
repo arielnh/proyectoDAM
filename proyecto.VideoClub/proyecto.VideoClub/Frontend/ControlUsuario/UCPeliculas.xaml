@@ -19,6 +19,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+               
 
             </Grid.ColumnDefinitions>
 
@@ -31,25 +32,37 @@
         <!--La tabla de info-->
         <Grid>
 
+           
+            
             <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaPeliculas}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                   >
 
                 <DataGrid.Columns>
+                    
 
                     <!--Portada-->
 
-                    <DataGridTemplateColumn Header="PORTADA">
+                    <DataGridTemplateColumn Header="Portada">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding portada}"  Width="100px"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    
+                    
+                    <!--Nombre-->
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding titulo}" SortDirection="Descending" />
+                    <!--Sinopsis-->
 
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo}" />
-                    <DataGridTextColumn Header="Sinopsis" Binding="{Binding pelicula.sinopsis}" />
-
+                    <DataGridTemplateColumn Header="Sinopsis" Width="350" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding pelicula.sinopsis}" HorizontalAlignment="Left" TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
                 </DataGrid.Columns>
             </DataGrid>
