@@ -14,7 +14,16 @@ namespace proyecto.VideoClub.Backend.Modelo
     
     public partial class genero
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public genero()
+        {
+            this.pelicula = new HashSet<pelicula>();
+        }
+    
         public int id_genero { get; set; }
         public string nombre { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<pelicula> pelicula { get; set; }
     }
 }

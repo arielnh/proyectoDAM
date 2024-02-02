@@ -18,6 +18,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public rol()
         {
             this.usuario = new HashSet<usuario>();
+            this.permiso = new HashSet<permiso>();
         }
     
         public int id_rol { get; set; }
@@ -25,5 +26,7 @@ namespace proyecto.VideoClub.Backend.Modelo
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<usuario> usuario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<permiso> permiso { get; set; }
     }
 }

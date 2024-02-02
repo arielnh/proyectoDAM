@@ -14,10 +14,19 @@ namespace proyecto.VideoClub.Backend.Modelo
     
     public partial class actor
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public actor()
+        {
+            this.pelicula = new HashSet<pelicula>();
+        }
+    
         public int id_actor { get; set; }
         public string nombre { get; set; }
         public string apellido_1 { get; set; }
         public string apellido_2 { get; set; }
         public Nullable<int> oscar { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<pelicula> pelicula { get; set; }
     }
 }

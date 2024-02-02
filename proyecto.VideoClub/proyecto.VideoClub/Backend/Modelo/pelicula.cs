@@ -9,36 +9,33 @@
 
 namespace proyecto.VideoClub.Backend.Modelo
 {
-    using proyecto.VideoClub.MVVM;
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class pelicula : PropertyChangedDataError
+    
+    public partial class pelicula
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public pelicula()
         {
             this.producto = new HashSet<producto>();
+            this.actor = new HashSet<actor>();
+            this.genero = new HashSet<genero>();
         }
     
         public int id_pelicula { get; set; }
-        [Required(ErrorMessage = "El campo nombre es obligatorio")]
         public string titulo_original { get; set; }
-        [Required(ErrorMessage = "El campo pais es obligatorio")]
         public string pais { get; set; }
-        [Required(ErrorMessage = "El campo duración solo acepta números")]
         public Nullable<int> duracion { get; set; }
-        [Required(ErrorMessage = "El campo sinopsis es obligatorio")]
         public string sinopsis { get; set; }
-        [Required(ErrorMessage = "El campo director es obligatorio")]
         public string director { get; set; }
-        [Required(ErrorMessage = "El campo formato es obligatorio")]
         public string formato { get; set; }
-        
         public string tipo_alquiler { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<producto> producto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<actor> actor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<genero> genero { get; set; }
     }
 }

@@ -7,7 +7,8 @@ USE videoclub;
 
 -- ACTORES
 
-CREATE TABLE actor(id_actor int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE actor(
+id_actor int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(30),
 apellido_1 VARCHAR(30),
 apellido_2 VARCHAR(30),
@@ -16,7 +17,8 @@ oscar INT(2)
 
 -- PELICULAS 
 
-CREATE TABLE pelicula (id_pelicula INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE pelicula (
+id_pelicula INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 titulo_original varchar(50),
 pais varchar (30),
 duracion int,
@@ -29,22 +31,31 @@ tipo_alquiler varchar (30)
 
 -- ACTUAN
 
-CREATE TABLE actuan (id_actor int,
+CREATE TABLE actuan (
+id_actor int not null,
+id_pelicula int not null,
+
+primary key(id_actor, id_pelicula),
+
 foreign key (id_actor) references actor (id_actor),
-id_pelicula int,
 foreign key (id_pelicula) references pelicula (id_pelicula)
 );
 
 -- GENEROS
 
-CREATE TABLE genero (id_genero int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE genero (
+id_genero int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(30) UNIQUE);
 
 -- GENEROS TIENE
 
-CREATE TABLE generos_pelicula (id_genero int,
+CREATE TABLE generos_pelicula (
+id_genero int not null,
+id_pelicula int not null,
+
+primary key(id_genero, id_pelicula),
+
 foreign key (id_genero) references genero (id_genero),
-id_pelicula int,
 foreign key (id_pelicula) references pelicula (id_pelicula)
 );
 
@@ -91,7 +102,8 @@ nombre varchar (30)
 );
 -- ROLES
 
-CREATE TABLE rol (id_rol int not null primary key AUTO_INCREMENT,
+CREATE TABLE rol (
+id_rol int not null primary key AUTO_INCREMENT,
 rol varchar (30) UNIQUE not null
 );
 
@@ -129,14 +141,17 @@ FOREIGN KEY (id_tipo) REFERENCES tipo_alquiler (id_tipo)
 );
 
 -- PERMISOS
-CREATE TABLE permiso (id_permiso int not null primary key auto_increment,
+CREATE TABLE permiso (
+id_permiso int not null primary key auto_increment,
 acciones varchar(30)
 );
 
-create table contiene_permiso (id_rol int,
+create table contiene_permiso (
+id_rol int,
 foreign key (id_rol) references rol (id_rol),
 id_permiso int,
-foreign key (id_permiso) references permiso (id_permiso)
+foreign key (id_permiso) references permiso (id_permiso),
+primary key (id_rol, id_permiso)
 );
 
 -- INCIDENCIA
@@ -247,6 +262,13 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,3);
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,4);
  INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,5);
+ 
+ insert into videoclub.actuan(id_actor, id_pelicula) values (1,1);
+ insert into videoclub.actuan(id_actor, id_pelicula) values (1,2);
+ insert into videoclub.actuan(id_actor, id_pelicula) values (2,2);
+ insert into videoclub.actuan(id_actor, id_pelicula) values (1,3);
+ 
+ 
  
  -- JUEGO
  
