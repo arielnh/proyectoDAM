@@ -11,6 +11,7 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     {
         private videoclubEntities vcEnt;
         private MVProducto mvProducto;
+        private producto prodReserva;
         public UCPeliculas(videoclubEntities ent)
         {
             InitializeComponent();
@@ -18,6 +19,13 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
           
             mvProducto = new MVProducto(vcEnt);
             DataContext = mvProducto;
+        }
+
+        private void btnReserva_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+           prodReserva = (producto)dgListaPeliculas.SelectedItem;
+           
         }
     }
 }

@@ -170,13 +170,15 @@ foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
 );
 
 -- ITEMS
-CREATE TABLE item (id_item int not null primary key AUTO_INCREMENT,
+CREATE TABLE item (
+id_item int not null primary key AUTO_INCREMENT,
 id_producto int,
 FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
 ubicacion varchar (100),
 numero int,
 id_incidencia int,
 FOREIGN KEY (id_incidencia) REFERENCES incidencia (id_incidencia)
+
 );
 
 -- INSERTAR DATOS

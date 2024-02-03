@@ -2,6 +2,7 @@
 using System.Linq;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.Backend.Servicios;
+using proyecto.VideoClub.Backend.Servicios.Base;
 
 namespace proyecto.VideoClub.MVVM
 {
@@ -15,6 +16,8 @@ namespace proyecto.VideoClub.MVVM
 
         //Servicios
         private PeliculaServicio peliServ;
+        private ActorServicio actServ;
+       
         public MVPelicula(videoclubEntities vcEnt)
         {
             
@@ -25,12 +28,19 @@ namespace proyecto.VideoClub.MVVM
         private void inicializa()
         {
             peliServ = new PeliculaServicio(vcEnt);
+            actServ = new ActorServicio(vcEnt);
             servicio = peliServ;
             peliNuevo = new pelicula();
         }
 
         //Propiedades públicas para listar
         public List<pelicula> listaPeliculas { get { return peliServ.getAll().ToList(); } }
+        public List<actor> listaActores { get { return actServ.getAll().ToList(); } }
+
+        public List<actor> listaActor => actServ.getActor();
+
+        //  public ICollection<actor> coleccionActores { get { return (ICollection<actor>)actServ.getAll(); } }
+
 
         public pelicula peliculaNuevo
         {

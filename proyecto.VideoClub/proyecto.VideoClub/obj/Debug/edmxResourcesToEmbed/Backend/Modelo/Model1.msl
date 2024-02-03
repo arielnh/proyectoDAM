@@ -152,5 +152,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="actuan" TypeName="videoclubModel.actuan" StoreEntitySet="actuan">
+      <EndProperty Name="actor">
+        <ScalarProperty Name="id_actor" ColumnName="id_actor" />
+      </EndProperty>
+      <EndProperty Name="pelicula">
+        <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="contiene_permiso" TypeName="videoclubModel.contiene_permiso" StoreEntitySet="contiene_permiso">
+      <EndProperty Name="rol">
+        <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+      </EndProperty>
+      <EndProperty Name="permiso">
+        <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="generos_pelicula" TypeName="videoclubModel.generos_pelicula" StoreEntitySet="generos_pelicula">
+      <EndProperty Name="genero">
+        <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+      </EndProperty>
+      <EndProperty Name="pelicula">
+        <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

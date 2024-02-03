@@ -1,11 +1,6 @@
 ﻿<Window x:Class="proyecto.VideoClub.Frontend.Dialogos.NuevaPelicula"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.Dialogos"
-        xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
-        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         Icon="/Recursos/Img/popcorn.png"
@@ -93,12 +88,23 @@
         <!--Sinopsis-->
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Sinopsis" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic" />
-        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtSinopsis" TextChanged="txtSinopsis_TextChanged" Height="60" Margin="20,10,20,0"
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtSinopsis" TextChanged="txtSinopsis_TextChanged" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200" AcceptsReturn="True" 
                  Text="{Binding peliculaNuevo.sinopsis, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
+        
+        <!--Actores-->
+        
+        <TextBlock Grid.Row="5" Grid.Column="2" x:Name="Actor"   Text="Actor" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic" />
 
+        <ComboBox Grid.Row="5" Grid.Column="3" x:Name="cbPelicula" Height="30" Margin="20,10,20,0"
+                  ItemsSource="{Binding listaActor}" DisplayMemberPath="apellido_1"
+                  Style="{StaticResource MaterialDesignComboBox}" Width="200"
+                  SelectedItem="{Binding peliculaNuevo.actor, ValidatesOnDataErrors=True,
+                  NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+        
 
 
 

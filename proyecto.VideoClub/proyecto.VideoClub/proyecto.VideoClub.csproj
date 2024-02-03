@@ -193,6 +193,7 @@
     <Compile Include="Backend\Modelo\usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Servicios\ActorServicio.cs" />
     <Compile Include="Backend\Servicios\Base\IServicioGenerico.cs" />
     <Compile Include="Backend\Servicios\Base\ServicioGenerico.cs" />
     <Compile Include="Backend\Servicios\JuegoServicio.cs" />

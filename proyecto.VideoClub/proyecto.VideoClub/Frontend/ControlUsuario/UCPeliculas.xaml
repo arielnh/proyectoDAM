@@ -53,13 +53,43 @@
                     
                     
                     <!--Nombre-->
-                    <DataGridTextColumn Header="Nombre" Binding="{Binding titulo}" SortDirection="Descending" />
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding titulo}" SortDirection="Descending" FontWeight="Bold"/>
+
+                    <!--Actor Director-->
+
+                    <DataGridTemplateColumn Header="Actor y Director" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="Director" FontWeight="DemiBold" Margin="10 0 10 10"/>
+
+                                    <TextBlock Text="{Binding pelicula.director}" HorizontalAlignment="Left" TextWrapping="Wrap"  Margin="10 0 10 10"/>
+                                    <TextBlock Text=""/>
+                                    <TextBlock Text="Actores" FontWeight="DemiBold"  Margin="10 0 10 10"/>
+                                    <TextBlock Text=""/>
+                                    <TextBlock Text="{Binding pelicula.actor.id_actor.nombre}" HorizontalAlignment="Left" TextWrapping="Wrap" />
+                                    
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <!--Sinopsis-->
 
                     <DataGridTemplateColumn Header="Sinopsis" Width="350" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding pelicula.sinopsis}" HorizontalAlignment="Left" TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!--Reservar-->
+
+                    <DataGridTemplateColumn Header="Reservar">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button IsDefault="True" Margin="20,20,20,20" Content="Reservar" HorizontalAlignment="Left" 
+                                 x:Name="btnReserva" Click="btnReserva_Click" Background="#01579a" BorderBrush="Transparent"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

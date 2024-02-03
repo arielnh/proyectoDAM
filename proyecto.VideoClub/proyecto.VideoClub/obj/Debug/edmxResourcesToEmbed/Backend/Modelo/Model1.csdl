@@ -9,6 +9,7 @@
     <Property Name="apellido_1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="apellido_2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="oscar" Type="Int32" />
+    <NavigationProperty Name="pelicula" Relationship="Self.actuan" FromRole="actor" ToRole="pelicula" />
   </EntityType>
   <EntityType Name="alquiler">
     <Key>
@@ -33,6 +34,7 @@
     </Key>
     <Property Name="id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="pelicula" Relationship="Self.generos_pelicula" FromRole="genero" ToRole="pelicula" />
   </EntityType>
   <EntityType Name="incidencia">
     <Key>
@@ -86,6 +88,8 @@
     <Property Name="formato" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="tipo_alquiler" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="producto" Relationship="Self.producto_ibfk_1" FromRole="pelicula" ToRole="producto" />
+    <NavigationProperty Name="actor" Relationship="Self.actuan" FromRole="pelicula" ToRole="actor" />
+    <NavigationProperty Name="genero" Relationship="Self.generos_pelicula" FromRole="pelicula" ToRole="genero" />
   </EntityType>
   <EntityType Name="permiso">
     <Key>
@@ -93,6 +97,7 @@
     </Key>
     <Property Name="id_permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="acciones" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="rol" Relationship="Self.contiene_permiso" FromRole="permiso" ToRole="rol" />
   </EntityType>
   <EntityType Name="producto">
     <Key>
@@ -104,7 +109,7 @@
     <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="portada" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="portada" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="año" Type="DateTime" />
     <Property Name="idioma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_1" FromRole="producto" ToRole="alquiler" />
@@ -117,8 +122,9 @@
       <PropertyRef Name="id_rol" />
     </Key>
     <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="usuario" Relationship="Self.usuario_ibfk_1" FromRole="rol" ToRole="usuario" />
+    <NavigationProperty Name="permiso" Relationship="Self.contiene_permiso" FromRole="rol" ToRole="permiso" />
   </EntityType>
   <EntityType Name="tipo_alquiler">
     <Key>
@@ -278,6 +284,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="actuan">
+    <End Role="actor" Type="Self.actor" Multiplicity="*" />
+    <End Role="pelicula" Type="Self.pelicula" Multiplicity="*" />
+  </Association>
+  <Association Name="contiene_permiso">
+    <End Role="rol" Type="Self.rol" Multiplicity="*" />
+    <End Role="permiso" Type="Self.permiso" Multiplicity="*" />
+  </Association>
+  <Association Name="generos_pelicula">
+    <End Role="genero" Type="Self.genero" Multiplicity="*" />
+    <End Role="pelicula" Type="Self.pelicula" Multiplicity="*" />
+  </Association>
   <EntityContainer Name="videoclubEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="actor" EntityType="Self.actor" />
     <EntitySet Name="alquiler" EntityType="Self.alquiler" />
@@ -331,6 +349,18 @@
     <AssociationSet Name="usuario_ibfk_1" Association="Self.usuario_ibfk_1">
       <End Role="rol" EntitySet="rol" />
       <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+    <AssociationSet Name="actuan" Association="Self.actuan">
+      <End Role="actor" EntitySet="actor" />
+      <End Role="pelicula" EntitySet="pelicula" />
+    </AssociationSet>
+    <AssociationSet Name="contiene_permiso" Association="Self.contiene_permiso">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="permiso" EntitySet="permiso" />
+    </AssociationSet>
+    <AssociationSet Name="generos_pelicula" Association="Self.generos_pelicula">
+      <End Role="genero" EntitySet="genero" />
+      <End Role="pelicula" EntitySet="pelicula" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

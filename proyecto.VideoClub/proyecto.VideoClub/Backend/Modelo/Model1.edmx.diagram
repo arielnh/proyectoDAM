@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="videoclubModel.alquiler" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.genero" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.incidencia" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.item" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.item" Width="1.5" PointX="10.125" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.juego" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.pelicula" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.permiso" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />

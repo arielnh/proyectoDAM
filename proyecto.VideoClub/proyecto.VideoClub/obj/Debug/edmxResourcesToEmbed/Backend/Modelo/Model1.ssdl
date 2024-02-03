@@ -10,12 +10,14 @@
     <Property Name="apellido_2" Type="varchar" MaxLength="30" />
     <Property Name="oscar" Type="int" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'def.videoclub.actuan' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="actuan">
-          <Property Name="id_actor" Type="int" />
-          <Property Name="id_pelicula" Type="int" />
-        </EntityType>-->
+  <EntityType Name="actuan">
+    <Key>
+      <PropertyRef Name="id_actor" />
+      <PropertyRef Name="id_pelicula" />
+    </Key>
+    <Property Name="id_actor" Type="int" Nullable="false" />
+    <Property Name="id_pelicula" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="alquiler">
     <Key>
       <PropertyRef Name="id_alquiler" />
@@ -30,12 +32,14 @@ advertencia 6013: La tabla o vista 'def.videoclub.actuan' no tiene definida una 
     <Property Name="devuelto" Type="bool" />
     <Property Name="id_tipo" Type="int" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'def.videoclub.contiene_permiso' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="contiene_permiso">
-          <Property Name="id_rol" Type="int" />
-          <Property Name="id_permiso" Type="int" />
-        </EntityType>-->
+  <EntityType Name="contiene_permiso">
+    <Key>
+      <PropertyRef Name="id_rol" />
+      <PropertyRef Name="id_permiso" />
+    </Key>
+    <Property Name="id_rol" Type="int" Nullable="false" />
+    <Property Name="id_permiso" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="genero">
     <Key>
       <PropertyRef Name="id_genero" />
@@ -43,12 +47,14 @@ advertencia 6013: La tabla o vista 'def.videoclub.contiene_permiso' no tiene def
     <Property Name="id_genero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="30" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="generos_pelicula">
-          <Property Name="id_genero" Type="int" />
-          <Property Name="id_pelicula" Type="int" />
-        </EntityType>-->
+  <EntityType Name="generos_pelicula">
+    <Key>
+      <PropertyRef Name="id_genero" />
+      <PropertyRef Name="id_pelicula" />
+    </Key>
+    <Property Name="id_genero" Type="int" Nullable="false" />
+    <Property Name="id_pelicula" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="incidencia">
     <Key>
       <PropertyRef Name="id_incidencia" />
@@ -112,7 +118,7 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
     <Property Name="titulo" Type="varchar" MaxLength="50" />
     <Property Name="disponibilidad" Type="varchar" MaxLength="30" />
     <Property Name="estado" Type="varchar" MaxLength="30" />
-    <Property Name="portada" Type="varchar" MaxLength="100" />
+    <Property Name="portada" Type="varchar" MaxLength="300" />
     <Property Name="año" Type="date" />
     <Property Name="idioma" Type="varchar" MaxLength="30" />
   </EntityType>
@@ -121,7 +127,7 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
       <PropertyRef Name="id_rol" />
     </Key>
     <Property Name="id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="rol" Type="varchar" MaxLength="30" />
+    <Property Name="rol" Type="varchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="tipo_alquiler">
     <Key>
@@ -156,12 +162,30 @@ advertencia 6013: La tabla o vista 'def.videoclub.generos_pelicula' no tiene def
     <Property Name="contraseña" Type="varchar" MaxLength="30" />
     <Property Name="id_rol" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'def.videoclub.actuan', pero no se encuentra la tabla.
-        <Association Name="actuan_ibfk_1" />-->
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'def.videoclub.actuan', pero no se encuentra la tabla.
-        <Association Name="actuan_ibfk_2" />-->
+  <Association Name="actuan_ibfk_1">
+    <End Role="actor" Type="Self.actor" Multiplicity="1" />
+    <End Role="actuan" Type="Self.actuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="actor">
+        <PropertyRef Name="id_actor" />
+      </Principal>
+      <Dependent Role="actuan">
+        <PropertyRef Name="id_actor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="actuan_ibfk_2">
+    <End Role="pelicula" Type="Self.pelicula" Multiplicity="1" />
+    <End Role="actuan" Type="Self.actuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pelicula">
+        <PropertyRef Name="id_pelicula" />
+      </Principal>
+      <Dependent Role="actuan">
+        <PropertyRef Name="id_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="alquiler_ibfk_1">
     <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
     <End Role="alquiler" Type="Self.alquiler" Multiplicity="*" />
@@ -198,18 +222,54 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.actuan', per
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'def.videoclub.contiene_permiso', pero no se encuentra la tabla.
-        <Association Name="contiene_permiso_ibfk_1" />-->
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'def.videoclub.contiene_permiso', pero no se encuentra la tabla.
-        <Association Name="contiene_permiso_ibfk_2" />-->
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_pelicula', pero no se encuentra la tabla.
-        <Association Name="generos_pelicula_ibfk_1" />-->
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_pelicula', pero no se encuentra la tabla.
-        <Association Name="generos_pelicula_ibfk_2" />-->
+  <Association Name="contiene_permiso_ibfk_1">
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
+    <End Role="contiene_permiso" Type="Self.contiene_permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="contiene_permiso">
+        <PropertyRef Name="id_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="contiene_permiso_ibfk_2">
+    <End Role="permiso" Type="Self.permiso" Multiplicity="1" />
+    <End Role="contiene_permiso" Type="Self.contiene_permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permiso">
+        <PropertyRef Name="id_permiso" />
+      </Principal>
+      <Dependent Role="contiene_permiso">
+        <PropertyRef Name="id_permiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="generos_pelicula_ibfk_1">
+    <End Role="genero" Type="Self.genero" Multiplicity="1" />
+    <End Role="generos_pelicula" Type="Self.generos_pelicula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="genero">
+        <PropertyRef Name="id_genero" />
+      </Principal>
+      <Dependent Role="generos_pelicula">
+        <PropertyRef Name="id_genero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="generos_pelicula_ibfk_2">
+    <End Role="pelicula" Type="Self.pelicula" Multiplicity="1" />
+    <End Role="generos_pelicula" Type="Self.generos_pelicula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pelicula">
+        <PropertyRef Name="id_pelicula" />
+      </Principal>
+      <Dependent Role="generos_pelicula">
+        <PropertyRef Name="id_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="incidencia_ibfk_1">
     <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
     <End Role="incidencia" Type="Self.incidencia" Multiplicity="*" />
@@ -296,8 +356,11 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
   </Association>
   <EntityContainer Name="videoclubModelStoreContainer">
     <EntitySet Name="actor" EntityType="Self.actor" Schema="videoclub" store:Type="Tables" />
+    <EntitySet Name="actuan" EntityType="Self.actuan" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="alquiler" EntityType="Self.alquiler" Schema="videoclub" store:Type="Tables" />
+    <EntitySet Name="contiene_permiso" EntityType="Self.contiene_permiso" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="genero" EntityType="Self.genero" Schema="videoclub" store:Type="Tables" />
+    <EntitySet Name="generos_pelicula" EntityType="Self.generos_pelicula" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="incidencia" EntityType="Self.incidencia" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="item" EntityType="Self.item" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="juego" EntityType="Self.juego" Schema="videoclub" store:Type="Tables" />
@@ -308,6 +371,14 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
     <EntitySet Name="tipo_alquiler" EntityType="Self.tipo_alquiler" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="tipo_incidencia" EntityType="Self.tipo_incidencia" Schema="videoclub" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="videoclub" store:Type="Tables" />
+    <AssociationSet Name="actuan_ibfk_1" Association="Self.actuan_ibfk_1">
+      <End Role="actor" EntitySet="actor" />
+      <End Role="actuan" EntitySet="actuan" />
+    </AssociationSet>
+    <AssociationSet Name="actuan_ibfk_2" Association="Self.actuan_ibfk_2">
+      <End Role="pelicula" EntitySet="pelicula" />
+      <End Role="actuan" EntitySet="actuan" />
+    </AssociationSet>
     <AssociationSet Name="alquiler_ibfk_1" Association="Self.alquiler_ibfk_1">
       <End Role="producto" EntitySet="producto" />
       <End Role="alquiler" EntitySet="alquiler" />
@@ -319,6 +390,22 @@ error 6004: Una relación hace referencia a la tabla 'def.videoclub.generos_peli
     <AssociationSet Name="alquiler_ibfk_3" Association="Self.alquiler_ibfk_3">
       <End Role="tipo_alquiler" EntitySet="tipo_alquiler" />
       <End Role="alquiler" EntitySet="alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="contiene_permiso_ibfk_1" Association="Self.contiene_permiso_ibfk_1">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="contiene_permiso" EntitySet="contiene_permiso" />
+    </AssociationSet>
+    <AssociationSet Name="contiene_permiso_ibfk_2" Association="Self.contiene_permiso_ibfk_2">
+      <End Role="permiso" EntitySet="permiso" />
+      <End Role="contiene_permiso" EntitySet="contiene_permiso" />
+    </AssociationSet>
+    <AssociationSet Name="generos_pelicula_ibfk_1" Association="Self.generos_pelicula_ibfk_1">
+      <End Role="genero" EntitySet="genero" />
+      <End Role="generos_pelicula" EntitySet="generos_pelicula" />
+    </AssociationSet>
+    <AssociationSet Name="generos_pelicula_ibfk_2" Association="Self.generos_pelicula_ibfk_2">
+      <End Role="pelicula" EntitySet="pelicula" />
+      <End Role="generos_pelicula" EntitySet="generos_pelicula" />
     </AssociationSet>
     <AssociationSet Name="incidencia_ibfk_1" Association="Self.incidencia_ibfk_1">
       <End Role="usuario" EntitySet="usuario" />
