@@ -4,7 +4,7 @@
         xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         Icon="/Recursos/Img/popcorn.png"
-        Title="Nuevo Usuario" Height="450" Width="800">
+        Title="Nuevo Usuario" Height="500" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -25,7 +25,7 @@
         <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#01579a" />
 
         <!--Parte Superior-->
-        <TextBlock Text="Nueva Pelicula" Grid.ColumnSpan="2" Margin="20" FontSize="28" Foreground="White" FontWeight="ExtraBold"/>
+        <TextBlock Text="Nueva Película" Grid.ColumnSpan="2" Margin="20" FontSize="28" Foreground="White" FontWeight="ExtraBold"/>
         <Image Source="/Recursos/img/film.png" Height="32" Grid.Column="1" HorizontalAlignment="Left" Margin="150,0,0,0" />
 
         <TextBlock Grid.Row="1" Text="Los campos con este formato son obligatorios" 
@@ -86,9 +86,9 @@
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
         <!--Sinopsis-->
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Sinopsis" Margin="20,10,20,0" VerticalAlignment="Center" 
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="Sinopsis" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic" />
-        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtSinopsis" TextChanged="txtSinopsis_TextChanged" Height="30" Margin="20,10,20,0"
+        <TextBox Grid.Row="5" Grid.Column="3" x:Name="txtSinopsis" TextChanged="txtSinopsis_TextChanged" Height="30" Margin="20,10,20,0"
                  Style="{StaticResource MaterialDesignTextBox}" Width="200" AcceptsReturn="True" 
                  Text="{Binding peliculaNuevo.sinopsis, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
@@ -96,23 +96,18 @@
         
         <!--Actores-->
         
-        <TextBlock Grid.Row="5" Grid.Column="2" x:Name="Actor"   Text="Actor" Margin="20,10,20,0" VerticalAlignment="Center" 
+        <TextBlock Grid.Row="5" Grid.Column="0" x:Name="Actor"   Text="Actores" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic" />
 
-        <ComboBox Grid.Row="5" Grid.Column="3" x:Name="cbPelicula" Height="30" Margin="20,10,20,0"
-                  ItemsSource="{Binding listaActor}" DisplayMemberPath="apellido_1"
-                  Style="{StaticResource MaterialDesignComboBox}" Width="200"
-                  SelectedItem="{Binding peliculaNuevo.actor, ValidatesOnDataErrors=True,
-                  NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
-        
+        <ListBox Grid.Row="5" Grid.Column="1" x:Name="cbPelicula" Height="90" Margin="20,20,20,0"
+                  ItemsSource="{Binding ListAct}" DisplayMemberPath="apellido_1"
+                  Style="{StaticResource MaterialDesignListBox}" Width="200"
+                  SelectionMode="Multiple" />
 
-
-
-
-        <Button Grid.Column="3" Grid.Row="6" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
+        <Button Grid.Column="3" Grid.Row="6" IsDefault="True" Margin="40,20,20,40" Content="Guardar" HorizontalAlignment="Left" 
                 x:Name="btnGuardarPeli" Click="btnGuardarPeli_Click" Background="#01579a"  BorderBrush="Transparent"/>
-        <Button Grid.Column="3" Grid.Row="6" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
+        <Button Grid.Column="3" Grid.Row="6" IsCancel="True" Margin="20,20,40,40" Content="Cancelar" HorizontalAlignment="Right"
                 x:Name="btnCancelar" Click="btnCancelar_Click" Foreground="#9a010b"
-                Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
+                Style="{StaticResource MaterialDesignFlatButton}" />
     </Grid>
 </Window>

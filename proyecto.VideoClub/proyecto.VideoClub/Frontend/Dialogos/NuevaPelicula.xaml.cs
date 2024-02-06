@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
@@ -24,9 +25,9 @@ namespace proyecto.VideoClub.Frontend.Dialogos
 
         private void btnGuardarPeli_Click(object sender, RoutedEventArgs e)
         {
-            
 
 
+            mvPeli.peliculaNuevo.actor = convertirLista();
             if (mvPeli.guarda)
             {
                 MessageBox.Show("Todo guardado correctamente.", "Guardar Pelicula", MessageBoxButton.OK);
@@ -42,6 +43,17 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             }
         }
 
+        private List<actor> convertirLista()
+        {
+            List<actor> lista = new List<actor>();
+            int num = cbPelicula.SelectedItems.Count;
+            for(int i = 0; i < num; i++)
+            {
+                actor a = cbPelicula.SelectedItems[i] as actor;
+                lista.Add(a);
+            }
+            return lista;
+        }
   
 
     private void btnCancelar_Click(object sender, RoutedEventArgs e)

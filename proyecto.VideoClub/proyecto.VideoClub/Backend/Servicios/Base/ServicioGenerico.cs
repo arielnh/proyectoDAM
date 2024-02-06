@@ -55,7 +55,7 @@ namespace proyecto.VideoClub.Backend.Servicios.Base
         {
             return _dbset.AsEnumerable<T>();
         }
-
+        public List<T> GetAll { get { return _dbset.AsEnumerable<T>().ToList(); } }
 
         /*
          * Realiza un commit de la cache a la base de datos

@@ -20,7 +20,7 @@
             <StackPanel >
                 <Grid>
                     <mat:PackIcon Kind="ViewDashboard" Width="15"  Height="15" Margin="10 16" Foreground="White"/>
-                    <ListBoxItem x:Name="ListViewItemMenu" Content="Dashboard" Padding="37 14" FontSize="15" Foreground="White" Style="{StaticResource MaterialDesignListBoxItem}"/>
+                    <ListBoxItem x:Name="ListViewItemMenu" Content="Opciones" Padding="37 14" FontSize="15" Foreground="White" Style="{StaticResource MaterialDesignListBoxItem}"/>
                 </Grid>
                 
                 

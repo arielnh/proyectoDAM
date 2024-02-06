@@ -35,9 +35,12 @@ namespace proyecto.VideoClub.MVVM
 
         //Propiedades públicas para listar
         public List<pelicula> listaPeliculas { get { return peliServ.getAll().ToList(); } }
+
+        //Probando diferentes listas de actor
         public List<actor> listaActores { get { return actServ.getAll().ToList(); } }
 
         public List<actor> listaActor => actServ.getActor();
+        public List<actor> ListAct { get { return actServ.GetAll; } }
 
         //  public ICollection<actor> coleccionActores { get { return (ICollection<actor>)actServ.getAll(); } }
 

@@ -13,6 +13,10 @@ namespace proyecto.VideoClub.Backend.Servicios.Base
       */
     interface IServicioGenerico<T> where T : class
     {
+        /// <summary>
+        /// Obtiene todos los objetos de una determinada entidad
+        /// </summary>
+        List<T> GetAll { get; }
         /*
          * Obtiene todos los objetos de una determinada entidad
          */
