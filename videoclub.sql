@@ -222,20 +222,31 @@ INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
 
 INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`, id_rol) VALUES ('admin', 'admin', 1);
 
+-- //////////////////// --
+-- DATOS PELICULAS Y JUEGOS
+-- //////////////////// --
 
 -- ACTOR
-	-- Ryan Gosling
+	
 INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Ryan', 'Gosling', '', 0);
 INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Emma', 'Stone', '', 0);
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Russell', 'Crowe', '', 1); 
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Rachel', 'McAdams', '', 0);
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Harrison', 'Ford', '', 0);
+INSERT INTO videoclub.actor (nombre, apellido_1, apellido_2, oscar) VALUES ('Claire', 'Foy', '', 0);
 
- INSERT INTO videoclub.genero (nombre) VALUES ('neo-noir');
- INSERT INTO videoclub.genero (nombre) VALUES ('ciencia-ficción');
- INSERT INTO videoclub.genero (nombre) VALUES ('musical');
- INSERT INTO videoclub.genero (nombre) VALUES ('comedia');
- INSERT INTO videoclub.genero (nombre) VALUES ('drama');
- INSERT INTO videoclub.genero (nombre) VALUES ('crimen');
+-- Generos
+INSERT INTO videoclub.genero (nombre) VALUES ('Neo-noir');
+INSERT INTO videoclub.genero (nombre) VALUES ('Ciencia-ficción');
+INSERT INTO videoclub.genero (nombre) VALUES ('Musical');
+INSERT INTO videoclub.genero (nombre) VALUES ('Comedia');
+INSERT INTO videoclub.genero (nombre) VALUES ('Drama');
+INSERT INTO videoclub.genero (nombre) VALUES ('Crimen');
+INSERT INTO videoclub.genero (nombre) VALUES ('Acción');
+INSERT INTO videoclub.genero (nombre) VALUES ('Romance');
+INSERT INTO videoclub.genero (nombre) VALUES ('Historia');
 
--- PELICULA
+-- PELICULAS Y PRODUCTO
 INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
 'Blade Runner 2049', 'Estados Unidos', '163', 'Ubicada treinta años después de la película original. La historia describe a un blade runner replicante llamado K descubriendo los restos de una mujer replicante que en algún momento del pasado estuvo embarazada, lo cual es aparentemente imposible. Para evitar una posible guerra entre humanos y replicantes, K se encarga secretamente de encontrar al niño y destruir toda evidencia relacionada con él.', 'Denis Villeneuve', 'Blu-Ray');
  
@@ -245,7 +256,8 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
  '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
- '2', 'La ciudad de las estrellas: La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
+ '2', 'La ciudad de las estrellas:
+La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
  'Drive', 'Estados Unidos', '100', 'Durante el día, Driver es conductor especialista de cine, pero de noche se convierte en chófer para delincuentes. El mundo de Driver cambia el día en que conoce a Irene, una vecina que tiene un hijo pequeño y a su marido en la cárcel.', 'Nicolas Winding Refn','Blue-Ray'
@@ -253,23 +265,71 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
  '3', 'Drive', 'Disponible','Disponible', '2011-09-01', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'
  );
+ 
+  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
+ 'The Nice Guys', 'Estados Unidos', '116', 'Ambientada en Los Ángeles durante los años 70. El detective Holland March y el matón a sueldo Jackson Healy se ven obligados a colaborar para resolver varios casos: la desaparición de una joven, la muerte de una estrella porno y una conspiración criminal que llega hasta las altas esferas.',
+ 'Shane Black','Blue-Ray'
+ );
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ '4', 'Dos Buenos Tipos', 'Disponible','Disponible', '2016-06-10', 'Español', 'https://www.themoviedb.org/t/p/w1280/kgMpKQMKyS7oYmPffKyyOv0VqyT.jpg'
+ );
+ 
+ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
+ 'The Notebook', 'Estados Unidos', '124', 'Cuenta la vida en los años 40 de dos jóvenes adolescentes de Carolina del Norte que, a pesar de vivir en dos ambientes sociales muy diferentes, pasaron un verano idílico juntos y profundamente enamorados, antes de ser separados, primero por sus padres, y más tarde por la Segunda Guerra Mundial.',
+ 'Nick Cassavetes','Blue-Ray'
+ );
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ '5', 'El diario de Noa', 'Disponible','Disponible', '2004-06-25', 'Español', 'https://www.themoviedb.org/t/p/w1280/tpYGO4BC1EGy5strj15xy1vB3jP.jpg'
+ );
+ 
+ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
+ 'First Man', 'Estados Unidos', '141', 'Cuenta la historia de la misión de la NASA que llevó al primer hombre a la luna, centrada en Neil Armstrong y el periodo comprendido entre los años 1961 y 1969. Un relato en primera persona, basado en la novela de James R. Hansen',
+ 'Damien Chazelle','Blue-Ray'
+ );
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ '6', 'First Man', 'Disponible','Disponible', '2018-10-11', 'Español', 'https://www.themoviedb.org/t/p/w1280/hLXDrsgBqdO0xJHoRlBBMMortWL.jpg'
+ );
+ 
+-- Añadir genero a la película
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,1);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,2);
 
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,1);
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,5);
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,6);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (2,3);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (2,4);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (2,5);
+
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,1);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,5);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (3,6);
+
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (4,4);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (4,6);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (4,7);
+
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (5,5);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (5,8);
+
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (6,1);
+INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (6,5);
  
+-- Añadir ACTOR a la PELÍCULA
  
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,1);
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,2);
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,3);
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,4);
- INSERT INTO videoclub.generos_pelicula (id_pelicula, id_genero) VALUES (1,5);
- 
- insert into videoclub.actuan(id_actor, id_pelicula) values (1,1);
- insert into videoclub.actuan(id_actor, id_pelicula) values (1,2);
- insert into videoclub.actuan(id_actor, id_pelicula) values (2,2);
- insert into videoclub.actuan(id_actor, id_pelicula) values (1,3);
- 
+insert into videoclub.actuan(id_actor, id_pelicula) values (1,1);
+insert into videoclub.actuan(id_actor, id_pelicula) values (5,1);
+
+insert into videoclub.actuan(id_actor, id_pelicula) values (1,2);
+insert into videoclub.actuan(id_actor, id_pelicula) values (2,2);
+
+insert into videoclub.actuan(id_actor, id_pelicula) values (1,3);
+
+insert into videoclub.actuan(id_actor, id_pelicula) values (1,4);
+insert into videoclub.actuan(id_actor, id_pelicula) values (3,4);
+
+insert into videoclub.actuan(id_actor, id_pelicula) values (1,5);
+insert into videoclub.actuan(id_actor, id_pelicula) values (4,5);
+
+insert into videoclub.actuan(id_actor, id_pelicula) values (1,6);
+insert into videoclub.actuan(id_actor, id_pelicula) values (6,6);
  
  
  -- JUEGO
