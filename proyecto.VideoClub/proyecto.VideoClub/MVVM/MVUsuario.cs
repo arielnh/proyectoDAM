@@ -19,14 +19,13 @@ namespace proyecto.VideoClub.MVVM
         private usuario usuLogin;
         private usuario usuNuevo;
 
-        private usuario _usuario;
+      
 
 
         //CONSTRUCTOR
         public MVUsuario(videoclubEntities ent)
         {
             vcEnt = ent;
-
             inicializa();
         }
         public MVUsuario(videoclubEntities ent, usuario usu)
@@ -38,8 +37,6 @@ namespace proyecto.VideoClub.MVVM
 
         private void inicializa()
         {
-            _usuario = new usuario();
-
             usuServ = new UsuarioServicio(vcEnt);
             rolServ = new RolServicio(vcEnt);
             usuNuevo = new usuario();
@@ -53,11 +50,7 @@ namespace proyecto.VideoClub.MVVM
         public List<usuario> listaUsuarios { get { return usuServ.getAll().ToList(); } }
         public List<usuario> listaDatosUsuario { get { return usuServ.getUsuario(usuLogin.usuario1.ToString()); } }
 
-        public usuario usuarioEdit
-        {
-            get { return _usuario; }
-            set { _usuario = value; NotifyPropertyChanged(nameof(usuarioEdit)); }
-        }
+      
         public usuario usuarioNuevo
         {
             get { return usuNuevo; }

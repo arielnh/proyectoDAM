@@ -45,7 +45,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             vcEnt = ent;
             mvUsu = new MVUsuario(vcEnt);
             this.DataContext = mvUsu;
-            mvUsu.usuarioEdit = usu;
+            mvUsu.usuarioNuevo = usu;
             
         }
 

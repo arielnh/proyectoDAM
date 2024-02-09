@@ -12,6 +12,11 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     {
         private videoclubEntities vcEnt;
         private MVUsuario mvUsuario;
+
+        public UCUsuarios()
+        {
+            InitializeComponent();
+        }
         public UCUsuarios(videoclubEntities ent)
         {
             InitializeComponent();
@@ -22,9 +27,15 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
 
         private void itemEditar_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            NuevoUsuario nu = new NuevoUsuario(vcEnt, (usuario)dgListaUsuarios.SelectedItem);
-            nu.ShowDialog();
-            dgListaUsuarios.Items.Refresh();
+            if (dgListaUsuarios.SelectedItem != null && dgListaUsuarios.SelectedItem is usuario)
+            {
+               
+                usuario usu = (usuario)dgListaUsuarios.SelectedItem;
+                NuevoUsuario nu = new NuevoUsuario(vcEnt,usu);
+                nu.ShowDialog();
+                dgListaUsuarios.Items.Refresh();
+
+            }
         }
 
         private void itemBorrar_Click(object sender, System.Windows.RoutedEventArgs e)

@@ -33,6 +33,7 @@
 
             <DataGrid x:Name="dgListaUsuarios" ItemsSource="{Binding listaUsuarios}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                      SelectionMode="Single" AlternatingRowBackground="#eee"
                   >
                  <!--Listar usuarios-->
                 <DataGrid.Columns>
