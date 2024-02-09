@@ -25,6 +25,11 @@ namespace proyecto.VideoClub.Frontend.Dialogos
     {
         private videoclubEntities vcEnt;
         private MVUsuario mvUsu;
+
+        public NuevoUsuario()
+        {
+            InitializeComponent();
+        }
         public NuevoUsuario(videoclubEntities ent)
         {
             
@@ -32,6 +37,16 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             vcEnt = ent;
             mvUsu = new MVUsuario(vcEnt);
             DataContext = mvUsu;
+        }
+
+        public NuevoUsuario(videoclubEntities ent, usuario usu)
+        {
+            InitializeComponent();
+            vcEnt = ent;
+            mvUsu = new MVUsuario(vcEnt);
+            this.DataContext = mvUsu;
+            mvUsu.usuarioEdit = usu;
+            
         }
 
         private void btnGuardarUsuario_Click(object sender, RoutedEventArgs e)

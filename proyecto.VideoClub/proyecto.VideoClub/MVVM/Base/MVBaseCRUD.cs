@@ -29,7 +29,6 @@ namespace proyecto.VideoClub
                 correcto = false;
                 // Guardamos en el Log el error
                 log.Error("\n" + "Insertando un nuevo objeto ..." + entity.GetType() + "\n" + dbex.Message + "\n" + dbex.StackTrace);
-
             }
             return correcto;
         }

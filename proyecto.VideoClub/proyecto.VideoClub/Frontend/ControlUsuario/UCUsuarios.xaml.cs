@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
+using proyecto.VideoClub.Frontend.Dialogos;
 using proyecto.VideoClub.MVVM;
 
 namespace proyecto.VideoClub.Frontend.ControlUsuario
@@ -17,6 +18,18 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
             vcEnt = ent;
             mvUsuario = new MVUsuario(vcEnt);
             DataContext = mvUsuario;
+        }
+
+        private void itemEditar_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NuevoUsuario nu = new NuevoUsuario(vcEnt, (usuario)dgListaUsuarios.SelectedItem);
+            nu.ShowDialog();
+            dgListaUsuarios.Items.Refresh();
+        }
+
+        private void itemBorrar_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
         }
     }
 }
