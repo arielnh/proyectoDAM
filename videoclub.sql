@@ -124,11 +124,37 @@ FOREIGN KEY (id_rol) REFERENCES rol (id_rol)
 
 );
 
+
+-- INCIDENCIA
+create table tipo_incidencia (id_tipo_inc int not null primary key auto_increment,
+incidencia varchar (30)
+);
+
+create table incidencia (id_incidencia int not null primary key auto_increment,
+id_usuario int,
+foreign key (id_usuario) references usuario (id_usuario),
+asunto varchar (30),
+descripcion varchar (300),
+id_tipo_inc int,
+foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
+);
+
+-- ITEMS
+CREATE TABLE item (
+id_item int not null primary key AUTO_INCREMENT,
+id_producto int,
+FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
+ubicacion varchar (100),
+numero int,
+id_incidencia int,
+FOREIGN KEY (id_incidencia) REFERENCES incidencia (id_incidencia)
+);
+
 -- ALQUILERES
 
 CREATE TABLE alquiler (id_alquiler int not null primary key AUTO_INCREMENT,
-id_producto int,
-FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
+id_item int,
+FOREIGN KEY (id_item) REFERENCES item (id_item),
 id_usuario int,
 FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
 fecha_alquiler date,
@@ -154,32 +180,12 @@ foreign key (id_permiso) references permiso (id_permiso),
 primary key (id_rol, id_permiso)
 );
 
--- INCIDENCIA
-create table tipo_incidencia (id_tipo_inc int not null primary key auto_increment,
-incidencia varchar (30)
-);
 
 
-create table incidencia (id_incidencia int not null primary key auto_increment,
-id_usuario int,
-foreign key (id_usuario) references usuario (id_usuario),
-asunto varchar (30),
-descripcion varchar (300),
-id_tipo_inc int,
-foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
-);
 
--- ITEMS
-CREATE TABLE item (
-id_item int not null primary key AUTO_INCREMENT,
-id_producto int,
-FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
-ubicacion varchar (100),
-numero int,
-id_incidencia int,
-FOREIGN KEY (id_incidencia) REFERENCES incidencia (id_incidencia)
 
-);
+
+
 
 -- INSERTAR DATOS
 

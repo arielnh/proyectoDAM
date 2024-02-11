@@ -16,7 +16,7 @@
       <EntityTypeMapping TypeName="videoclubModel.alquiler">
         <MappingFragment StoreEntitySet="alquiler">
           <ScalarProperty Name="id_alquiler" ColumnName="id_alquiler" />
-          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="id_item" ColumnName="id_item" />
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
           <ScalarProperty Name="fecha_alquiler" ColumnName="fecha_alquiler" />
           <ScalarProperty Name="fecha_prev_devolucion" ColumnName="fecha_prev_devolucion" />

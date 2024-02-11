@@ -14,12 +14,20 @@ namespace proyecto.VideoClub.Backend.Modelo
     
     public partial class item
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public item()
+        {
+            this.alquiler = new HashSet<alquiler>();
+        }
+    
         public int id_item { get; set; }
         public Nullable<int> id_producto { get; set; }
         public string ubicacion { get; set; }
         public Nullable<int> numero { get; set; }
         public Nullable<int> id_incidencia { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<alquiler> alquiler { get; set; }
         public virtual incidencia incidencia { get; set; }
         public virtual producto producto { get; set; }
     }

@@ -16,7 +16,7 @@
       <PropertyRef Name="id_alquiler" />
     </Key>
     <Property Name="id_alquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_producto" Type="Int32" />
+    <Property Name="id_item" Type="Int32" />
     <Property Name="id_usuario" Type="Int32" />
     <Property Name="fecha_alquiler" Type="DateTime" />
     <Property Name="fecha_prev_devolucion" Type="DateTime" />
@@ -24,7 +24,7 @@
     <Property Name="recargo" Type="Int32" />
     <Property Name="devuelto" Type="Boolean" />
     <Property Name="id_tipo" Type="Int32" />
-    <NavigationProperty Name="producto" Relationship="Self.alquiler_ibfk_1" FromRole="alquiler" ToRole="producto" />
+    <NavigationProperty Name="item" Relationship="Self.alquiler_ibfk_1" FromRole="alquiler" ToRole="item" />
     <NavigationProperty Name="usuario" Relationship="Self.alquiler_ibfk_2" FromRole="alquiler" ToRole="usuario" />
     <NavigationProperty Name="tipo_alquiler" Relationship="Self.alquiler_ibfk_3" FromRole="alquiler" ToRole="tipo_alquiler" />
   </EntityType>
@@ -58,6 +58,7 @@
     <Property Name="ubicacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="numero" Type="Int32" />
     <Property Name="id_incidencia" Type="Int32" />
+    <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_1" FromRole="item" ToRole="alquiler" />
     <NavigationProperty Name="incidencia" Relationship="Self.item_ibfk_2" FromRole="item" ToRole="incidencia" />
     <NavigationProperty Name="producto" Relationship="Self.item_ibfk_1" FromRole="item" ToRole="producto" />
   </EntityType>
@@ -112,7 +113,6 @@
     <Property Name="portada" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="año" Type="DateTime" />
     <Property Name="idioma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="alquiler" Relationship="Self.alquiler_ibfk_1" FromRole="producto" ToRole="alquiler" />
     <NavigationProperty Name="item" Relationship="Self.item_ibfk_1" FromRole="producto" ToRole="item" />
     <NavigationProperty Name="juego" Relationship="Self.producto_ibfk_2" FromRole="producto" ToRole="juego" />
     <NavigationProperty Name="pelicula" Relationship="Self.producto_ibfk_1" FromRole="producto" ToRole="pelicula" />
@@ -165,14 +165,14 @@
     <NavigationProperty Name="rol" Relationship="Self.usuario_ibfk_1" FromRole="usuario" ToRole="rol" />
   </EntityType>
   <Association Name="alquiler_ibfk_1">
-    <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+    <End Role="item" Type="Self.item" Multiplicity="0..1" />
     <End Role="alquiler" Type="Self.alquiler" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="producto">
-        <PropertyRef Name="id_producto" />
+      <Principal Role="item">
+        <PropertyRef Name="id_item" />
       </Principal>
       <Dependent Role="alquiler">
-        <PropertyRef Name="id_producto" />
+        <PropertyRef Name="id_item" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,7 +311,7 @@
     <EntitySet Name="tipo_incidencia" EntityType="Self.tipo_incidencia" />
     <EntitySet Name="usuario" EntityType="Self.usuario" />
     <AssociationSet Name="alquiler_ibfk_1" Association="Self.alquiler_ibfk_1">
-      <End Role="producto" EntitySet="producto" />
+      <End Role="item" EntitySet="item" />
       <End Role="alquiler" EntitySet="alquiler" />
     </AssociationSet>
     <AssociationSet Name="alquiler_ibfk_2" Association="Self.alquiler_ibfk_2">

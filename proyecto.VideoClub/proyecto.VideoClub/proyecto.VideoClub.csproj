@@ -91,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Frontend\ControlUsuario\UCAlquiler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\ControlUsuario\UCDatosUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +209,9 @@
     <Compile Include="Backend\Servicios\ProductoServicio.cs" />
     <Compile Include="Backend\Servicios\RolServicio.cs" />
     <Compile Include="Backend\Servicios\UsuarioServicio.cs" />
+    <Compile Include="Frontend\ControlUsuario\UCAlquiler.xaml.cs">
+      <DependentUpon>UCAlquiler.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\ControlUsuario\UCDatosUsuario.xaml.cs">
       <DependentUpon>UCDatosUsuario.xaml</DependentUpon>
     </Compile>
@@ -307,6 +314,10 @@
     <Resource Include="Recursos\img\catalog.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Recursos\img\delete3.png" />
+    <Resource Include="Recursos\img\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Backend\Modelo\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -317,8 +328,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Recursos\img\delete3.png" />
-    <Resource Include="Recursos\img\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -17,7 +17,6 @@ namespace proyecto.VideoClub.Backend.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public producto()
         {
-            this.alquiler = new HashSet<alquiler>();
             this.item = new HashSet<item>();
         }
     
@@ -31,8 +30,6 @@ namespace proyecto.VideoClub.Backend.Modelo
         public Nullable<System.DateTime> año { get; set; }
         public string idioma { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<alquiler> alquiler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<item> item { get; set; }
         public virtual juego juego { get; set; }

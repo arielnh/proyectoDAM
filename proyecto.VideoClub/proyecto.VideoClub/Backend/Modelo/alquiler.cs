@@ -15,7 +15,7 @@ namespace proyecto.VideoClub.Backend.Modelo
     public partial class alquiler
     {
         public int id_alquiler { get; set; }
-        public Nullable<int> id_producto { get; set; }
+        public Nullable<int> id_item { get; set; }
         public Nullable<int> id_usuario { get; set; }
         public Nullable<System.DateTime> fecha_alquiler { get; set; }
         public Nullable<System.DateTime> fecha_prev_devolucion { get; set; }
@@ -24,7 +24,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public Nullable<bool> devuelto { get; set; }
         public Nullable<int> id_tipo { get; set; }
     
-        public virtual producto producto { get; set; }
+        public virtual item item { get; set; }
         public virtual usuario usuario { get; set; }
         public virtual tipo_alquiler tipo_alquiler { get; set; }
     }

@@ -23,7 +23,7 @@
       <PropertyRef Name="id_alquiler" />
     </Key>
     <Property Name="id_alquiler" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_producto" Type="int" />
+    <Property Name="id_item" Type="int" />
     <Property Name="id_usuario" Type="int" />
     <Property Name="fecha_alquiler" Type="date" />
     <Property Name="fecha_prev_devolucion" Type="date" />
@@ -187,14 +187,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="alquiler_ibfk_1">
-    <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+    <End Role="item" Type="Self.item" Multiplicity="0..1" />
     <End Role="alquiler" Type="Self.alquiler" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="producto">
-        <PropertyRef Name="id_producto" />
+      <Principal Role="item">
+        <PropertyRef Name="id_item" />
       </Principal>
       <Dependent Role="alquiler">
-        <PropertyRef Name="id_producto" />
+        <PropertyRef Name="id_item" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -380,7 +380,7 @@
       <End Role="actuan" EntitySet="actuan" />
     </AssociationSet>
     <AssociationSet Name="alquiler_ibfk_1" Association="Self.alquiler_ibfk_1">
-      <End Role="producto" EntitySet="producto" />
+      <End Role="item" EntitySet="item" />
       <End Role="alquiler" EntitySet="alquiler" />
     </AssociationSet>
     <AssociationSet Name="alquiler_ibfk_2" Association="Self.alquiler_ibfk_2">
