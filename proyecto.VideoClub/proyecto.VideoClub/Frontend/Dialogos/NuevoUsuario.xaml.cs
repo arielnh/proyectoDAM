@@ -25,6 +25,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
     {
         private videoclubEntities vcEnt;
         private MVUsuario mvUsu;
+        private bool editar;
 
         public NuevoUsuario()
         {
@@ -37,6 +38,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             vcEnt = ent;
             mvUsu = new MVUsuario(vcEnt);
             DataContext = mvUsu;
+            editar = false;
         }
 
         public NuevoUsuario(videoclubEntities ent, usuario usu)
@@ -46,20 +48,37 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             mvUsu = new MVUsuario(vcEnt);
             this.DataContext = mvUsu;
             mvUsu.usuarioNuevo = usu;
-            
+            editar = true;
+
         }
 
         private void btnGuardarUsuario_Click(object sender, RoutedEventArgs e)
         {
-
-            if (mvUsu.guarda)
+            if (!editar)
             {
-                MessageBox.Show("Todo guardado correctamente.","Guardar Usuario", MessageBoxButton.OK);
-                DialogResult = true;
+
+                if (mvUsu.guarda)
+                {
+                    MessageBox.Show("Todo guardado correctamente.", "Guardar Usuario", MessageBoxButton.OK);
+                    DialogResult = true;
+                }
+                else
+                {
+                    MessageBox.Show("Se ha producido un error.", "Guardar Usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Se ha producido un error.","Guardar Usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (mvUsu.update)
+                {
+
+                    DialogResult = true;
+                }
+                else
+                {
+
+                    DialogResult = false;
+                }
             }
         }
 

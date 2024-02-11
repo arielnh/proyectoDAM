@@ -103,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\ControlUsuario\UCProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\ControlUsuario\UCUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -209,6 +213,9 @@
     </Compile>
     <Compile Include="Frontend\ControlUsuario\UCPeliculas.xaml.cs">
       <DependentUpon>UCPeliculas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ControlUsuario\UCProducto.xaml.cs">
+      <DependentUpon>UCProducto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\ControlUsuario\UCUsuarios.xaml.cs">
       <DependentUpon>UCUsuarios.xaml</DependentUpon>

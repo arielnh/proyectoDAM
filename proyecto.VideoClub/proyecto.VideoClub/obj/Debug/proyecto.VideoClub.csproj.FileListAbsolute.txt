@@ -147,3 +147,5 @@ C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\NuevoProducto.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\NuevoProducto.baml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.csproj.AssemblyReference.cache
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCProducto.g.cs
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCProducto.baml

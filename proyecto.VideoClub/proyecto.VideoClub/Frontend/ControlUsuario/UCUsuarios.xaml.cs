@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.Frontend.Dialogos;
 using proyecto.VideoClub.MVVM;
@@ -40,7 +42,13 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
 
         private void itemBorrar_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            usuario usu = (usuario)dgListaUsuarios.SelectedItem;
+            mvUsuario.BorrarUsu(usu);
+
+            dgListaUsuarios.Items.Refresh();
 
         }
+
+       
     }
 }

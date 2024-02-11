@@ -61,7 +61,12 @@ namespace proyecto.VideoClub.MVVM
             }
         }
         public bool guarda { get { return add(usuarioNuevo); } }
+        public bool update { get { return update(usuarioNuevo); } }
+        public bool BorrarUsu (usuario susDel) {
+             return delete(susDel); 
 
+        } 
+    
     }
 
 }

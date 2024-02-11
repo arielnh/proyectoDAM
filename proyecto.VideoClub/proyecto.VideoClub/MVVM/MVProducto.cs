@@ -45,10 +45,6 @@ namespace proyecto.VideoClub.MVVM
     public List<pelicula> listaPeliculasDB { get { return peliServ.getAll().ToList(); } }
     public List<juego> listaJuegosDB { get { return jueServ.getAll().ToList(); } }
 
-    
-
-
-
 
         public producto productoNuevo
         {
@@ -60,6 +56,12 @@ namespace proyecto.VideoClub.MVVM
             }
         }
         public bool guarda { get { return add(prodNuevo); } }
+        public bool update { get { return update(productoNuevo); } }
+        public bool BorrarProd(producto prodDel)
+        {
+            return delete(prodDel);
+
+        }
 
     }
 }

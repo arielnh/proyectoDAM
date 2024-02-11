@@ -14,34 +14,66 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         private videoclubEntities vcEnt;
         private MVProducto mvProd;
         private MVJuego mvJue;
-       
+        private bool editar;
 
         public NuevoProducto(videoclubEntities ent)
         {
+
             InitializeComponent();
             vcEnt = ent;
+            editar = false;
+
+            inicializa();
+        }
+
+        public NuevoProducto(videoclubEntities ent, producto prod)
+        {
+            InitializeComponent();
+            vcEnt = ent;
+            inicializa();
+            editar = true;
+            mvProd.productoNuevo = prod;
+          
+
+        }
+
+        private void inicializa ()
+        {
+            
             mvProd = new MVProducto(vcEnt);
             mvJue = new MVJuego(vcEnt);
             DataContext = mvProd;
             peliculaSelect();
-
         }
  
 
         private void btnGuardarProd_Click(object sender, RoutedEventArgs e)
         {
-            if (mvProd.guarda)
+            if (!editar)
             {
-                MessageBox.Show("Todo guardado correctamente.", "Guardar Pelicula", MessageBoxButton.OK);
-                this.Close();
 
+                if (mvProd.guarda)
+                {
+                    MessageBox.Show("Todo guardado correctamente.", "Guardar", MessageBoxButton.OK);
+                    DialogResult = true;
+                }
+                else
+                {
+                    MessageBox.Show("Se ha producido un error.", "Guardar", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Se ha producido un error.", "Guardar Pelicula", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (mvProd.update)
+                {
 
+                    DialogResult = true;
+                }
+                else
+                {
 
-
+                    DialogResult = false;
+                }
             }
         }
 

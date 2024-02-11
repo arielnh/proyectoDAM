@@ -38,7 +38,7 @@ namespace proyecto.VideoClub
             if (gridCentral.Children != null) gridCentral.Children.Clear();
             // Añadimos nuestro user control
             gridCentral.Children.Add(uc);
-            
+
         }
 
         private void CatalogoJuegos(object sender, RoutedEventArgs e)
@@ -51,10 +51,10 @@ namespace proyecto.VideoClub
             // Añadimos nuestro user control
             gridCentral.Children.Add(uc);
             Todas.IsSelected = false;
-           
+
         }
 
-        
+
 
         private void NewUser_Selected(object sender, RoutedEventArgs e)
         {
@@ -64,7 +64,7 @@ namespace proyecto.VideoClub
             ventana.ShowDialog();
 
 
-            
+
 
 
 
@@ -85,12 +85,12 @@ namespace proyecto.VideoClub
             CerrarSeleccion(4);
             NuevoJuego ventana = new NuevoJuego(vcEnt);
             ventana.ShowDialog();
-           
+
 
         }
 
 
-        void CerrarSeleccion (int sel)
+        void CerrarSeleccion(int sel)
         {
             switch (sel)
             {
@@ -112,7 +112,7 @@ namespace proyecto.VideoClub
                     Gestion.IsExpanded = false;
                     break;
 
-               case 4:
+                case 4:
                     Juegos.IsExpanded = false;
                     Peliculas.IsExpanded = false;
                     Perfil.IsExpanded = false;
@@ -131,6 +131,7 @@ namespace proyecto.VideoClub
             gridCentral.Children.Add(uc);
             Todas.IsSelected = false;
         }
+       
 
         private void NewProduct_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -143,6 +144,18 @@ namespace proyecto.VideoClub
         {
             CerrarSeleccion(3);
             UCDatosUsuario uc = new UCDatosUsuario(vcEnt, usuLogin);
+            // Lo colocaremos en el panel central de nuestra aplicación
+            // Si hay algo en el grid central lo borramos
+            if (gridCentral.Children != null) gridCentral.Children.Clear();
+            // Añadimos nuestro user control
+            gridCentral.Children.Add(uc);
+            Todas.IsSelected = false;
+        }
+
+        private void ListarProducto_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            CerrarSeleccion(4);
+            UCProducto uc = new UCProducto(vcEnt);
             // Lo colocaremos en el panel central de nuestra aplicación
             // Si hay algo en el grid central lo borramos
             if (gridCentral.Children != null) gridCentral.Children.Clear();
