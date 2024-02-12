@@ -80,7 +80,6 @@ FOREIGN KEY (id_pelicula) REFERENCES pelicula (id_pelicula),
 id_juego int,
 FOREIGN KEY (id_juego) REFERENCES juego (id_juego),
 titulo VARCHAR(50),
-disponibilidad varchar(30),
 estado varchar (30),
 portada varchar (300),
 año date,
@@ -144,6 +143,7 @@ CREATE TABLE item (
 id_item int not null primary key AUTO_INCREMENT,
 id_producto int,
 FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
+disponibilidad varchar(30),
 ubicacion varchar (100),
 numero int,
 id_incidencia int,
@@ -224,9 +224,11 @@ INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (3,4);
 -- PERMISO USUARIO PÚBLICO
 INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
 
--- ADMIN
+-- ADMIN Y USERS
 
-INSERT INTO `videoclub`.`usuario` (`usuario`, `contraseña`, id_rol) VALUES ('admin', 'admin', 1);
+INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Ariel','admin', 'admin', 1);
+INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Pepe','pepe', 'cliente', 3);
+
 
 -- //////////////////// --
 -- DATOS PELICULAS Y JUEGOS
@@ -259,41 +261,41 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
 'La La Land', 'Estados Unidos', '128', 'La película cuenta la historia de Mia, una empleada de un bar que aspira a ser actriz y Sebastian, un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades, gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
  
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
- '1', 'Blade Runner 2049', 'Disponible', 'Disponible', '2017-10-03', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
+ '1', 'Blade Runner 2049', 'Disponible', '2017-10-03', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
  '2', 'La ciudad de las estrellas:
-La La Land', 'Disponible', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
+La La Land', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
  'Drive', 'Estados Unidos', '100', 'Durante el día, Driver es conductor especialista de cine, pero de noche se convierte en chófer para delincuentes. El mundo de Driver cambia el día en que conoce a Irene, una vecina que tiene un hijo pequeño y a su marido en la cárcel.', 'Nicolas Winding Refn','Blue-Ray'
  );
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
- '3', 'Drive', 'Disponible','Disponible', '2011-09-01', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
+ '3', 'Drive','Disponible', '2011-09-01', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'
  );
  
   INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
  'The Nice Guys', 'Estados Unidos', '116', 'Ambientada en Los Ángeles durante los años 70. El detective Holland March y el matón a sueldo Jackson Healy se ven obligados a colaborar para resolver varios casos: la desaparición de una joven, la muerte de una estrella porno y una conspiración criminal que llega hasta las altas esferas.',
  'Shane Black','Blue-Ray'
  );
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
- '4', 'Dos Buenos Tipos', 'Disponible','Disponible', '2016-06-10', 'Español', 'https://www.themoviedb.org/t/p/w1280/kgMpKQMKyS7oYmPffKyyOv0VqyT.jpg'
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
+ '4', 'Dos Buenos Tipos','Disponible', '2016-06-10', 'Español', 'https://www.themoviedb.org/t/p/w1280/kgMpKQMKyS7oYmPffKyyOv0VqyT.jpg'
  );
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
  'The Notebook', 'Estados Unidos', '124', 'Cuenta la vida en los años 40 de dos jóvenes adolescentes de Carolina del Norte que, a pesar de vivir en dos ambientes sociales muy diferentes, pasaron un verano idílico juntos y profundamente enamorados, antes de ser separados, primero por sus padres, y más tarde por la Segunda Guerra Mundial.',
  'Nick Cassavetes','Blue-Ray'
  );
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
- '5', 'El diario de Noa', 'Disponible','Disponible', '2004-06-25', 'Español', 'https://www.themoviedb.org/t/p/w1280/tpYGO4BC1EGy5strj15xy1vB3jP.jpg'
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
+ '5', 'El diario de Noa','Disponible', '2004-06-25', 'Español', 'https://www.themoviedb.org/t/p/w1280/tpYGO4BC1EGy5strj15xy1vB3jP.jpg'
  );
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
  'First Man', 'Estados Unidos', '141', 'Cuenta la historia de la misión de la NASA que llevó al primer hombre a la luna, centrada en Neil Armstrong y el periodo comprendido entre los años 1961 y 1969. Un relato en primera persona, basado en la novela de James R. Hansen',
  'Damien Chazelle','Blue-Ray'
  );
- INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `disponibilidad`, `estado`, `año`, `idioma`, portada) VALUES (
- '6', 'First Man', 'Disponible','Disponible', '2018-10-11', 'Español', 'https://www.themoviedb.org/t/p/w1280/hLXDrsgBqdO0xJHoRlBBMMortWL.jpg'
+ INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
+ '6', 'First Man','Disponible', '2018-10-11', 'Español', 'https://www.themoviedb.org/t/p/w1280/hLXDrsgBqdO0xJHoRlBBMMortWL.jpg'
  );
  
 -- Añadir genero a la película
@@ -352,7 +354,14 @@ VALUES (1,'Lies of P', 'https://slug.vercel.app/s/juego');
 INSERT INTO videoclub.producto (id_juego, titulo, portada)
 VALUES (1,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
 
+ -- Alquiler de productos MUESTRA
  
+ insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (1, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 2, 'Alquilado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (2, 'Estantería', 1, 'Reservado');
+ 
+ insert into videoclub.alquiler (id_item, id_usuario) values (1,1);
+ insert into videoclub.alquiler (id_item, id_usuario) values (2,2);
  
  
 

@@ -51,6 +51,7 @@
         <MappingFragment StoreEntitySet="item">
           <ScalarProperty Name="id_item" ColumnName="id_item" />
           <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
           <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
           <ScalarProperty Name="numero" ColumnName="numero" />
           <ScalarProperty Name="id_incidencia" ColumnName="id_incidencia" />
@@ -100,7 +101,6 @@
           <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
           <ScalarProperty Name="id_juego" ColumnName="id_juego" />
           <ScalarProperty Name="titulo" ColumnName="titulo" />
-          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="portada" ColumnName="portada" />
           <ScalarProperty Name="año" ColumnName="año" />

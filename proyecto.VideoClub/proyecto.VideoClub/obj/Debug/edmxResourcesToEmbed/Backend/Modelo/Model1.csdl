@@ -55,6 +55,7 @@
     </Key>
     <Property Name="id_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_producto" Type="Int32" />
+    <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="ubicacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="numero" Type="Int32" />
     <Property Name="id_incidencia" Type="Int32" />
@@ -108,7 +109,6 @@
     <Property Name="id_pelicula" Type="Int32" />
     <Property Name="id_juego" Type="Int32" />
     <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="portada" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="año" Type="DateTime" />

@@ -31,29 +31,34 @@
         <!--La tabla de info-->
         <Grid>
 
-            <DataGrid x:Name="dgListaProductos" ItemsSource="{Binding listaAlquileres}"
+            <DataGrid x:Name="dgListaAlquiler" ItemsSource="{Binding listaAlquileres}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                       SelectionMode="Single" AlternatingRowBackground="#eee"
                   >
                 <!--Listar alquileres-->
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Usuario" Binding="{Binding usuario}" />
-                    <DataGridTextColumn Header="Titulo del Producto" Binding="{Binding producto.titulo}" />
-                    <DataGridTextColumn Header="fecha alquiler" Binding="{Binding fecha_alquiler}" />
+                    <DataGridTextColumn Header="Estado" Binding="{Binding item.disponibilidad}" />
+                    <DataGridTextColumn Header="Usuario" Binding="{Binding usuario.nombre}" />
+                    <DataGridTextColumn Header="Item" Binding="{Binding item.producto.titulo}" />
+                    <DataGridTextColumn Header="id prod" Binding="{Binding item.id_producto}" />
+                    <DataGridTextColumn Header="id item" Binding="{Binding id_item}" />
+                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_aqluiler}" />
+                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_prev_devolucion}" />
+                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_devolucion}" />
                 </DataGrid.Columns>
 
-                <!--Click derecho para editar o borrar-->
+                <!--Click derecho para devolver o entregar-->
                 <DataGrid.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Editar" x:Name="itemEditar" Click="itemEditar_Click">
+                        <MenuItem Header="Devuelto" x:Name="itemDevuelto" Click="itemDevuelto_Click"  Foreground="#01579a">
                             <MenuItem.Icon>
-                                <Image  Source="/Recursos/Img/edit.png"/>
+                                <Image  Source="/Recursos/Img/return.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <Separator/>
-                        <MenuItem Header="Borrar" x:Name="itemBorrar" Click="itemBorrar_Click" Foreground="#9a010b">
+                        <MenuItem Header="Entregado" x:Name="itemEntregado" Click="itemEntregado_Click" Foreground="#019a90">
                             <MenuItem.Icon>
-                                <Image  Source="/Recursos/Img/delete3.png"/>
+                                <Image  Source="/Recursos/Img/entrega.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
 

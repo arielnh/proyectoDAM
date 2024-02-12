@@ -1,4 +1,6 @@
-﻿using System;
+﻿using proyecto.VideoClub.Backend.Modelo;
+using proyecto.VideoClub.MVVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +22,32 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     /// </summary>
     public partial class UCAlquiler : UserControl
     {
+        private videoclubEntities vcEnt;
+        private MVAlquiler mvAlq;
         public UCAlquiler()
         {
             InitializeComponent();
         }
-
-        private void itemEditar_Click(object sender, RoutedEventArgs e)
+        public UCAlquiler(videoclubEntities ent)
         {
-
+            InitializeComponent();
+            vcEnt = ent;
+            mvAlq = new MVAlquiler(vcEnt);
+            DataContext = mvAlq;
         }
 
-        private void itemBorrar_Click(object sender, RoutedEventArgs e)
+        
+
+        private void itemDevuelto_Click(object sender, RoutedEventArgs e)
+        {
+            alquiler aq = (alquiler)dgListaAlquiler.SelectedItem;
+            mvAlq.Devolver(aq);
+            dgListaAlquiler.Items.Refresh();
+            
+            
+        }
+
+        private void itemEntregado_Click(object sender, RoutedEventArgs e)
         {
 
         }

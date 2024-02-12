@@ -22,6 +22,7 @@ namespace proyecto.VideoClub.Backend.Modelo
     
         public int id_item { get; set; }
         public Nullable<int> id_producto { get; set; }
+        public string disponibilidad { get; set; }
         public string ubicacion { get; set; }
         public Nullable<int> numero { get; set; }
         public Nullable<int> id_incidencia { get; set; }

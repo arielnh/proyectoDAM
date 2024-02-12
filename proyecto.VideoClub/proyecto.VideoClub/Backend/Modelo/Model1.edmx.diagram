@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bd541d7fd46540dcbd4d84509feceb54" Name="Diagram1">
-        <EntityTypeShape EntityType="videoclubModel.actor" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.alquiler" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.genero" Width="1.5" PointX="3.75" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.incidencia" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+      <Diagram DiagramId="76931be980354a3589d5639399d52737" Name="Diagram1">
+        <EntityTypeShape EntityType="videoclubModel.actor" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.alquiler" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.genero" Width="1.5" PointX="3.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.incidencia" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.item" Width="1.5" PointX="10.5" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.juego" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.juego" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.pelicula" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.permiso" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.producto" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.rol" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.tipo_alquiler" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="videoclubModel.tipo_incidencia" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.permiso" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.producto" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.rol" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.tipo_alquiler" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="videoclubModel.tipo_incidencia" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="videoclubModel.usuario" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <AssociationConnector Association="videoclubModel.alquiler_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="videoclubModel.alquiler_ibfk_2" ManuallyRouted="false" />

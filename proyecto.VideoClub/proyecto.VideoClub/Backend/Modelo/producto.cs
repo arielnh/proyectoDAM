@@ -24,7 +24,6 @@ namespace proyecto.VideoClub.Backend.Modelo
         public Nullable<int> id_pelicula { get; set; }
         public Nullable<int> id_juego { get; set; }
         public string titulo { get; set; }
-        public string disponibilidad { get; set; }
         public string estado { get; set; }
         public string portada { get; set; }
         public Nullable<System.DateTime> año { get; set; }

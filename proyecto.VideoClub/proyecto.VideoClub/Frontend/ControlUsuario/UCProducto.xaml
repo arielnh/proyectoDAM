@@ -37,9 +37,9 @@
                   >
                 <!--Listar productos-->
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nombre" Binding="{Binding titulo}" />
                     <DataGridTextColumn Header="Pelicula" Binding="{Binding id_juego}" />
                     <DataGridTextColumn Header="Juego" Binding="{Binding id_pelicula}" />
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding titulo}" />
                 </DataGrid.Columns>
 
                 <!--Click derecho para editar o borrar-->

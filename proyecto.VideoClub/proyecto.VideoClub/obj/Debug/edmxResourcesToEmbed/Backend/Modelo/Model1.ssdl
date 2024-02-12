@@ -71,6 +71,7 @@
     </Key>
     <Property Name="id_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_producto" Type="int" />
+    <Property Name="disponibilidad" Type="varchar" MaxLength="30" />
     <Property Name="ubicacion" Type="varchar" MaxLength="100" />
     <Property Name="numero" Type="int" />
     <Property Name="id_incidencia" Type="int" />
@@ -116,7 +117,6 @@
     <Property Name="id_pelicula" Type="int" />
     <Property Name="id_juego" Type="int" />
     <Property Name="titulo" Type="varchar" MaxLength="50" />
-    <Property Name="disponibilidad" Type="varchar" MaxLength="30" />
     <Property Name="estado" Type="varchar" MaxLength="30" />
     <Property Name="portada" Type="varchar" MaxLength="300" />
     <Property Name="año" Type="date" />

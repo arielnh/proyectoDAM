@@ -76,6 +76,7 @@
           </Key>
           <Property Name="id_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_producto" Type="int" />
+          <Property Name="disponibilidad" Type="varchar" MaxLength="30" />
           <Property Name="ubicacion" Type="varchar" MaxLength="100" />
           <Property Name="numero" Type="int" />
           <Property Name="id_incidencia" Type="int" />
@@ -121,7 +122,6 @@
           <Property Name="id_pelicula" Type="int" />
           <Property Name="id_juego" Type="int" />
           <Property Name="titulo" Type="varchar" MaxLength="50" />
-          <Property Name="disponibilidad" Type="varchar" MaxLength="30" />
           <Property Name="estado" Type="varchar" MaxLength="30" />
           <Property Name="portada" Type="varchar" MaxLength="300" />
           <Property Name="año" Type="date" />
@@ -501,6 +501,7 @@
           </Key>
           <Property Name="id_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_producto" Type="Int32" />
+          <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="ubicacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="numero" Type="Int32" />
           <Property Name="id_incidencia" Type="Int32" />
@@ -554,7 +555,6 @@
           <Property Name="id_pelicula" Type="Int32" />
           <Property Name="id_juego" Type="Int32" />
           <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="disponibilidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="portada" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="año" Type="DateTime" />
@@ -865,6 +865,7 @@
               <MappingFragment StoreEntitySet="item">
                 <ScalarProperty Name="id_item" ColumnName="id_item" />
                 <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
                 <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
                 <ScalarProperty Name="numero" ColumnName="numero" />
                 <ScalarProperty Name="id_incidencia" ColumnName="id_incidencia" />
@@ -914,7 +915,6 @@
                 <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
                 <ScalarProperty Name="id_juego" ColumnName="id_juego" />
                 <ScalarProperty Name="titulo" ColumnName="titulo" />
-                <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="portada" ColumnName="portada" />
                 <ScalarProperty Name="año" ColumnName="año" />

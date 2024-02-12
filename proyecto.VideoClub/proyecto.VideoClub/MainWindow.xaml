@@ -124,7 +124,7 @@
                             <ListViewItem Content="Añadir Producto" Padding="30 5" Foreground="White" x:Name="NewProduct" MouseLeftButtonUp="NewProduct_MouseLeftButtonUp"/>
                             <ListViewItem Content="Añadir Usuario" Padding="30 5" Foreground="White" x:Name="NewUser" MouseLeftButtonUp="NewUser_Selected"/>
                             <ListViewItem Content="Listar Usuarios" Padding="30 5" Foreground="White" x:Name="ListUser" MouseLeftButtonUp="ListUser_MouseLeftButtonUp"/>
-                            <ListViewItem Content="Listar Reservas" Padding="30 5" Foreground="White"/>
+                            <ListViewItem Content="Listar Alquileres" Padding="30 5" Foreground="White" x:Name="ListAlquileres" MouseLeftButtonUp="ListAlquileres_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Productos" Padding="30 5" Foreground="White" x:Name="ListarProducto"  MouseLeftButtonUp="ListarProducto_MouseLeftButtonUp" />
 
                         </ListView>

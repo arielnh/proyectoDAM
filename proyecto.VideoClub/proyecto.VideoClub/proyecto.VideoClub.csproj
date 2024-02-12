@@ -202,6 +202,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Backend\Servicios\ActorServicio.cs" />
+    <Compile Include="Backend\Servicios\AlquilerServicio.cs" />
     <Compile Include="Backend\Servicios\Base\IServicioGenerico.cs" />
     <Compile Include="Backend\Servicios\Base\ServicioGenerico.cs" />
     <Compile Include="Backend\Servicios\JuegoServicio.cs" />
@@ -253,6 +254,7 @@
   <ItemGroup>
     <Compile Include="MVVM\Base\MVBase.cs" />
     <Compile Include="MVVM\Base\MVBaseCRUD.cs" />
+    <Compile Include="MVVM\MVAlquiler.cs" />
     <Compile Include="MVVM\MVJuego.cs" />
     <Compile Include="MVVM\MVPelicula.cs" />
     <Compile Include="MVVM\MVProducto.cs" />
@@ -317,6 +319,11 @@
     <Resource Include="Recursos\img\delete3.png" />
     <Resource Include="Recursos\img\edit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\img\entrega.png" />
+    <Resource Include="Recursos\img\return.png" />
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Backend\Modelo\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
