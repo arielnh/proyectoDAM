@@ -37,7 +37,6 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
                 NuevoProducto nu = new NuevoProducto(vcEnt, prod);
                 nu.ShowDialog();
                 dgListaProductos.Items.Refresh();
-
             }
         }
 
@@ -45,11 +44,7 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         {
             producto prod = (producto)dgListaProductos.SelectedItem;
             mvProducto.BorrarProd(prod);
-
-            dgListaProductos.Items.Refresh();
-
+            dgListaProductos.ItemsSource = mvProducto.Refresca();
         }
-
-
     }
 }

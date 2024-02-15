@@ -227,7 +227,22 @@ INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
 -- ADMIN Y USERS
 
 INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Ariel','admin', 'admin', 1);
-INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Pepe','pepe', 'cliente', 3);
+INSERT INTO `videoclub`.`usuario` (nombre, apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Pepe','Perez', 'pepe', '1234', 2);
+INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Publico','public', '0000', 4);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Alicia','Alcantara','alicia', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Marta','Rodriguez','marta', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Laura','Moreno','laura', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Jorge','Ruiz','jorge', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Carla','Alonso','carla', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('David','Ortiz','david', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Daniel','Rubio','daniel', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Javier','Castro','javier', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Alex','Torres','alex', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Ana','Romero','ana', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Carlos','Ortega','carlos', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Asier','Aguado','asier', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Cristina','Aldana','cristina', '1234', 3);
+INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('José','Baro','jose', '1234', 3);
 
 
 -- //////////////////// --
@@ -339,29 +354,48 @@ insert into videoclub.actuan(id_actor, id_pelicula) values (4,5);
 insert into videoclub.actuan(id_actor, id_pelicula) values (1,6);
 insert into videoclub.actuan(id_actor, id_pelicula) values (6,6);
  
- 
- -- JUEGO
- 
+ -- ////////////////////--
+		-- JUEGO
+-- ////////////////////--
  INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
  VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
     
 INSERT INTO videoclub.producto (id_juego, titulo, portada)
-VALUES (1,'Lies of P', 'https://slug.vercel.app/s/juego');
+VALUES (1,'Lies of P', 'https://i.ibb.co/3vCtnbf/l.png');
 
  INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
  VALUES ('Play Station 5', true, 'rol', 'Larian Studios NV', 'Larian Studios NV', true); 
     
 INSERT INTO videoclub.producto (id_juego, titulo, portada)
-VALUES (1,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
+VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
 
  -- Alquiler de productos MUESTRA
  
+ -- ITEM
+ 
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (1, 'Estantería', 1, 'Reservado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 2, 'Alquilado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 3, 'Alquilado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 3, 'Alquilado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (2, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (2, 'Estantería', 2, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (3, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (4, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (5, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Reservado');
  
- insert into videoclub.alquiler (id_item, id_usuario) values (1,1);
- insert into videoclub.alquiler (id_item, id_usuario) values (2,2);
+ -- ALQUILER
+ 
+ insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (1,4,0);
+ insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (2,5,1);
+ insert into videoclub.alquiler (id_item, id_usuario) values (3,6);
+  insert into videoclub.alquiler (id_item, id_usuario) values (4,7);
+  insert into videoclub.alquiler (id_item, id_usuario) values (5,8);
+  insert into videoclub.alquiler (id_item, id_usuario) values (6,9);
+  insert into videoclub.alquiler (id_item, id_usuario) values (7,10);
+  insert into videoclub.alquiler (id_item, id_usuario) values (8,11);
+  insert into videoclub.alquiler (id_item, id_usuario) values (9,12);
+  insert into videoclub.alquiler (id_item, id_usuario) values (10,13);
  
  
 

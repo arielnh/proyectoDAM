@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Data;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.Backend.Servicios;
 
@@ -18,7 +19,7 @@ namespace proyecto.VideoClub.MVVM
         private ProductoServicio prodServ;
         private PeliculaServicio peliServ;
         private JuegoServicio jueServ;
-
+        private ListCollectionView listaAux;
        
         public MVProducto(videoclubEntities vcEnt)
         {
@@ -34,13 +35,13 @@ namespace proyecto.VideoClub.MVVM
             jueServ = new JuegoServicio(vcEnt);
             servicio = prodServ;
             prodNuevo = new producto();
-           
+            listaAux = new ListCollectionView(servicio.getAll().ToList());
         }
 
     //Propiedades públicas para listar
     public List<producto> listaPeliculas => prodServ.getPeliculas();
     public List<producto> listaJuegos => prodServ.getJuegos();
-    public List<producto> listaProductos { get { return prodServ.getAll().ToList(); } }
+    public ListCollectionView listaProductos { get { return listaAux; } }
 
     public List<pelicula> listaPeliculasDB { get { return peliServ.getAll().ToList(); } }
     public List<juego> listaJuegosDB { get { return jueServ.getAll().ToList(); } }
@@ -52,17 +53,20 @@ namespace proyecto.VideoClub.MVVM
             set
             {
                 prodNuevo = value;
-                NotifyPropertyChanged(nameof(prodNuevo));
+                NotifyPropertyChanged(nameof(productoNuevo));
             }
         }
-        public bool guarda { get { return add(prodNuevo); } }
+        public bool guarda { get { return add(productoNuevo); } }
         public bool update { get { return update(productoNuevo); } }
         public bool BorrarProd(producto prodDel)
         {
             return delete(prodDel);
-
         }
 
+        public ListCollectionView Refresca()
+        {
+            return new ListCollectionView(servicio.getAll().ToList());
+        }
     }
 }
 

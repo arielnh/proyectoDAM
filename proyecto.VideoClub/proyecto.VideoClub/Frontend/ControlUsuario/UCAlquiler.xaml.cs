@@ -41,7 +41,7 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private void itemDevuelto_Click(object sender, RoutedEventArgs e)
         {
             alquiler aq = (alquiler)dgListaAlquiler.SelectedItem;
-            mvAlq.Devolver(aq);
+          
             dgListaAlquiler.Items.Refresh();
             
             
@@ -50,6 +50,16 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private void itemEntregado_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void checkDevuelto_Checked(object sender, RoutedEventArgs e)
+        {
+            mvAlq.Filtra();
+        }
+
+        private void checkDevuelto_Unchecked(object sender, RoutedEventArgs e)
+        {
+            mvAlq.QuitaFiltros();
         }
     }
 }
