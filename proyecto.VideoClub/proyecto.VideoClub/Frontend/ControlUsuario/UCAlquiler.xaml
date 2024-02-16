@@ -19,24 +19,39 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                
 
             </Grid.ColumnDefinitions>
             
             <!--ENCABEZADO-->
 
             <Border Grid.Row="0" Grid.ColumnSpan="4" />
-            <TextBlock Text="PRODUCTOS" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
-            <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+            <TextBlock Text="ALQUILERES" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
+            <Image Source="/Recursos/img/ticket.png" Height="32" Grid.Column="0" HorizontalAlignment="Left" Margin="150,0,0,0" />
+            <Separator Background="#01579a" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
 
 
-            <!--AGRUPAR por Conferencia-->
-            <TextBlock Text="Agrupar por: " FontWeight="Bold" Grid.Column="0" VerticalAlignment="Center"
-                       Grid.Row="1" Margin="20" Foreground="#222"/>
+            <!--FILTROS-->
+            <!--Ocultar alquileres devueltos-->
+            <TextBlock Text="Filtrar: " FontWeight="DemiBold" Grid.Column="0" VerticalAlignment="Center"
+                       Grid.Row="1" Margin="20" Foreground="#01579a" FontSize="16"/>
 
-            <CheckBox Content="Ocultar devueltos" Grid.Row="1"  Grid.Column="1"
-                      Margin="20" VerticalAlignment="Center" Foreground="#222"
+            <CheckBox Content="Ocultar alquileres devueltos" Grid.Row="1"  Grid.Column="0"
+                      HorizontalAlignment="Left" FontWeight="DemiBold"
+                      Margin="100 0 0 0" VerticalAlignment="Center" Foreground="#444"
+                      Style ="{StaticResource MaterialDesignCheckBox}"
                       x:Name="checkDevuelto" Checked="checkDevuelto_Checked" Unchecked="checkDevuelto_Unchecked"
                       IsChecked="{Binding devueltoCheck}"/>
+
+            <!--Filtrar por nombre TextBox-->
+            <TextBlock Text="Buscar por apellido: " FontWeight="DemiBold" FontSize="14" Grid.Column="1" HorizontalAlignment="Left"
+                       Grid.Row="1" Margin="20" VerticalAlignment="Center" Foreground="#01579a" />
+            <TextBox x:Name="tbApellido" Grid.Row="1" Grid.Column="1" Width="180" Margin="-40,0,0,0" Foreground="#444" VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="{Binding apellidoUsuario, UpdateSourceTrigger=PropertyChanged}"
+                     TextChanged="tbApellido_TextChanged"/>
+
+            <Separator Background="#01579a" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
             
 
@@ -49,14 +64,15 @@
                   >
                 <!--Listar alquileres-->
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Estado" Binding="{Binding item.disponibilidad}" />
-                    <DataGridTextColumn Header="Usuario" Binding="{Binding usuario.nombre}" />
-                    <DataGridTextColumn Header="Item" Binding="{Binding item.producto.titulo}" />
-                    <DataGridTextColumn Header="id item" Binding="{Binding id_item}" />
-                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_aqluiler}" />
-                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_prev_devolucion}" />
-                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_devolucion}" />
-                    <DataGridTextColumn Header="Devuelto" Binding="{Binding devuelto}" />
+                    <DataGridTextColumn Header="Estado" Binding="{Binding item.disponibilidad}"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding usuario.nombre}"/>
+                    <DataGridTextColumn Header="Apellido" Binding="{Binding usuario.apellido_1}"/>
+                    <DataGridTextColumn Header="Item" Binding="{Binding item.producto.titulo}"/>
+                    <DataGridTextColumn Header="id item" Binding="{Binding id_item}"/>
+                    <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_alquiler, StringFormat=dd/MM/yyyy}"/>
+                    <DataGridTextColumn Header="Fecha prevista devolución" Binding="{Binding fecha_prev_devolucion}"/>
+                    <DataGridTextColumn Header="Fecha devolución" Binding="{Binding fecha_devolucion}"/>
+                    
                 </DataGrid.Columns>
 
                 <!--Click derecho para devolver o entregar-->

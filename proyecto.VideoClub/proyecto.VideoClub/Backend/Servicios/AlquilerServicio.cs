@@ -32,6 +32,23 @@ namespace proyecto.VideoClub.Backend.Servicios
             return pe.id_alquiler;
         }
 
+        public List<item> getItemsDispProd(producto prod)
+        {
+            int idBuscar = prod.id_producto;
+            return contexto.Set<item>().Where(i => i.disponibilidad == "Disponible" && i.id_producto ==idBuscar).ToList();
+        }
+
+        public List<item> getItemsDisponibles()
+        {
+            return contexto.Set<item>().Where(i => i.disponibilidad == "Disponible" ).ToList();
+
+        }
+
+        public List<item> getItems()
+        {
+            return contexto.Set<item>().ToList();
+
+        }
 
     }
 }

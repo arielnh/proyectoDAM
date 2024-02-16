@@ -14,12 +14,18 @@ namespace proyecto.VideoClub.MVVM
     {
         private videoclubEntities vcEnt;
         private AlquilerServicio alqServ;
+       
+
+        private producto _producto;
+        private usuario _usuario;
+        private alquiler alqNuevo;
 
         //Lista de jugadores para la tabla
         private ListCollectionView listaAux;
 
         //Criterio de filtro
         private bool devuelto;
+        private string apellido;
 
         //Predicados
         //Comun para todos los filtros
@@ -28,6 +34,7 @@ namespace proyecto.VideoClub.MVVM
 
         //Criterios especificos
         private Predicate<alquiler> criterioDevuelto;
+        private Predicate<alquiler> criterioApellido;
 
         //CONSTRUCTOR
         public MVAlquiler(videoclubEntities ent)
@@ -37,7 +44,23 @@ namespace proyecto.VideoClub.MVVM
             servicio = alqServ;
             inicializa();
         }
+        public MVAlquiler(videoclubEntities ent, usuario usu, producto pr)
+        {
+            vcEnt = ent;
 
+            _producto = pr;
+            _usuario = usu;
+
+            alqNuevo = new alquiler();
+
+            alqNuevo.id_usuario = usu.id_usuario;
+            alqNuevo.usuario = usu;
+           
+            
+            alqServ = new AlquilerServicio(vcEnt);
+            servicio = alqServ;
+            inicializa();
+        }
         private void inicializa()
         {
             //lista de criterios de filtrar
@@ -48,7 +71,7 @@ namespace proyecto.VideoClub.MVVM
 
             //Criterio puntos
             criterioDevuelto = new Predicate<alquiler>(a => a.devuelto != null && a.devuelto == false);
-            
+            criterioApellido = new Predicate<alquiler>(a => !string.IsNullOrEmpty(a.usuario.apellido_1) && a.usuario.apellido_1.ToUpper().StartsWith(apellidoUsuario.ToUpper()));
 
 
 
@@ -56,18 +79,28 @@ namespace proyecto.VideoClub.MVVM
             predicadoFiltro = new Predicate<object>(FiltroCriterios);
         }
 
+       public List <item> listaItems { get { return alqServ.getItems(); } }
+       public List <item> listaItemsDisponibles { get { return alqServ.getItemsDisponibles(); } }
+       public List <item> listaItemsDisponiblesProducto { get { return alqServ.getItemsDispProd(_producto); } }
+       
 
         //--- FILTROS ---
-       // public List<alquiler> listaAlquileres { get { return alqServ.getAll().ToList(); } }
+        // public List<alquiler> listaAlquileres { get { return alqServ.getAll().ToList(); } }
 
         //Ver los alquleres devueltos
+        public ListCollectionView ListaAlquileres { get { return listaAux; } }
         public bool devueltoCheck
         {
             get { return devuelto; }
             set { devuelto = value; NotifyPropertyChanged(nameof(devueltoCheck)); }
         }
 
-        public ListCollectionView ListaAlquileres { get { return listaAux; } }
+
+        public string apellidoUsuario
+        {
+            get { return apellido; }
+            set { apellido = value; NotifyPropertyChanged(nameof(apellidoUsuario)); }
+        }
         private bool FiltroCriterios(object item)
         {
             bool correcto = true;
@@ -91,7 +124,7 @@ namespace proyecto.VideoClub.MVVM
             {
                 devueltoCheck = false;
             }
-            
+            if (!string.IsNullOrEmpty(apellido)) { criterios.Add(criterioApellido); }
 
         }
 
@@ -108,13 +141,29 @@ namespace proyecto.VideoClub.MVVM
         {
             ListaAlquileres.Filter = null;
             devueltoCheck = false;
+            apellidoUsuario = "";
 
+        }
+
+
+        public alquiler alquilerNuevo
+        {
+            get { return alqNuevo; }
+            set
+            {
+                alqNuevo = value;
+                NotifyPropertyChanged(nameof(alquilerNuevo));
+            }
         }
 
         public void  Devolver ()
         {
+
+
        
             
         }
+
+        public bool guarda { get { return add(alquilerNuevo); } }
     }
 }

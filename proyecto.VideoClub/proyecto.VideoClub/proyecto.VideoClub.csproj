@@ -146,6 +146,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\Dialogos\Reserva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -253,6 +257,9 @@
     <Compile Include="Frontend\Dialogos\NuevoUsuario.xaml.cs">
       <DependentUpon>NuevoUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Dialogos\Reserva.xaml.cs">
+      <DependentUpon>Reserva.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -344,6 +351,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recursos\img\reserva2.png" />
+    <Resource Include="Recursos\img\reserva.png" />
+    <Resource Include="Recursos\img\usuarios.png" />
+    <Resource Include="Recursos\img\ticket.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

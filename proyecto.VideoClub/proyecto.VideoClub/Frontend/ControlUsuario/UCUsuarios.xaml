@@ -24,6 +24,7 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="4" />
             <TextBlock Text="USUARIOS" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
+            <Image Source="/Recursos/img/usuarios.png" Height="32" Grid.Column="0" HorizontalAlignment="Left" Margin="150,0,0,0" />
             <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
 

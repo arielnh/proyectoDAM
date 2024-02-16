@@ -381,21 +381,26 @@ VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (2, 'Estantería', 2, 'Reservado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (3, 'Estantería', 1, 'Reservado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (4, 'Estantería', 1, 'Reservado');
- insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (5, 'Estantería', 1, 'Reservado');
- insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (5, 'Estantería', 1, 'Alquilado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Alquilado');
+ 
+ insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (1, 'Estantería', 1, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Disponible');
  
  -- ALQUILER
  
  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (1,4,0);
  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (2,5,1);
- insert into videoclub.alquiler (id_item, id_usuario) values (3,6);
-  insert into videoclub.alquiler (id_item, id_usuario) values (4,7);
-  insert into videoclub.alquiler (id_item, id_usuario) values (5,8);
-  insert into videoclub.alquiler (id_item, id_usuario) values (6,9);
-  insert into videoclub.alquiler (id_item, id_usuario) values (7,10);
-  insert into videoclub.alquiler (id_item, id_usuario) values (8,11);
-  insert into videoclub.alquiler (id_item, id_usuario) values (9,12);
-  insert into videoclub.alquiler (id_item, id_usuario) values (10,13);
+ insert into videoclub.alquiler (id_item, id_usuario,devuelto) values (3,6,0);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (4,7,1);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (5,8,0);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (6,9,0);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (7,10,0);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (8,11,0);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (9,12,0);
+  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (10,13,1);
  
  
 

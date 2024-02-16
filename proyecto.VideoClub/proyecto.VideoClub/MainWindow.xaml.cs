@@ -32,7 +32,7 @@ namespace proyecto.VideoClub
         private void CatalogoPeliculas(object sender, RoutedEventArgs e)
         {
             CerrarSeleccion(1);
-            UCPeliculas uc = new UCPeliculas(vcEnt);
+            UCPeliculas uc = new UCPeliculas(vcEnt, usuLogin);
             // Lo colocaremos en el panel central de nuestra aplicación
             // Si hay algo en el grid central lo borramos
             if (gridCentral.Children != null) gridCentral.Children.Clear();

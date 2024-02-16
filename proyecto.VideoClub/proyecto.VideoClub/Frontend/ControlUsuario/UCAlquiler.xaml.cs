@@ -61,5 +61,10 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         {
             mvAlq.QuitaFiltros();
         }
+
+        private void tbApellido_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            mvAlq.Filtra();
+        }
     }
 }

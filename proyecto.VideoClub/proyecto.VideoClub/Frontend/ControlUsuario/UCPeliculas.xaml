@@ -96,8 +96,11 @@
                     <DataGridTemplateColumn Header="Reservar">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button IsDefault="True" Margin="20,20,20,20" Content="Reservar" HorizontalAlignment="Left" 
+                                <StackPanel Orientation="Vertical">
+                                    <Button IsDefault="True" Margin="20,20,20,20" Content="Reservar" HorizontalAlignment="Left" 
                                  x:Name="btnReserva" Click="btnReserva_Click" Background="#01579a" BorderBrush="Transparent"/>
+                                    
+                                </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

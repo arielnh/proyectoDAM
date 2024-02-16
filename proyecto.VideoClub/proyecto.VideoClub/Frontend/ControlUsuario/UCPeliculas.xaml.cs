@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
+using proyecto.VideoClub.Frontend.Dialogos;
 using proyecto.VideoClub.MVVM;
 
 namespace proyecto.VideoClub.Frontend.ControlUsuario
@@ -12,20 +13,50 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private videoclubEntities vcEnt;
         private MVProducto mvProducto;
         private producto prodReserva;
+        private usuario _usu;
         public UCPeliculas(videoclubEntities ent)
         {
             InitializeComponent();
             vcEnt = ent;
-          
-            mvProducto = new MVProducto(vcEnt);
-            DataContext = mvProducto;
+            inicializa();
+
+
+        }
+        public UCPeliculas(videoclubEntities ent, usuario usu)
+        {
+            InitializeComponent();
+            vcEnt = ent;
+            _usu = usu;
+            inicializa();
+
+
         }
 
+
+        private void inicializa()
+        {
+            mvProducto = new MVProducto(vcEnt);
+            DataContext = mvProducto;
+
+        }
+
+        private void verDisponibles()
+        {
+
+        }
         private void btnReserva_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 
-           prodReserva = (producto)dgListaPeliculas.SelectedItem;
-           
+            if (dgListaPeliculas.SelectedItem != null && dgListaPeliculas.SelectedItem is producto)
+            {
+                producto pr = (producto)dgListaPeliculas.SelectedItem;
+               
+                Reserva nu = new Reserva (vcEnt, _usu, pr);
+                nu.ShowDialog();
+                dgListaPeliculas.Items.Refresh();
+
+            }
+
         }
     }
 }
