@@ -50,5 +50,11 @@ namespace proyecto.VideoClub.Backend.Servicios
 
         }
 
+        public List<alquiler> getUsuarioAlquileres(usuario usu)
+        {
+            int idBuscar = usu.id_usuario;
+            return contexto.Set<alquiler>().Where(a =>a.id_usuario == idBuscar).ToList();
+        }
+
     }
 }

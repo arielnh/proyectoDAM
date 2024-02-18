@@ -63,13 +63,6 @@ namespace proyecto.VideoClub
             NuevoUsuario ventana = new NuevoUsuario(vcEnt);
             ventana.ShowDialog();
 
-
-
-
-
-
-
-
         }
 
         private void NewPeli_Selected(object sender, RoutedEventArgs e)
@@ -168,6 +161,18 @@ namespace proyecto.VideoClub
         {
             CerrarSeleccion(4);
             UCAlquiler uc = new UCAlquiler(vcEnt);
+            // Lo colocaremos en el panel central de nuestra aplicación
+            // Si hay algo en el grid central lo borramos
+            if (gridCentral.Children != null) gridCentral.Children.Clear();
+            // Añadimos nuestro user control
+            gridCentral.Children.Add(uc);
+            Todas.IsSelected = false;
+        }
+
+        private void UsuAlq_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            CerrarSeleccion(3);
+            UCMisAlquileres uc = new UCMisAlquileres(vcEnt, usuLogin);
             // Lo colocaremos en el panel central de nuestra aplicación
             // Si hay algo en el grid central lo borramos
             if (gridCentral.Children != null) gridCentral.Children.Clear();

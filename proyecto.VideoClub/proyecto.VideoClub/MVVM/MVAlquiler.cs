@@ -19,6 +19,7 @@ namespace proyecto.VideoClub.MVVM
         private producto _producto;
         private usuario _usuario;
         private alquiler alqNuevo;
+        private usuario usuLogin;
 
         //Lista de jugadores para la tabla
         private ListCollectionView listaAux;
@@ -42,6 +43,14 @@ namespace proyecto.VideoClub.MVVM
             vcEnt = ent;
             alqServ = new AlquilerServicio(vcEnt);
             servicio = alqServ;
+            inicializa();
+        }
+        public MVAlquiler(videoclubEntities ent, usuario usu)
+        {
+            vcEnt = ent;
+            alqServ = new AlquilerServicio(vcEnt);
+            servicio = alqServ;
+            usuLogin = usu;
             inicializa();
         }
         public MVAlquiler(videoclubEntities ent, usuario usu, producto pr)
@@ -79,10 +88,12 @@ namespace proyecto.VideoClub.MVVM
             predicadoFiltro = new Predicate<object>(FiltroCriterios);
         }
 
+        //LISTAS
        public List <item> listaItems { get { return alqServ.getItems(); } }
        public List <item> listaItemsDisponibles { get { return alqServ.getItemsDisponibles(); } }
        public List <item> listaItemsDisponiblesProducto { get { return alqServ.getItemsDispProd(_producto); } }
-       
+       public List<alquiler> listaDatosUsuarioAlquiler { get { return alqServ.getUsuarioAlquileres(usuLogin); } }
+
 
         //--- FILTROS ---
         // public List<alquiler> listaAlquileres { get { return alqServ.getAll().ToList(); } }

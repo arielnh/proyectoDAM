@@ -16,7 +16,7 @@
 
         <Grid DockPanel.Dock="Left"
               Background="#01579a"
-              Width="220">
+              Width="200">
             <StackPanel >
                 <Grid>
                     <mat:PackIcon Kind="ViewDashboard" Width="15"  Height="15" Margin="10 16" Foreground="White"/>
@@ -97,8 +97,8 @@
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListViewItem Content="Mis datos" Padding="30 5" Foreground="White" x:Name="DatosUsu" MouseLeftButtonUp="DatosUsu_MouseLeftButtonUp"  />
-                           
-                            <ListViewItem Content="Mis alquileres" Padding="30 5" Foreground="White"/>
+
+                            <ListViewItem Content="Mis alquileres" Padding="30 5" Foreground="White" x:Name="UsuAlq" MouseLeftButtonUp="UsuAlq_MouseLeftButtonUp"/>
                         </ListView>
                     </Expander>
                 </Grid>
@@ -113,7 +113,7 @@
                     <!-- Ahora mostramos el icono de la sección -->
                     <Image Stretch="Fill" Source="/Recursos/Img/adm2.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
 
-                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Gestión BD" Margin="30 0"
+                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Gestión" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
                               Background="{x:Null}" Foreground="White" 
                               x:Name="Gestion"
@@ -127,7 +127,7 @@
                         </ListView>
                     </Expander>
                 </Grid>
-                <!--Tercera parte GESTION-->
+                <!--Cuarta parte Listar Base de Datos-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
