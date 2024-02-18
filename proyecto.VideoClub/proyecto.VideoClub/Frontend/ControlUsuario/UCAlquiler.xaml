@@ -51,7 +51,7 @@
                      Text="{Binding apellidoUsuario, UpdateSourceTrigger=PropertyChanged}"
                      TextChanged="tbApellido_TextChanged"/>
 
-            <Separator Background="#01579a" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+            <Separator Background="#9a010b" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
             
 

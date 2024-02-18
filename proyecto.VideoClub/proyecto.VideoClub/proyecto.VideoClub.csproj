@@ -318,7 +318,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\img\film.png" />
     <Resource Include="Recursos\img\adm.png" />
     <Resource Include="Recursos\img\adm2.png" />
     <Resource Include="Recursos\img\usr.png" />
@@ -351,6 +350,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recursos\img\film.png" />
+    <Resource Include="Recursos\img\4k.png" />
+    <Resource Include="Recursos\img\product.png" />
+    <Resource Include="Recursos\img\listdb.png" />
     <Resource Include="Recursos\img\reserva2.png" />
     <Resource Include="Recursos\img\reserva.png" />
     <Resource Include="Recursos\img\usuarios.png" />

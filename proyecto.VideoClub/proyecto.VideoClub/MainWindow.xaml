@@ -16,7 +16,7 @@
 
         <Grid DockPanel.Dock="Left"
               Background="#01579a"
-              Width="200">
+              Width="220">
             <StackPanel >
                 <Grid>
                     <mat:PackIcon Kind="ViewDashboard" Width="15"  Height="15" Margin="10 16" Foreground="White"/>
@@ -34,14 +34,14 @@
                     <!-- Ahora mostramos el icono de la sección -->
                     <Image Stretch="Fill" Source="/Recursos/Img/film.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
 
-                    <!-- Utilizamos elcontrol Expander para la primera sección -->
+                    <!-- Utilizamos el control Expander para la primera sección -->
                   
                     <Expander IsExpanded="False" Width="160"
                               Margin="30 0"
                               x:Name="Peliculas"
                               Foreground="White"
                               HorizontalAlignment="Left" Style="{StaticResource MaterialDesignExpander}"
-                              Header="Peliculas"  Background="{x:Null}"
+                              Header="Películas"  Background="{x:Null}"
                               Grid.ColumnSpan="2"
                               >
                         <!-- Utilizamos este control para mostrar la lista de opciones de la
@@ -51,7 +51,7 @@
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                   Foreground="White">
                             <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="Todas" MouseLeftButtonUp="CatalogoPeliculas"  />
-                            <ListViewItem Content="Alquiladas" Padding="30 5" Foreground="White"/>
+                           
                         </ListView>
                     </Expander>
 
@@ -74,8 +74,8 @@
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="TodosJ" Foreground="White" MouseLeftButtonUp="CatalogoJuegos" />
-                            <ListViewItem Content="Nuevas" Padding="30 5" Foreground="White"/>
-                            <ListViewItem Content="Alquiladas" Padding="30 5" Foreground="White"/>
+                           
+                           
                         </ListView>
                     </Expander>
                 </Grid>
@@ -97,7 +97,7 @@
                               >
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListViewItem Content="Mis datos" Padding="30 5" Foreground="White" x:Name="DatosUsu" MouseLeftButtonUp="DatosUsu_MouseLeftButtonUp"  />
-                            <ListViewItem Content="Incidencias" Padding="30 5" Foreground="White"/>
+                           
                             <ListViewItem Content="Mis alquileres" Padding="30 5" Foreground="White"/>
                         </ListView>
                     </Expander>
@@ -113,7 +113,7 @@
                     <!-- Ahora mostramos el icono de la sección -->
                     <Image Stretch="Fill" Source="/Recursos/Img/adm2.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
 
-                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Gestión" Margin="30 0"
+                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Gestión BD" Margin="30 0"
                               Style="{StaticResource MaterialDesignExpander}" 
                               Background="{x:Null}" Foreground="White" 
                               x:Name="Gestion"
@@ -123,6 +123,27 @@
                             <ListViewItem Content="Añadir Juego" Padding="30 5" Foreground="White" x:Name="NewJuego" MouseLeftButtonUp="NewJuego_Selected"/>
                             <ListViewItem Content="Añadir Producto" Padding="30 5" Foreground="White" x:Name="NewProduct" MouseLeftButtonUp="NewProduct_MouseLeftButtonUp"/>
                             <ListViewItem Content="Añadir Usuario" Padding="30 5" Foreground="White" x:Name="NewUser" MouseLeftButtonUp="NewUser_Selected"/>
+                           
+                        </ListView>
+                    </Expander>
+                </Grid>
+                <!--Tercera parte GESTION-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="7*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Ahora mostramos el icono de la sección -->
+                    <Image Stretch="Fill" Source="/Recursos/Img/listdb.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
+
+                    <Expander Grid.ColumnSpan="2" IsExpanded="False" Width="160" HorizontalAlignment="Left" Header="Listar BD" Margin="30 0"
+                              Style="{StaticResource MaterialDesignExpander}" 
+                              Background="{x:Null}" Foreground="White" 
+                              x:Name="ListaBD"
+                              >
+                        <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                           
                             <ListViewItem Content="Listar Usuarios" Padding="30 5" Foreground="White" x:Name="ListUser" MouseLeftButtonUp="ListUser_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Alquileres" Padding="30 5" Foreground="White" x:Name="ListAlquileres" MouseLeftButtonUp="ListAlquileres_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Productos" Padding="30 5" Foreground="White" x:Name="ListarProducto"  MouseLeftButtonUp="ListarProducto_MouseLeftButtonUp" />
