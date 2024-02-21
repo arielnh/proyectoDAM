@@ -52,30 +52,29 @@ namespace proyecto.VideoClub.MVVM
             prodServ = new ProductoServicio(vcEnt);
             peliServ = new PeliculaServicio(vcEnt);
             jueServ = new JuegoServicio(vcEnt);
-            servicio = prodServ;
-            prodNuevo = new producto();
-            listaAux = new ListCollectionView(servicio.getAll().ToList());
 
+            servicio = prodServ;
+
+            prodNuevo = new producto();
+
+            listaAux = new ListCollectionView(servicio.getAll().ToList());
             //lista de criterios de filtrar
             listaAuxPeli = new ListCollectionView(prodServ.getPeliculas());
             //Predicado que nos indica el método de filtrado
             criterios = new List<Predicate<producto>>();
 
-
             //Criterio puntos
-           //TextBox
+            //TextBox
             criterioTitulo = new Predicate<producto>(a => !string.IsNullOrEmpty(a.titulo) && a.titulo.ToUpper().StartsWith(tituloPelicula.ToUpper()));
             //TextBox
             criterioDirector = new Predicate<producto>(a => !string.IsNullOrEmpty(a.pelicula.director) && a.pelicula.director.ToUpper().StartsWith(directorPelicula.ToUpper()));
-
-
 
             //PARA TODOS
             predicadoFiltro = new Predicate<object>(FiltroCriterios);
         }
 
     //Propiedades públicas para listar
-  //  public List<producto> listaPeliculas => prodServ.getPeliculas();
+    //  public List<producto> listaPeliculas => prodServ.getPeliculas();
     public ListCollectionView listaPeliculas { get { return listaAuxPeli; } }
 
     public List<producto> listaJuegos => prodServ.getJuegos();

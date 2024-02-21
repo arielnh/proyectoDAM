@@ -45,6 +45,7 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
             producto prod = (producto)dgListaProductos.SelectedItem;
             mvProducto.BorrarProd(prod);
             dgListaProductos.ItemsSource = mvProducto.Refresca();
+            dgListaProductos.Items.Refresh();
         }
     }
 }

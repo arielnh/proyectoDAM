@@ -142,21 +142,22 @@ foreign key (id_tipo_inc) references tipo_incidencia (id_tipo_inc)
 CREATE TABLE item (
 id_item int not null primary key AUTO_INCREMENT,
 id_producto int,
-FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
+FOREIGN KEY (id_producto) REFERENCES producto (id_producto) ON DELETE CASCADE,
 disponibilidad varchar(30),
 ubicacion varchar (100),
 numero int,
 id_incidencia int,
 FOREIGN KEY (id_incidencia) REFERENCES incidencia (id_incidencia)
+
 );
 
 -- ALQUILERES
 
 CREATE TABLE alquiler (id_alquiler int not null primary key AUTO_INCREMENT,
 id_item int,
-FOREIGN KEY (id_item) REFERENCES item (id_item),
+FOREIGN KEY (id_item) REFERENCES item (id_item) ON DELETE SET NULL,
 id_usuario int,
-FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
+FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario) ON DELETE CASCADE,
 fecha_alquiler date,
 fecha_prev_devolucion date,
 fecha_devolucion date,

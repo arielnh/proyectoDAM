@@ -401,7 +401,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Recursos\img\reserva.png" />
     <Resource Include="Recursos\img\film.png" />
     <Resource Include="Recursos\img\4k.png" />
     <Resource Include="Recursos\img\product.png" />

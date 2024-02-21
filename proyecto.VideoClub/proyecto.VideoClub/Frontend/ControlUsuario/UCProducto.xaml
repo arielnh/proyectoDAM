@@ -40,7 +40,11 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Juegos" Binding="{Binding id_juego}" />
                     <DataGridTextColumn Header="Peliculas" Binding="{Binding id_pelicula}" />
+                    <DataGridTextColumn Header="Id producto" Binding="{Binding id_producto}" />
                     <DataGridTextColumn Header="Nombre" Binding="{Binding titulo}" />
+                    <DataGridTextColumn Header="Estado" Binding="{Binding estado}" />
+                    <DataGridTextColumn Header="Año" Binding="{Binding año}" />
+                    <DataGridTextColumn Header="Idioma" Binding="{Binding idioma}" />
                 </DataGrid.Columns>
 
                 <!--Click derecho para editar o borrar-->
