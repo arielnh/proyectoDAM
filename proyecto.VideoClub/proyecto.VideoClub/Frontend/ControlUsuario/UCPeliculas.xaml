@@ -19,21 +19,50 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
                
 
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.ColumnSpan="4" />
             <TextBlock Text="NUESTRO CATÁLOGO" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
-            <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
-        </Grid>
+            <Separator Background="#9a010b" Grid.ColumnSpan="5" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+        
+
+        <!--FILTROS-->
+        <!-- -->
+        <TextBlock Text="Filtrar" FontWeight="DemiBold" Grid.Column="0" VerticalAlignment="Center"
+                       Grid.Row="1" Margin="20" Foreground="#01579a" FontSize="16"/>
+
        
+
+        <!--Filtrar por nombre TextBox-->
+        <TextBlock Text="Buscar título: " FontWeight="DemiBold" FontSize="14" Grid.Column="1" HorizontalAlignment="Left"
+                       Grid.Row="1" Margin="20" VerticalAlignment="Center" Foreground="#01579a" />
+        <TextBox x:Name="tbTitulo" Grid.Row="1" Grid.Column="2" Width="120" Margin="-40,0,0,0" Foreground="#444" VerticalAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Text="{Binding tituloPelicula, UpdateSourceTrigger=PropertyChanged}"
+                     TextChanged="tbTitulo_TextChanged"/>
+
+        <!--Filtrar por nombre TextBox-->
+        <TextBlock Text="Buscar director: " FontWeight="DemiBold" FontSize="14" Grid.Column="3" HorizontalAlignment="Left"
+                    Grid.Row="1" Margin="20" VerticalAlignment="Center" Foreground="#01579a" />
+            
+            <TextBox x:Name="tbDirector" Grid.Row="1" Grid.Column="4" Width="120" Margin="-40,0,0,0" Foreground="#444" VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Text="{Binding directorPelicula, UpdateSourceTrigger=PropertyChanged}"
+                    TextChanged="tbDirector_TextChanged"/>
+
+            <Separator Background="#9a010b" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+        </Grid>
 
         <!--La tabla de info-->
         <Grid>
 
-           
-            
+
+
             <DataGrid x:Name="dgListaPeliculas" ItemsSource="{Binding listaPeliculas}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                   >

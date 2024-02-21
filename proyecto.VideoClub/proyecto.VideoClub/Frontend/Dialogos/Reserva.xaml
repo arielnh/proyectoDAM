@@ -25,17 +25,23 @@
 
         <!--Parte Superior-->
         <TextBlock Text="RESERVA" Grid.ColumnSpan="2" Margin="20" FontSize="28" Foreground="White" FontWeight="ExtraBold"/>
-        <Image Source="/Recursos/img/reserva2.png" Height="32" Grid.Column="1" HorizontalAlignment="Left" Margin="100,0,0,0" />
+        <Image Source="/Recursos/img/reserva2.png" Height="32" Grid.Column="1" HorizontalAlignment="Center" Margin="60,0,0,0" />
 
-        <TextBlock Grid.Row="1" Text="Los campos con este formato son obligatorios" 
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Los campos con este formato son obligatorios" 
                    FontSize="10" Margin="20,10,0,20" Grid.ColumnSpan="2"
                    FontWeight="Bold" FontStyle="Italic"/>
+        <!--Parte izquierda-->
+
+
+        
+        <Image Grid.Row="1" x:Name="ReservaPortada" Grid.RowSpan="4" Grid.Column="1" Stretch="Fill" Margin="10,20,10,20" Width="200px"/>
+
 
         <!--Nombre-->
-        <TextBlock Grid.Row="2" Text="Fecha" Margin="20,10,20,0" VerticalAlignment="Center" 
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="Fecha" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic"/>
 
-        <DatePicker Grid.Row="2" Grid.Column="1"  x:Name="txtFechaAlq" Height="30" Margin="20,10,20,0" Language ="es-Es"
+        <DatePicker Grid.Row="3" Grid.Column="4"  x:Name="txtFechaAlq" Height="30" Margin="20,10,20,0" Language ="es-Es"
                  Style="{StaticResource MaterialDesignDatePicker}" Width="200"
                  SelectedDate ="{Binding alquilerNuevo.fecha_alquiler, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged }"/>

@@ -147,6 +147,7 @@
                             <ListViewItem Content="Listar Usuarios" Padding="30 5" Foreground="White" x:Name="ListUser" MouseLeftButtonUp="ListUser_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Alquileres" Padding="30 5" Foreground="White" x:Name="ListAlquileres" MouseLeftButtonUp="ListAlquileres_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Productos" Padding="30 5" Foreground="White" x:Name="ListarProducto"  MouseLeftButtonUp="ListarProducto_MouseLeftButtonUp" />
+                            <ListViewItem Content="Listar Informe" Padding="30 5" Foreground="White" x:Name="ListarInforme"  MouseLeftButtonUp="ListarInforme_MouseLeftButtonUp" />
 
                         </ListView>
                     </Expander>

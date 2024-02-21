@@ -167,14 +167,28 @@ namespace proyecto.VideoClub.MVVM
             }
         }
 
-        public void  Devolver ()
-        {
-
-
-       
-            
-        }
 
         public bool guarda { get { return add(alquilerNuevo); } }
+        public bool actualiza { get { return update(alquilerNuevo); } }
+        public bool ActualizarAlq(alquiler aq)
+        {
+            return update(aq);
+
+        }
+
+        public int CarcularRecargo (alquiler aq)
+        {
+            int recargo =0;
+
+            if (aq.fecha_prev_devolucion< aq.fecha_devolucion)
+            {
+                DateTime otherDateTime = (DateTime)aq.fecha_prev_devolucion; // Your other DateTime value
+                TimeSpan diff = DateTime.Now - otherDateTime;
+                recargo = (int)Math.Abs(Math.Round(diff.TotalDays));
+
+
+            }
+            return recargo;
+        }
     }
 }

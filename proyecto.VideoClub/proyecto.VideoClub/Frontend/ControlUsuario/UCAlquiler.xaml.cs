@@ -24,6 +24,7 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     {
         private videoclubEntities vcEnt;
         private MVAlquiler mvAlq;
+        private DateTime hoy = DateTime.Now;
         public UCAlquiler()
         {
             InitializeComponent();
@@ -41,15 +42,29 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private void itemDevuelto_Click(object sender, RoutedEventArgs e)
         {
             alquiler aq = (alquiler)dgListaAlquiler.SelectedItem;
-          
+
+            aq.devuelto = true;
+            aq.fecha_devolucion = hoy;
+            aq.item.disponibilidad = "Disponible";
+            aq.recargo = mvAlq.CarcularRecargo(aq);
+
+
+            mvAlq.ActualizarAlq(aq);
             dgListaAlquiler.Items.Refresh();
+
             
             
         }
 
         private void itemEntregado_Click(object sender, RoutedEventArgs e)
         {
+            alquiler aq = (alquiler)dgListaAlquiler.SelectedItem;
+            aq.fecha_prev_devolucion = hoy.AddDays(3);
+            aq.item.disponibilidad = "Alquilado";
 
+           
+            mvAlq.ActualizarAlq(aq);
+            dgListaAlquiler.Items.Refresh();
         }
 
         private void checkDevuelto_Checked(object sender, RoutedEventArgs e)

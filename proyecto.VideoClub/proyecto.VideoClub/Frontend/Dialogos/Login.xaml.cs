@@ -66,6 +66,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             this.Close();
         }
 
+        /*
         private void ResetPss_MouseEnter(object sender, MouseEventArgs e)
         {
             ResetPss.TextDecorations = TextDecorations.Underline;
@@ -78,7 +79,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             ResetPss.TextDecorations = null;
             ResetPss.FontWeight = FontWeights.Normal;
         }
-
+        */
         private void Cerrar_MouseEnter(object sender, MouseEventArgs e)
         {
             Cerrar.Opacity = 1;

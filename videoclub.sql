@@ -277,16 +277,16 @@ INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sino
 'La La Land', 'Estados Unidos', '128', 'La película cuenta la historia de Mia, una empleada de un bar que aspira a ser actriz y Sebastian, un pianista de jazz desempleado con grandes ambiciones. A pesar de sus diferencias y sus distintas personalidades, gracias a una serie de acontecimientos harán que sus caminos acaben cruzándose.', 'Damien Chazelle', 'Blu-Ray');
  
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
- '1', 'Blade Runner 2049', 'Disponible', '2017-10-03', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
+ '1', 'Blade Runner 2049', 'Disponible', '2017-10-03 12:00:00', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg');
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
  '2', 'La ciudad de las estrellas:
-La La Land', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
+La La Land', 'Disponible', '2016-09-02 12:00:00', 'Español', 'https://www.themoviedb.org/t/p/w188_and_h282_bestv2/7pFsAaJmiOppVHcldBzg8JKBHwe.jpg');
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
  'Drive', 'Estados Unidos', '100', 'Durante el día, Driver es conductor especialista de cine, pero de noche se convierte en chófer para delincuentes. El mundo de Driver cambia el día en que conoce a Irene, una vecina que tiene un hijo pequeño y a su marido en la cárcel.', 'Nicolas Winding Refn','Blue-Ray'
  );
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
- '3', 'Drive','Disponible', '2011-09-01', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'
+ '3', 'Drive','Disponible', '2011-09-01 12:00:00', 'Español', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uC6ykM4OcOaxS7mLMdF7eebdk1Z.jpg'
  );
  
   INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
@@ -294,7 +294,7 @@ La La Land', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org
  'Shane Black','Blue-Ray'
  );
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
- '4', 'Dos Buenos Tipos','Disponible', '2016-06-10', 'Español', 'https://www.themoviedb.org/t/p/w1280/kgMpKQMKyS7oYmPffKyyOv0VqyT.jpg'
+ '4', 'Dos Buenos Tipos','Disponible', '2016-06-10 12:00:00', 'Español', 'https://www.themoviedb.org/t/p/w1280/kgMpKQMKyS7oYmPffKyyOv0VqyT.jpg'
  );
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
@@ -302,7 +302,7 @@ La La Land', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org
  'Nick Cassavetes','Blue-Ray'
  );
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
- '5', 'El diario de Noa','Disponible', '2004-06-25', 'Español', 'https://www.themoviedb.org/t/p/w1280/tpYGO4BC1EGy5strj15xy1vB3jP.jpg'
+ '5', 'El diario de Noa','Disponible', '2004-06-25 12:00:00', 'Español', 'https://www.themoviedb.org/t/p/w1280/tpYGO4BC1EGy5strj15xy1vB3jP.jpg'
  );
  
  INSERT INTO `videoclub`.`pelicula` (`titulo_original`, `pais`, `duracion`, `sinopsis`, `director`, `formato`) VALUES (
@@ -310,7 +310,7 @@ La La Land', 'Disponible', '2016-09-02', 'Español', 'https://www.themoviedb.org
  'Damien Chazelle','Blue-Ray'
  );
  INSERT INTO `videoclub`.`producto` (`id_pelicula`, `titulo`, `estado`, `año`, `idioma`, portada) VALUES (
- '6', 'First Man','Disponible', '2018-10-11', 'Español', 'https://www.themoviedb.org/t/p/w1280/hLXDrsgBqdO0xJHoRlBBMMortWL.jpg'
+ '6', 'First Man','Disponible', '2018-10-11 12:00:00', 'Español', 'https://www.themoviedb.org/t/p/w1280/hLXDrsgBqdO0xJHoRlBBMMortWL.jpg'
  );
  
 -- Añadir genero a la película
@@ -391,17 +391,17 @@ VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
  
  -- ALQUILER
  
- insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (1,4,0);
- insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (2,5,1);
- insert into videoclub.alquiler (id_item, id_usuario,devuelto) values (3,6,0);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (4,7,1);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (5,8,0);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (6,9,0);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (7,10,0);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (8,11,0);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (9,12,0);
-  insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (10,13,1);
- 
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (1,4,0);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (2,5,1);
+insert into videoclub.alquiler (id_item, id_usuario,devuelto) values (3,6,0);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (4,7,1);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (5,8,0);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (6,9,0);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (7,10,0);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (8,11,0);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto,fecha_alquiler, fecha_prev_devolucion) values (9,12,0, '2024-02-10', '2024-02-15');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (10,13,1);
+
  
 
 

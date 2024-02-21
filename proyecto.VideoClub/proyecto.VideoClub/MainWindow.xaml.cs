@@ -5,6 +5,7 @@ using System.Windows;
 using System.Configuration;
 using System.Collections.Generic;
 using proyecto.VideoClub.Backend.Servicios;
+using proyecto.VideoClub.Informes;
 
 namespace proyecto.VideoClub
 {
@@ -179,6 +180,17 @@ namespace proyecto.VideoClub
             // Añadimos nuestro user control
             gridCentral.Children.Add(uc);
             Todas.IsSelected = false;
+        }
+
+        private void ListarInforme_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            UCInforme uc = new UCInforme();
+            // Lo colocaremos en el panel central de nuestra aplicación
+            // Si hay algo en el grid central lo borramos
+           if (gridCentral.Children != null) gridCentral.Children.Clear();
+            // Añadimos nuestro user control
+            gridCentral.Children.Add(uc);
+            //Todas.IsSelected = false;
         }
     }
 }

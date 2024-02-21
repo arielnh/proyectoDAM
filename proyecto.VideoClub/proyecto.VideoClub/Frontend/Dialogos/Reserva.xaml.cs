@@ -6,6 +6,7 @@ using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.MVVM;
 using System;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace proyecto.VideoClub.Frontend.Dialogos
 {
@@ -17,8 +18,9 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         private videoclubEntities vcEnt;
         private MVAlquiler mvAlq;
         private usuario usuLogin;
+        private string portada="";
         
-       // private ICollection<object> listItems;
+      
         
         public Reserva(videoclubEntities ent, usuario usu, producto pr)
         {
@@ -26,9 +28,11 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             InitializeComponent();
             vcEnt = ent;
             usuLogin = usu;
+            portada = pr.portada;
+            ReservaPortada.Source = new BitmapImage(
+     new Uri(portada));
 
-           // listItems = (ICollection<object>)pr.item;
-           
+
             mvAlq = new MVAlquiler(vcEnt, usuLogin, pr);
             DataContext = mvAlq;
         }
