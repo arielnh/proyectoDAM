@@ -33,6 +33,8 @@
                    FontSize="10" Margin="20,10,0,20" Grid.ColumnSpan="2"
                    FontWeight="Bold" FontStyle="Italic"/>
         <!--Parte izquierda-->
+        
+        <!-- Portada pelicula a reservar -->
 
         <Border Grid.Row="1" Grid.RowSpan="4" Grid.Column="1"  Margin="10" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Style>
@@ -40,7 +42,7 @@
                     
                     <Setter Property="Effect">
                         <Setter.Value>
-                            <DropShadowEffect Color="Black" ShadowDepth="10"  Opacity="0.3"/>
+                            <DropShadowEffect Color="Black" ShadowDepth="5"  Opacity="0.3"/>
                         </Setter.Value>
                     </Setter>
                 </Style>

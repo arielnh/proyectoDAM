@@ -6,9 +6,13 @@
              xmlns:local="clr-namespace:proyecto.VideoClub.Frontend.ControlUsuario"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <DockPanel>
+        
         <!-- Parte superior -->
+        
         <Grid DockPanel.Dock="Top">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -19,7 +23,6 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.ColumnSpan="4" />
@@ -28,19 +31,21 @@
 
         </Grid>
 
-
         <!--La tabla de info-->
+
         <Grid>
-
-
-            <DataGrid x:Name="dgListaUsuarios" ItemsSource="{Binding listaDatosUsuarioAlquiler}" DisplayMemberPath="nombre"
-                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
-                  >
+            <DataGrid x:Name="dgListaUsuarios"
+                      ItemsSource="{Binding listaDatosUsuarioAlquiler}"
+                      DisplayMemberPath="nombre"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True">
+                
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Producto alquilado" Binding="{Binding item.producto.titulo}"/>
-                    <DataGridTextColumn Header="Fecha del alquiler" Binding="{Binding fecha_alquiler}" />
-                    <DataGridTextColumn Header="Fecha de devolución" Binding="{Binding fecha_prev_devolucion}" />
+                    <DataGridTextColumn Header="Fecha de recogida" Binding="{Binding fecha_alquiler, StringFormat=dd/MM/yyyy}" />
+                    <DataGridTextColumn Header="Fecha de devolución" Binding="{Binding fecha_prev_devolucion, StringFormat=dd/MM/yyyy}" />
 
                 </DataGrid.Columns>
             </DataGrid>

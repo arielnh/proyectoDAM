@@ -44,8 +44,8 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         {
             usuario usu = (usuario)dgListaUsuarios.SelectedItem;
             mvUsuario.BorrarUsu(usu);
-
-            dgListaUsuarios.Items.Refresh();
+            dgListaUsuarios.ItemsSource = mvUsuario.Refresca();
+           // dgListaUsuarios.Items.Refresh();
 
         }
 

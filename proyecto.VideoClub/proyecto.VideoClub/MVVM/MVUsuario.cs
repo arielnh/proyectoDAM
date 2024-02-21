@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 
 namespace proyecto.VideoClub.MVVM
 {
@@ -19,7 +20,8 @@ namespace proyecto.VideoClub.MVVM
         private usuario usuLogin;
         private usuario usuNuevo;
 
-      
+        private ListCollectionView listaAux;
+
 
 
         //CONSTRUCTOR
@@ -41,13 +43,14 @@ namespace proyecto.VideoClub.MVVM
             rolServ = new RolServicio(vcEnt);
             usuNuevo = new usuario();
             servicio = usuServ;
+            listaAux = new ListCollectionView(servicio.getAll().ToList());
 
         }
 
         //VARIABLES PUBLICAS
 
         public List<rol> listaRol { get { return rolServ.getAll().ToList(); } }
-        public List<usuario> listaUsuarios { get { return usuServ.getAll().ToList(); } }
+        public ListCollectionView listaUsuarios { get { return listaAux; } }
         public List<usuario> listaDatosUsuario { get { return usuServ.getUsuario(usuLogin.usuario1.ToString()); } }
 
       
@@ -65,8 +68,14 @@ namespace proyecto.VideoClub.MVVM
         public bool BorrarUsu (usuario susDel) {
              return delete(susDel); 
 
-        } 
-    
+        }
+
+        
+        public ListCollectionView Refresca()
+        {
+            return new ListCollectionView(servicio.getAll().ToList());
+        }
+
     }
 
 }

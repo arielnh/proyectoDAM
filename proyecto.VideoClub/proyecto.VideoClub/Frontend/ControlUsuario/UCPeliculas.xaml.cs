@@ -40,10 +40,6 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
 
         }
 
-        private void verDisponibles()
-        {
-
-        }
         private void btnReserva_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 
@@ -53,7 +49,10 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
                
                 Reserva nu = new Reserva (vcEnt, _usu, pr);
                 nu.ShowDialog();
-                dgListaPeliculas.Items.Refresh();
+
+                dgListaPeliculas.ItemsSource = mvProducto.RefrescaPelis();
+               
+               // dgListaPeliculas.Items.Refresh();
 
             }
 

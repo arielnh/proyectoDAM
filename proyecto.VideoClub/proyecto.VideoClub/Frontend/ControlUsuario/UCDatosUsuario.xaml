@@ -39,9 +39,14 @@
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
+                    <DataGridTextColumn Header="Apellido" Binding="{Binding apellido_1}" />
+                    <DataGridTextColumn Header="Apellido 2" Binding="{Binding apellido_2}" />
+                    <DataGridTextColumn Header="Direccion" Binding="{Binding direccion}" />
+                    <DataGridTextColumn Header="Correo" Binding="{Binding mail}" />
+                    <DataGridTextColumn Header="Telf." Binding="{Binding telefono}" />
+                    <DataGridTextColumn Header="Fecha nac." Binding="{Binding fecha_nacimiento}" />
                     <DataGridTextColumn Header="Usuario" Binding="{Binding usuario1}" />
                     <DataGridTextColumn Header="Contraseña" Binding="{Binding contraseña}" />
-
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

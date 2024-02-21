@@ -22,8 +22,9 @@ namespace proyecto.VideoClub.MVVM
         private ListCollectionView listaAux;
 
 
-        //Lista de jugadores para la tabla
+        //Lista para la tabla
         private ListCollectionView listaAuxPeli;
+        private ListCollectionView listaAuxPeliProx;
 
         //Criterio de filtro
        
@@ -59,7 +60,9 @@ namespace proyecto.VideoClub.MVVM
 
             listaAux = new ListCollectionView(servicio.getAll().ToList());
             //lista de criterios de filtrar
-            listaAuxPeli = new ListCollectionView(prodServ.getPeliculas());
+            listaAuxPeli = new ListCollectionView(prodServ.GetPeliDisp());
+            listaAuxPeliProx = new ListCollectionView(prodServ.GetPeliProx());
+
             //Predicado que nos indica el método de filtrado
             criterios = new List<Predicate<producto>>();
 
@@ -74,8 +77,9 @@ namespace proyecto.VideoClub.MVVM
         }
 
     //Propiedades públicas para listar
-    //  public List<producto> listaPeliculas => prodServ.getPeliculas();
+    
     public ListCollectionView listaPeliculas { get { return listaAuxPeli; } }
+    public ListCollectionView listaPeliculasProx { get { return listaAuxPeliProx; } }
 
     public List<producto> listaJuegos => prodServ.getJuegos();
     public ListCollectionView listaProductos { get { return listaAux; } }
@@ -124,6 +128,8 @@ namespace proyecto.VideoClub.MVVM
         {
             addCriterios();
             listaPeliculas.Filter = predicadoFiltro;
+            listaPeliculasProx.Filter = predicadoFiltro;
+           
 
         }
 
@@ -131,6 +137,7 @@ namespace proyecto.VideoClub.MVVM
         public void QuitaFiltros()
         {
             listaPeliculas.Filter = null;
+            listaPeliculasProx.Filter = null;
             tituloPelicula = "";
             directorPelicula = "";
 
@@ -157,6 +164,11 @@ namespace proyecto.VideoClub.MVVM
     {
         return new ListCollectionView(servicio.getAll().ToList());
     }
+
+    public ListCollectionView RefrescaPelis()
+        {
+            return new ListCollectionView(prodServ.GetPeliDisp());
+        }
     }
 }
 

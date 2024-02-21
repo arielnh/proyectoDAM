@@ -14,18 +14,21 @@
     
     <DockPanel>
 
+        <!--MENU LATERAL-->
+        
         <Grid DockPanel.Dock="Left"
               Background="#01579a"
               Width="200">
+            
             <StackPanel >
+                
                 <Grid>
                     <mat:PackIcon Kind="ViewDashboard" Width="15"  Height="15" Margin="10 16" Foreground="White"/>
                     <ListBoxItem x:Name="ListViewItemMenu" Content="Opciones" Padding="37 14" FontSize="15" Foreground="White" Style="{StaticResource MaterialDesignListBoxItem}"/>
                 </Grid>
                 
-                
-               
                 <!--Primera parte Peliculas-->
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
@@ -35,7 +38,7 @@
                     <Image Stretch="Fill" Source="/Recursos/Img/film.png" Width="20"  Height="20"  Margin="5,16,0,0" Grid.Column="0" VerticalAlignment="Top"/>
 
                     <!-- Utilizamos el control Expander para la primera sección -->
-                  
+
                     <Expander IsExpanded="False" Width="160"
                               Margin="30 0"
                               x:Name="Peliculas"
@@ -46,19 +49,20 @@
                               >
                         <!-- Utilizamos este control para mostrar la lista de opciones de la
                             sección -->
-                        
-                             <ListView x:Name="ListViewMenu" Style ="{StaticResource MaterialDesignListView}"
+
+                        <ListView x:Name="ListViewMenu" Style ="{StaticResource MaterialDesignListView}"
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                   Foreground="White">
-                            <ListViewItem Content="Ver catalogo" Padding="30 5" x:Name="Todas" MouseLeftButtonUp="CatalogoPeliculas"  />
-                           
+                            <ListViewItem Content="Disponibles" Padding="30 5" x:Name="Todas" MouseLeftButtonUp="CatalogoPeliculas"/>
+                            <ListViewItem Content="Próximamente" Padding="30 5" x:Name="ProxPel" MouseLeftButtonUp="ProxPelis"/>
+
                         </ListView>
                     </Expander>
 
                 </Grid>
-                
-               
+
                 <!--Segunda parte Juegos -->
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
@@ -81,6 +85,7 @@
                 </Grid>
                 
                 <!--Tercera parte USUARIO-->
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
@@ -104,6 +109,7 @@
                 </Grid>
 
                 <!--Tercera parte GESTION-->
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
@@ -127,7 +133,9 @@
                         </ListView>
                     </Expander>
                 </Grid>
+                
                 <!--Cuarta parte Listar Base de Datos-->
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>

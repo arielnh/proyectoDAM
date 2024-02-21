@@ -192,5 +192,17 @@ namespace proyecto.VideoClub
             gridCentral.Children.Add(uc);
             //Todas.IsSelected = false;
         }
+
+
+        private void ProxPelis(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            CerrarSeleccion(1);
+
+            UCProxPeli uc = new UCProxPeli(vcEnt);
+
+            if (gridCentral.Children != null) gridCentral.Children.Clear();
+
+            gridCentral.Children.Add(uc);
+        }
     }
 }

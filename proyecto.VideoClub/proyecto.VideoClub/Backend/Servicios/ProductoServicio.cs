@@ -38,9 +38,7 @@ namespace proyecto.VideoClub.Backend.Servicios
         }
         public List<producto> GetPeliDisp()
         {
-            // List<producto> lista = contexto.Database.SqlQuery<producto>("SELECT *FROM producto p JOIN item i ON p.id_producto = i.id_producto WHERE i.disponibilidad = 'Disponible';").ToList();
-
-            //List<producto> lista = contexto.Database.SqlQuery<producto>("select * from producto p, item i where p.id_producto = i.id_producto and i.disponibilidad = 'disponible';").ToList();
+           
             List<producto> lista = new List<producto>();
             foreach(producto p in getPeliculas())
             {
@@ -53,7 +51,23 @@ namespace proyecto.VideoClub.Backend.Servicios
             }
             return lista;
         }
-        
+
+        public List<producto> GetPeliProx()
+        {
+
+            List<producto> lista = new List<producto>();
+            foreach (producto p in getPeliculas())
+            {
+                int num = 0;
+                foreach (item i in p.item)
+                {
+                    if (i.disponibilidad.Equals("Disponible")) num++;
+                }
+                if (num == 0) lista.Add(p);
+            }
+            return lista;
+        }
+
 
         /*
          * Obtenemos la lista de Productos que son Juegos
