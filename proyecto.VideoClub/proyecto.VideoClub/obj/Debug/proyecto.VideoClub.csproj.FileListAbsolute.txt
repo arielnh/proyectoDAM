@@ -172,8 +172,8 @@ C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\stdole.dll
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Informes\UCInforme.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Informes\UCInforme.baml
-C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.csproj.CopyComplete
-C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\MySql.Data.dll
-C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\MySql.Data.Entity.EF6.xml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCProxPeli.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCProxPeli.baml
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.csproj.SuggestedBindingRedirects.cache
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.exe.config
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.93B9F9BD.Up2Date
