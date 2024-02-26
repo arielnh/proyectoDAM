@@ -358,20 +358,20 @@ insert into videoclub.actuan(id_actor, id_pelicula) values (6,6);
  INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
  VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
     
-INSERT INTO videoclub.producto (id_juego, titulo, portada)
-VALUES (1,'Lies of P', 'https://i.ibb.co/3vCtnbf/l.png');
+INSERT INTO videoclub.producto (id_juego, titulo, portada,año)
+VALUES (1,'Lies of P', 'https://i.ibb.co/3vCtnbf/l.png', '2024-01-01');
 
  INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
  VALUES ('Play Station 5', true, 'rol', 'Larian Studios NV', 'Larian Studios NV', true); 
     
-INSERT INTO videoclub.producto (id_juego, titulo, portada)
-VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
+INSERT INTO videoclub.producto (id_juego, titulo, portada, año)
+VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j', '2024-02-02');
 
  -- Alquiler de productos MUESTRA
  
  -- ITEM
   -- reservados / alquilados
- insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (1, 'Estantería', 1, 'Reservado');
+ insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (1, 'Estantería', 1, 'Devuelto');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 1, 'Alquilado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 1, 'Alquilado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (1, 'Estantería', 1, 'Alquilado');
@@ -381,29 +381,35 @@ VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (4, 'Estantería', 1, 'Reservado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (5, 'Estantería', 1, 'Alquilado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (6, 'Estantería', 1, 'Alquilado');
-	-- disponibles
+	
+    -- disponibles
+    
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (1, 'Estantería', 2, 'Disponible');
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (2, 'Estantería', 2, 'Disponible');
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (3, 'Estantería', 2, 'Disponible');
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (4, 'Estantería', 2, 'Disponible');
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (5, 'Estantería', 2, 'Disponible');
  insert into videoclub.item (id_producto, ubicacion, numero, disponibilidad) values (6, 'Estantería', 2, 'Disponible');
- insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (7, 'Estantería', 2, 'Disponible');
- insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 2, 'Disponible');
- insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 2, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (7, 'Estantería', 3, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (7, 'Estantería', 3, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (7, 'Estantería', 3, 'Alquilado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 3, 'Alquilado');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 3, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 3, 'Disponible');
+ 
  
  -- ALQUILER
  
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (1,4,0);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (2,5,1);
-insert into videoclub.alquiler (id_item, id_usuario,devuelto) values (3,6,0);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (4,7,1);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (5,8,0);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (6,9,0);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (7,10,0);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (8,11,0);
-insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion) values (9,12,0, '2024-02-10', '2024-02-15');
-insert into videoclub.alquiler (id_item, id_usuario, devuelto) values (10,13,1);
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (1,4,0, '2024-01-10', '2024-01-13','2024-01-13');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (2,5,1, '2024-01-11', '2024-01-14','2024-01-14');
+insert into videoclub.alquiler (id_item, id_usuario,devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (3,6,0, '2024-01-12', '2024-01-15','2024-01-15');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (4,7,1, '2024-01-13', '2024-01-16','2024-01-16');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (5,8,0, '2024-01-14', '2024-01-17','2024-01-17');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (6,9,0, '2024-01-15', '2024-01-18','2024-01-18');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (7,10,0, '2024-01-16', '2024-01-19','2024-01-19');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (8,11,0, '2024-01-17', '2024-01-20','2024-01-20');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion) values (9,12,0, '2024-02-06', '2024-02-09');
+insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion) values (10,13,1, '2024-03-08', '2024-03-10');
 
  
 

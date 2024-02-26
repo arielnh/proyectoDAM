@@ -7,8 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
+        
         <!-- Parte superior -->
+        
         <Grid DockPanel.Dock="Top">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -29,11 +32,11 @@
 
 
         <!--La tabla de info-->
+        
         <Grid>
 
             <DataGrid x:Name="dgListaJuegos" ItemsSource="{Binding listaJuegos}"
-                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
-                  >
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
 
                 <DataGrid.Columns>
 
@@ -46,10 +49,26 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding titulo}" />
                     
+                    <!--Titulo-->
+                    <DataGridTextColumn Header="TÍTULO" Binding="{Binding titulo}" />
+                    <!--Titulo-->
+                    <DataGridTextColumn Header="AÑO" Binding="{Binding año,  StringFormat=dd/MM/yyyy}" />
+                    <!--Titulo-->
+                    <DataGridTextColumn Header="PLATAFORMA" Binding="{Binding juego.plataforma, StringFormat=dd/MM/yyyy}" />
 
+                    <!--Reservar-->
+
+                    <DataGridTemplateColumn Header="Reservar">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Button IsDefault="True" Margin="20,20,20,20" Content="Reservar" HorizontalAlignment="Left" 
+                                 x:Name="btnReserva" Click="btnReserva_Click" Background="#01579a" BorderBrush="Transparent"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
                 </DataGrid.Columns>
             </DataGrid>

@@ -78,5 +78,37 @@ namespace proyecto.VideoClub.Backend.Servicios
 
         }
 
+        public List<producto> GetJueDisp()
+        {
+
+            List<producto> lista = new List<producto>();
+            foreach (producto p in getJuegos())
+            {
+                int num = 0;
+                foreach (item i in p.item)
+                {
+                    if (i.disponibilidad.Equals("Disponible")) num++;
+                }
+                if (num > 0) lista.Add(p);
+            }
+            return lista;
+        }
+
+        public List<producto> GetJueProx()
+        {
+
+            List<producto> lista = new List<producto>();
+            foreach (producto p in getJuegos())
+            {
+                int num = 0;
+                foreach (item i in p.item)
+                {
+                    if (i.disponibilidad.Equals("Disponible")) num++;
+                }
+                if (num == 0) lista.Add(p);
+            }
+            return lista;
+        }
+
     }
 }

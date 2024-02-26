@@ -18,16 +18,20 @@ namespace proyecto.VideoClub.MVVM
         //Servicios
         private ProductoServicio prodServ;
         private PeliculaServicio peliServ;
+        
         private JuegoServicio jueServ;
+
         private ListCollectionView listaAux;
 
 
         //Lista para la tabla
         private ListCollectionView listaAuxPeli;
         private ListCollectionView listaAuxPeliProx;
+        private ListCollectionView listaAuxJue;
+        private ListCollectionView listaAuxJueProx;
 
         //Criterio de filtro
-       
+
         private string titulo;
         private string director;
 
@@ -63,6 +67,9 @@ namespace proyecto.VideoClub.MVVM
             listaAuxPeli = new ListCollectionView(prodServ.GetPeliDisp());
             listaAuxPeliProx = new ListCollectionView(prodServ.GetPeliProx());
 
+            listaAuxJue = new ListCollectionView(prodServ.GetJueDisp());
+            listaAuxJueProx = new ListCollectionView(prodServ.GetJueProx());
+
             //Predicado que nos indica el método de filtrado
             criterios = new List<Predicate<producto>>();
 
@@ -76,18 +83,24 @@ namespace proyecto.VideoClub.MVVM
             predicadoFiltro = new Predicate<object>(FiltroCriterios);
         }
 
-    //Propiedades públicas para listar
-    
-    public ListCollectionView listaPeliculas { get { return listaAuxPeli; } }
-    public ListCollectionView listaPeliculasProx { get { return listaAuxPeliProx; } }
+        //Propiedades públicas para listar
 
-    public List<producto> listaJuegos => prodServ.getJuegos();
-    public ListCollectionView listaProductos { get { return listaAux; } }
+        public ListCollectionView listaProductos { get { return listaAux; } }
 
-    public List<pelicula> listaPeliculasDB { get { return peliServ.getAll().ToList(); } }
-    public List<juego> listaJuegosDB { get { return jueServ.getAll().ToList(); } }
+        //PELICULAS
+        public ListCollectionView listaPeliculas { get { return listaAuxPeli; } }
+        public ListCollectionView listaPeliculasProx { get { return listaAuxPeliProx; } }
 
-    public List<producto> lPeliDispo => prodServ.GetPeliDisp();
+        public List<pelicula> listaPeliculasDB { get { return peliServ.getAll().ToList(); } }
+        public List<producto> lPeliDispo => prodServ.GetPeliDisp();
+
+        //JUEGOS
+        public ListCollectionView listaJuegos { get { return listaAuxJue; } }
+        public ListCollectionView listaJuegosProx { get { return listaAuxJueProx; } }
+        public List<juego> listaJuegosDB { get { return jueServ.getAll().ToList(); } }
+
+        public List<producto> lJueDispo => prodServ.GetJueDisp();
+
 
         public string directorPelicula
         {
@@ -168,6 +181,10 @@ namespace proyecto.VideoClub.MVVM
     public ListCollectionView RefrescaPelis()
         {
             return new ListCollectionView(prodServ.GetPeliDisp());
+        }
+        public ListCollectionView RefrescaJue()
+        {
+            return new ListCollectionView(prodServ.GetJueDisp());
         }
     }
 }

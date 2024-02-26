@@ -30,6 +30,7 @@ namespace proyecto.VideoClub
             InitializeComponent();
         }
 
+        // CATALOGO PELICULAS
         private void CatalogoPeliculas(object sender, RoutedEventArgs e)
         {
             CerrarSeleccion(1);
@@ -42,10 +43,12 @@ namespace proyecto.VideoClub
 
         }
 
+        //CATALOGO JUEGOS
+
         private void CatalogoJuegos(object sender, RoutedEventArgs e)
         {
             CerrarSeleccion(2);
-            UCJuegos uc = new UCJuegos(vcEnt);
+            UCJuegos uc = new UCJuegos(vcEnt, usuLogin);
             // Lo colocaremos en el panel central de nuestra aplicación
             // Si hay algo en el grid central lo borramos
             if (gridCentral.Children != null) gridCentral.Children.Clear();
@@ -56,7 +59,7 @@ namespace proyecto.VideoClub
         }
 
 
-
+        // NUEVO USUARIO
         private void NewUser_Selected(object sender, RoutedEventArgs e)
         {
             gridCentral.Children.Clear();
@@ -66,6 +69,7 @@ namespace proyecto.VideoClub
 
         }
 
+        //NUEVA PELICULA
         private void NewPeli_Selected(object sender, RoutedEventArgs e)
         {
             CerrarSeleccion(4);
@@ -74,6 +78,7 @@ namespace proyecto.VideoClub
 
         }
 
+        //NUEVO JUEGO
         private void NewJuego_Selected(object sender, RoutedEventArgs e)
         {
             CerrarSeleccion(4);
@@ -83,7 +88,7 @@ namespace proyecto.VideoClub
 
         }
 
-
+        //MINIMIZAR ARBOL DE OPCIONES
         void CerrarSeleccion(int sel)
         {
             switch (sel)
@@ -114,6 +119,7 @@ namespace proyecto.VideoClub
             }
         }
 
+        //LISTAR USUARIOS
         private void ListUser_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(4);
@@ -126,7 +132,7 @@ namespace proyecto.VideoClub
             Todas.IsSelected = false;
         }
        
-
+        //NUEVO PRODUCTO
         private void NewProduct_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(4);
@@ -134,6 +140,7 @@ namespace proyecto.VideoClub
             ventana.ShowDialog();
         }
 
+        //VER DATOS DEL USUARIO LOGEADO
         private void DatosUsu_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(3);
@@ -146,6 +153,7 @@ namespace proyecto.VideoClub
             Todas.IsSelected = false;
         }
 
+        //LISTAR PRODUCTOS
         private void ListarProducto_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(4);
@@ -158,6 +166,7 @@ namespace proyecto.VideoClub
             Todas.IsSelected = false;
         }
 
+        //LISTAR ALQUILERES
         private void ListAlquileres_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(4);
@@ -170,6 +179,7 @@ namespace proyecto.VideoClub
             Todas.IsSelected = false;
         }
 
+        //VER ALQUILERES DEL USUARIO LOGEADO
         private void UsuAlq_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(3);
@@ -182,6 +192,7 @@ namespace proyecto.VideoClub
             Todas.IsSelected = false;
         }
 
+        //VER INFORMES
         private void ListarInforme_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             UCInforme uc = new UCInforme();
@@ -193,7 +204,7 @@ namespace proyecto.VideoClub
             //Todas.IsSelected = false;
         }
 
-
+        //VER PELICULAS SIN ITEMS DISPONIBLES
         private void ProxPelis(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(1);
