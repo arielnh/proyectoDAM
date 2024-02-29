@@ -54,7 +54,7 @@
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                   Foreground="White">
                             <ListViewItem Content="Disponibles" Padding="30 5" x:Name="Todas" MouseLeftButtonUp="CatalogoPeliculas"/>
-                            <ListViewItem Content="Próximamente" Padding="30 5" x:Name="ProxPel" MouseLeftButtonUp="ProxPelis"/>
+                            <ListViewItem Content="Alquilados" Padding="30 5" x:Name="ProxPel" MouseLeftButtonUp="ProxPelis"/>
 
                         </ListView>
                     </Expander>
@@ -86,7 +86,7 @@
                 
                 <!--Tercera parte USUARIO-->
                 
-                <Grid>
+                <Grid x:Name="MiPerfil">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
@@ -103,14 +103,13 @@
                         <ListView ItemsSource="{Binding Path=SubItems}" Style="{StaticResource MaterialDesignListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListViewItem Content="Mis datos" Padding="30 5" Foreground="White" x:Name="DatosUsu" MouseLeftButtonUp="DatosUsu_MouseLeftButtonUp"  />
 
-                            <ListViewItem Content="Mis alquileres" Padding="30 5" Foreground="White" x:Name="UsuAlq" MouseLeftButtonUp="UsuAlq_MouseLeftButtonUp"/>
                         </ListView>
                     </Expander>
                 </Grid>
 
                 <!--Tercera parte GESTION-->
                 
-                <Grid>
+                <Grid x:Name="GestionAdm">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
@@ -136,7 +135,7 @@
                 
                 <!--Cuarta parte Listar Base de Datos-->
                 
-                <Grid>
+                <Grid x:Name="BD">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
@@ -156,6 +155,7 @@
                             <ListViewItem Content="Listar Alquileres" Padding="30 5" Foreground="White" x:Name="ListAlquileres" MouseLeftButtonUp="ListAlquileres_MouseLeftButtonUp"/>
                             <ListViewItem Content="Listar Productos" Padding="30 5" Foreground="White" x:Name="ListarProducto"  MouseLeftButtonUp="ListarProducto_MouseLeftButtonUp" />
                             <ListViewItem Content="Listar Informe" Padding="30 5" Foreground="White" x:Name="ListarInforme"  MouseLeftButtonUp="ListarInforme_MouseLeftButtonUp" />
+                            <ListViewItem Content="Charts" Padding="30 5" Foreground="White" x:Name="Charts"  MouseLeftButtonUp="Charts_MouseLeftButtonUp" />
 
                         </ListView>
                     </Expander>

@@ -89,10 +89,10 @@ idioma varchar (30)
 
 -- TIPO ALQUILER
 
-CREATE TABLE tipo_alquiler (id_tipo int not null primary key,
+CREATE TABLE tipo_alquiler (id_tipo int not null primary key AUTO_INCREMENT,
 precio double,
 duracion int,
-recargo int,
+recargo double,
 nombre varchar (30)
 
 );
@@ -110,7 +110,7 @@ nombre varchar (30),
 apellido_1 varchar (30),
 apellido_2 varchar (30),
 direccion varchar (100),
-mail varchar (30),
+mail varchar (60),
 telefono varchar (30),
 fecha_nacimiento date,
 usuario varchar (30) UNIQUE,
@@ -227,21 +227,89 @@ INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
 INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Ariel','admin', 'admin', 1);
 INSERT INTO `videoclub`.`usuario` (nombre, apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Pepe','Perez', 'pepe', '1234', 2);
 INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Publico','public', '0000', 4);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Alicia','Alcantara','alicia', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Marta','Rodriguez','marta', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Laura','Moreno','laura', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Jorge','Ruiz','jorge', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Carla','Alonso','carla', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('David','Ortiz','david', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Daniel','Rubio','daniel', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Javier','Castro','javier', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Alex','Torres','alex', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Ana','Romero','ana', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Carlos','Ortega','carlos', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Asier','Aguado','asier', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Cristina','Aldana','cristina', '1234', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('José','Baro','jose', '1234', 3);
 
+-- USUARIOS GENERADOS AUTO
+
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Cinthia','Moniz','Race', '8593 Eastleigh Circle , Whitehill, Suffolk, EH4 7NE','elainalew330@yahoo.com','+32-7488-802-424','1991-08-22','ZUEKQ','hotmail',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Dorthey','Dempsey','Noland', '6196 Back Avenue , Beltchingley, Dundee City, ST6 0LR','lashawnaburke09692@yahoo.com','+354-6122-146-135','1997-06-29','OOWKZ','jamaica',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Florrie','Parra','Whaley', '7741 Violet Avenue , Birchwood, Oxfordshire, CT1 8WK','shona.billiot@yahoo.com','+94-6819-627-270','1989-06-16','QSHIQ','boston',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Twanda','Segal','Barth', '7572 Joan Avenue , Grassington, Monmouthshire, NW63 8MS','clelia73488@broken.com','+57-2344-637-438','2015-05-23','TGBBY','fireball',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Graham','Hatley','Mcnamee', '6196 Cornbrook Street , Stanhope, Greater Manchester, ME62 4NX','renato_mcconnell@yahoo.com','+41-1390-349-758','1972-02-03','NLCTQ','111111',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Tanna','Dexter','Mejia', '6300 Capital Avenue , Wareham, Renfrewshire, DE1 7JO','era_negron@yahoo.com','+679-0060-601-657','1988-01-13','MNYKZ','business',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Ayako','Clem','Barr', '1681 Findlay , Bollington, East Sussex, NP7 2CN','major28799@yahoo.com','+234-3624-307-167','1977-08-29','IIYYN','loveme',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Tasia','Quinonez','Upchurch', '4895 Daventry Circle , West Malling, Aberdeen City, HU9 9PP','marisha6998@hotmail.com','+40-5339-134-350','1970-03-20','NPORO','zxcvbn',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Laine','Durr','Condon', '0821 Lindop Circle , Beccles, Aberdeen City, HU93 6GM','dwain.brock222@seasons.com','+237-0766-662-025','2007-02-14','FGGPL','tomcat',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Twana','Baron','Billingsley', '8196 Conran , Bromyard, Aberdeen City, LD2 7EU','carolinaclark@nervous.com','+31-0652-103-211','1974-09-07','SOIHY','poohbear',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Sarah','Dias','Reno', '1598 Law , Penryn, Highland, TW31 0BO','gabriel40@hotmail.com','+43-5719-206-464','2022-01-22','VKALN','butter',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Sabine','Weston','Buckingham', '3697 Rushside Circle , Faversham, West Dunbartonshire, SR58 4AO','kimi491@night.com','+509-5260-308-584','2013-06-22','SLGIH','friends',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Shavonda','Taber','Ruff', '8374 Whit Avenue , Lutterworth, Aberdeenshire, HG9 7VR','hank-herring@hotmail.com','+66-6194-179-315','1977-12-25','EHMTD','martin',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Damien','Mclain','Gunter', '2230 Shropshire Street , Newark on Trent, West Midlands, SY23 4KI','noma9@hotmail.com','+852-3796-781-004','1973-12-05','ELVTS','bond007',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Rae','Bello','Bourgeois', '4936 Rounthorn , Frinton on Sea, Armagh, CM8 5FT','jacquie274@gmail.com','+61-2603-728-949','1981-06-22','YINJN','chicken',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Eulalia','Wirth-Danielson','Leach', '4061 Old Circle , Deganwy, Falkirk, AB79 1UG','princess-krebs@hotmail.com','+684-6707-682-396','1994-05-31','AHWLN','juventus',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Nella','Henke','Horvath-Bean', '3696 Albermarle , Bridge of Tilt, Cornwall, TQ16 7YB','werner-lohr4779@hotmail.com','+221-8878-690-834','1998-02-09','JGOHZ','terminator',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Prudence','Cockrell','Bechtel', '1332 Rushfield Lane , Bridge of Tilt, Gloucestershire, BH88 8BL','aileen.higgins49@hotmail.com','+689-3376-995-466','1970-01-07','FESKH','victor',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Luvenia','Weldon','Thomas-Chaffin', '1074 Cowlishaw Lane , Wood Green, North Yorkshire, NN2 2EY','teisha-keller@yahoo.com','+61-7526-796-150','2007-11-21','KYDQL','camille',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Camille','Covert','Dietrich', '8328 Southsea Avenue , Brandon, Leicestershire, HX58 3JN','leandra-ernst@yahoo.com','+251-3701-997-576','2016-05-11','NBRLC','ireland',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Angel','Begay','Trujillo', '1544 Kilmory Road , Eckington, Devon, RG52 4PE','claudine868@yahoo.com','+48-4221-051-617','1996-12-21','GNXVP','pakistan',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Kalyn','Downey','Sewell', '3344 Eve Circle , Midhurst, Merionethshire, LD6 4FO','antionewilliam@gmail.com','+225-9787-575-110','1987-08-11','XBCKF','mike',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Jeff','Grisham','Thompson', '6266 New Circle , Kirkwall, West Sussex, WC70 7RD','adaline1251@ea.com','+41-5762-152-889','2001-10-06','HLOTI','donkey',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Sheryll','Wicks','Larose', '3411 Brancaster Road , Llanrwst, Wiltshire, BD18 5WR','gertie224@yahoo.com','+213-9008-262-564','2022-11-02','IYEXX','snoopy',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Katharina','Hatton','Bedard', '4907 Hallwood Street , Crieff, Armagh, BD8 8YR','sharilyn_mulligan@water.net.za','+260-5730-749-760','1986-03-21','WLKGU','mother',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Lucinda','Voigt','Esquivel', '8987 Zulu Street , Brackley, Clackmannanshire, TW77 7UB','jacquelinkey953@yahoo.com','+596-1395-754-079','1975-03-20','ZOTBW','147258',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Vernita','Spriggs','Haller', '8642 Rathmel , Porthleven, Leicestershire, WF1 5JG','katia.stallings@hotmail.com','+47-7633-119-130','1983-12-21','HABYD','galaxy',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Salina','Bush','Connor', '8992 Sheath , Howdon, Buckinghamshire, HD93 1MY','cherishwalton@yahoo.com','+509-2119-976-517','1972-10-14','DKXCO','blahblah',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Mindy','Flood','Brogan', '4450 Back Road , Kirkham, Surrey, NN81 3XS','shawna191@gmail.com','+47-7337-301-293','1972-05-20','YUOGR','shelby',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Emile','Landry','Rosas', '0192 Sportsmans , Poulton le Fylde, Highland, HP7 1HI','enda9@the.com','+57-2321-338-440','2000-04-16','BSREX','kawasaki',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Exie','Lowell','Lyles', '2958 Menai , Kettering, Flintshire, IG8 7LN','renitatracey04@vhs.com','+44-2404-214-428','1985-07-13','RNVYJ','drowssap',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Hermila','Oneal','Hester', '7667 Coldalhurst , North Walsham, Perth and Kinross, SM18 7DB','leanora17329@chi.com','+358-5823-115-296','2020-10-29','GTBBX','black',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Tyisha','High','Hutton', '3240 Bowler Street , Wilton, Kent, SE51 6KV','nellie1680@gmail.com','+506-1138-162-021','1981-04-28','EZPTB','potter',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Frederica','Thorn','Krauss', '9521 Back Lane , Lechlade, Midlothian, OX8 8BU','lyle_smart@hotmail.com','+39-7909-327-352','2001-08-02','MXINM','julian',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Jody','Swartz','Monson', '3168 Lees Lane , Peebles, Cleveland, SA38 1FY','jacqulyn_salgado6318@gmail.com','+965-3257-157-806','1987-10-12','QMPOF','hammer',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Romana','Ayres','Turner', '7874 Elmhurst Street , Sandwich, North Yorkshire, TR6 2GR','akilah.damico@copying.com','+33-0242-347-340','1997-03-16','QBDUR','marcus',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Pearlie','Spurgeon','Neville', '6446 Farndon Street , Laugharne, Cardiganshire, HA3 4IX','tyrelloswald@drawn.marnardal.no','+509-3874-887-374','2019-03-21','TDLVE','123qwe',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Isaura','Gustafson','Conner', '6703 Erica Street , Westbury, Flintshire, B7 2UB','camie486@yahoo.com','+38-2665-833-161','1977-07-05','VFRRJ','thomas',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Melissia','Collier','Mattox', '3457 Minshull Lane , Buxton, Fermanagh, KW04 9BD','fleta4@approximately.com','+501-7307-979-962','1992-07-08','MXFRB','happy',3);
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Julianne','Needham','Coffey', '9182 Dacre Road , Donaghadee, Falkirk, PL43 1GQ','therese.slade23323@looks.com','+82-8395-270-531','1989-07-05','CQIHH','willow',3);
 
 -- //////////////////// --
 -- DATOS PELICULAS Y JUEGOS
@@ -399,6 +467,8 @@ VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j', '2024-02-02');
  
  
  -- ALQUILER
+ -- tipo alquiler
+ insert into videoclub.tipo_alquiler (precio, duracion, recargo,nombre) values (3,3,1,'Alquiler ordinario');
  
 insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (1,4,0, '2024-01-10', '2024-01-13','2024-01-13');
 insert into videoclub.alquiler (id_item, id_usuario, devuelto, fecha_alquiler, fecha_prev_devolucion, fecha_devolucion) values (2,5,1, '2024-01-11', '2024-01-14','2024-01-14');

@@ -16,6 +16,7 @@ namespace proyecto.VideoClub.MVVM
         private videoclubEntities vcEnt;
         //Servicios
         private UsuarioServicio usuServ;
+        private AlquilerServicio alqServ;
         private RolServicio rolServ;
         private usuario usuLogin;
         private usuario usuNuevo;
@@ -40,6 +41,7 @@ namespace proyecto.VideoClub.MVVM
         private void inicializa()
         {
             usuServ = new UsuarioServicio(vcEnt);
+            alqServ = new AlquilerServicio(vcEnt);
             rolServ = new RolServicio(vcEnt);
             usuNuevo = new usuario();
             servicio = usuServ;
@@ -52,8 +54,9 @@ namespace proyecto.VideoClub.MVVM
         public List<rol> listaRol { get { return rolServ.getAll().ToList(); } }
         public ListCollectionView listaUsuarios { get { return listaAux; } }
         public List<usuario> listaDatosUsuario { get { return usuServ.getUsuario(usuLogin.usuario1.ToString()); } }
+        public List<alquiler> listaDatosUsuarioAlquiler { get { return alqServ.getUsuarioAlquileres(usuLogin); } }
 
-      
+
         public usuario usuarioNuevo
         {
             get { return usuNuevo; }

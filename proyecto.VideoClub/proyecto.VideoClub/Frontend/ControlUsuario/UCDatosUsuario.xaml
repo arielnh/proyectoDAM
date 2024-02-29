@@ -30,12 +30,11 @@
 
 
         <!--La tabla de info-->
-        <Grid>
+        <Grid DockPanel.Dock="Top">
 
 
             <DataGrid x:Name="dgListaUsuarios" ItemsSource="{Binding listaDatosUsuario}" DisplayMemberPath="nombre"
-                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
-                  >
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*">
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
@@ -49,6 +48,29 @@
                     <DataGridTextColumn Header="Contraseña" Binding="{Binding contraseña}" />
                 </DataGrid.Columns>
             </DataGrid>
+
+            <Separator Background="#9a010b" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
+        
+        <Grid DockPanel.Dock="Top">
+           
+             <DataGrid x:Name="dgListaUsuariosAlquileres"
+                      ItemsSource="{Binding listaDatosUsuarioAlquiler}"
+                      DisplayMemberPath="nombre"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True">
+                
+                <DataGrid.Columns>
+                    
+                    <DataGridTextColumn Header="Producto alquilado" Binding="{Binding item.producto.titulo}"/>
+                    <DataGridTextColumn Header="Fecha de recogida" Binding="{Binding fecha_alquiler, StringFormat=dd/MM/yyyy}" />
+                    <DataGridTextColumn Header="Fecha de devolución" Binding="{Binding fecha_prev_devolucion, StringFormat=dd/MM/yyyy}" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        
+        
     </DockPanel>
 </UserControl>

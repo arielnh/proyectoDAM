@@ -50,6 +50,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.1.4.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.1.4\lib\net462\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -113,15 +119,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\ControlUsuario\UCChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\ControlUsuario\UCDatosUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frontend\ControlUsuario\UCJuegos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Frontend\ControlUsuario\UCMisAlquileres.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frontend\Dialogos\Error.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frontend\Dialogos\ErrorRegistro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,19 +253,20 @@
     <Compile Include="Backend\Servicios\PeliculaServicio.cs" />
     <Compile Include="Backend\Servicios\ProductoServicio.cs" />
     <Compile Include="Backend\Servicios\RolServicio.cs" />
+    <Compile Include="Backend\Servicios\ServicioCharts.cs" />
     <Compile Include="Backend\Servicios\ServicioSQL.cs" />
     <Compile Include="Backend\Servicios\UsuarioServicio.cs" />
     <Compile Include="Frontend\ControlUsuario\UCAlquiler.xaml.cs">
       <DependentUpon>UCAlquiler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ControlUsuario\UCChart.xaml.cs">
+      <DependentUpon>UCChart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\ControlUsuario\UCDatosUsuario.xaml.cs">
       <DependentUpon>UCDatosUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\ControlUsuario\UCJuegos.xaml.cs">
       <DependentUpon>UCJuegos.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Frontend\ControlUsuario\UCMisAlquileres.xaml.cs">
-      <DependentUpon>UCMisAlquileres.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\ControlUsuario\UCPeliculas.xaml.cs">
       <DependentUpon>UCPeliculas.xaml</DependentUpon>
@@ -271,6 +282,9 @@
     </Compile>
     <Compile Include="Frontend\Dialogos\Error.xaml.cs">
       <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Dialogos\ErrorRegistro.xaml.cs">
+      <DependentUpon>ErrorRegistro.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\Dialogos\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -408,6 +422,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recursos\img\pen.jpeg" />
     <Resource Include="Recursos\img\film.png" />
     <Resource Include="Recursos\img\4k.png" />
     <Resource Include="Recursos\img\product.png" />

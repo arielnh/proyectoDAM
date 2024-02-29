@@ -100,6 +100,7 @@
                                 Height="35"
                                />
                         <Button Content="Ver catálogo" 
+                                x:Name="btnVerCatalogo" Click="btnVerCatalogo_Click"
                                 Foreground="#01579a"
                                 Width="120"
                                 Height="35"

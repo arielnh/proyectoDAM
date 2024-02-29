@@ -14,12 +14,14 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private videoclubEntities vcEnt;
         private MVProducto mvProducto;
         private usuario _usu;
+        private bool publico = false;
         public UCJuegos(videoclubEntities ent)
         {
             InitializeComponent();
             vcEnt = ent;
             mvProducto = new MVProducto(vcEnt);
             DataContext = mvProducto;
+            publico = true;
         }
 
         public UCJuegos(videoclubEntities ent, usuario usu)
@@ -35,7 +37,7 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private void btnReserva_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 
-            if (dgListaJuegos.SelectedItem != null && dgListaJuegos.SelectedItem is producto)
+            if (!publico && dgListaJuegos.SelectedItem != null && dgListaJuegos.SelectedItem is producto)
             {
                 producto pr = (producto)dgListaJuegos.SelectedItem;
 
@@ -46,6 +48,11 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
 
                 // dgListaPeliculas.Items.Refresh();
 
+            }
+            else
+            {
+                ErrorRegistro er = new ErrorRegistro();
+                er.Show();
             }
         }
     }

@@ -134,5 +134,12 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         {
             comprobarBtn();
         }
+
+        private void btnVerCatalogo_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventanaPrincipal = new MainWindow(vCEnt);
+            ventanaPrincipal.Show();
+            this.Close();
+        }
     }
 }

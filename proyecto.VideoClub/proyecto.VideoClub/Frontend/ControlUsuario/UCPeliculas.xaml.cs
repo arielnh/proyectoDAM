@@ -14,14 +14,15 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
         private MVProducto mvProducto;
         private producto prodReserva;
         private usuario _usu;
+        private bool publico = false;
         public UCPeliculas(videoclubEntities ent)
         {
             InitializeComponent();
             vcEnt = ent;
             inicializa();
+            publico = true;
 
-
-        }
+    }
         public UCPeliculas(videoclubEntities ent, usuario usu)
         {
             InitializeComponent();
@@ -42,8 +43,14 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
 
         private void btnReserva_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+           if(publico)
+            {
+                ErrorRegistro er = new ErrorRegistro();
+                er.Show();
+               
+            }
 
-            if (dgListaPeliculas.SelectedItem != null && dgListaPeliculas.SelectedItem is producto)
+            if (!publico && dgListaPeliculas.SelectedItem != null && dgListaPeliculas.SelectedItem is producto)
             {
                 producto pr = (producto)dgListaPeliculas.SelectedItem;
                

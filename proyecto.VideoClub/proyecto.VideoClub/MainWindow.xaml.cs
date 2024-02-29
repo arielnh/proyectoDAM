@@ -15,13 +15,23 @@ namespace proyecto.VideoClub
         private usuario usuLogin;
         private videoclubEntities vcEnt;
         private UsuarioServicio servUsu;
-
+        private bool publico = false;
 
         public MainWindow()
         {
             InitializeComponent();
             vcEnt = new videoclubEntities();
             servUsu = new UsuarioServicio(vcEnt);
+        }
+
+        public MainWindow(videoclubEntities ent)
+        {
+            vcEnt = ent;
+            InitializeComponent();
+            BD.Visibility = Visibility.Hidden;
+            GestionAdm.Visibility = Visibility.Hidden;
+            MiPerfil.Visibility = Visibility.Hidden;
+            publico = true;
         }
         public MainWindow(videoclubEntities ent, usuario usu)
         {
@@ -33,13 +43,27 @@ namespace proyecto.VideoClub
         // CATALOGO PELICULAS
         private void CatalogoPeliculas(object sender, RoutedEventArgs e)
         {
-            CerrarSeleccion(1);
-            UCPeliculas uc = new UCPeliculas(vcEnt, usuLogin);
-            // Lo colocaremos en el panel central de nuestra aplicación
-            // Si hay algo en el grid central lo borramos
-            if (gridCentral.Children != null) gridCentral.Children.Clear();
-            // Añadimos nuestro user control
-            gridCentral.Children.Add(uc);
+            if (publico)
+            {
+                CerrarSeleccion(1);
+                UCPeliculas uc = new UCPeliculas(vcEnt);
+                // Lo colocaremos en el panel central de nuestra aplicación
+                // Si hay algo en el grid central lo borramos
+                if (gridCentral.Children != null) gridCentral.Children.Clear();
+                // Añadimos nuestro user control
+                gridCentral.Children.Add(uc);
+            }
+            else
+            {
+                CerrarSeleccion(1);
+                UCPeliculas uc = new UCPeliculas(vcEnt, usuLogin);
+                // Lo colocaremos en el panel central de nuestra aplicación
+                // Si hay algo en el grid central lo borramos
+                if (gridCentral.Children != null) gridCentral.Children.Clear();
+                // Añadimos nuestro user control
+                gridCentral.Children.Add(uc);
+            }
+           
 
         }
 
@@ -47,6 +71,20 @@ namespace proyecto.VideoClub
 
         private void CatalogoJuegos(object sender, RoutedEventArgs e)
         {
+            if (publico)
+            {
+                CerrarSeleccion(2);
+                UCJuegos uc = new UCJuegos(vcEnt);
+                // Lo colocaremos en el panel central de nuestra aplicación
+                // Si hay algo en el grid central lo borramos
+                if (gridCentral.Children != null) gridCentral.Children.Clear();
+                // Añadimos nuestro user control
+                gridCentral.Children.Add(uc);
+                Todas.IsSelected = false;
+            }
+            else
+            {
+
             CerrarSeleccion(2);
             UCJuegos uc = new UCJuegos(vcEnt, usuLogin);
             // Lo colocaremos en el panel central de nuestra aplicación
@@ -55,6 +93,7 @@ namespace proyecto.VideoClub
             // Añadimos nuestro user control
             gridCentral.Children.Add(uc);
             Todas.IsSelected = false;
+            }
 
         }
 
@@ -178,19 +217,7 @@ namespace proyecto.VideoClub
             gridCentral.Children.Add(uc);
             Todas.IsSelected = false;
         }
-
-        //VER ALQUILERES DEL USUARIO LOGEADO
-        private void UsuAlq_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            CerrarSeleccion(3);
-            UCMisAlquileres uc = new UCMisAlquileres(vcEnt, usuLogin);
-            // Lo colocaremos en el panel central de nuestra aplicación
-            // Si hay algo en el grid central lo borramos
-            if (gridCentral.Children != null) gridCentral.Children.Clear();
-            // Añadimos nuestro user control
-            gridCentral.Children.Add(uc);
-            Todas.IsSelected = false;
-        }
+       
 
         //VER INFORMES
         private void ListarInforme_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -210,6 +237,15 @@ namespace proyecto.VideoClub
             CerrarSeleccion(1);
 
             UCProxPeli uc = new UCProxPeli(vcEnt);
+
+            if (gridCentral.Children != null) gridCentral.Children.Clear();
+
+            gridCentral.Children.Add(uc);
+        }
+
+        private void Charts_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            UCChart uc = new UCChart();
 
             if (gridCentral.Children != null) gridCentral.Children.Clear();
 
