@@ -12,7 +12,6 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     {
         private videoclubEntities vcEnt;
         private MVProducto mvProducto;
-        private producto prodReserva;
         private usuario _usu;
         private bool publico = false;
         public UCPeliculas(videoclubEntities ent)

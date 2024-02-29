@@ -20,6 +20,7 @@ namespace proyecto.VideoClub.MVVM
         private usuario _usuario;
         private alquiler alqNuevo;
         private usuario usuLogin;
+        
 
         //Lista de jugadores para la tabla
         private ListCollectionView listaAux;
@@ -64,6 +65,7 @@ namespace proyecto.VideoClub.MVVM
 
             alqNuevo.id_usuario = usu.id_usuario;
             alqNuevo.usuario = usu;
+            alqNuevo.id_tipo=1;
            
             
             alqServ = new AlquilerServicio(vcEnt);

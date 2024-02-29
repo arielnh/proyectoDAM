@@ -70,15 +70,25 @@
                     <DataGridTextColumn Header="Item" Binding="{Binding item.producto.titulo}"/>
                     <DataGridTextColumn Header="id item" Binding="{Binding id_item}"/>
                     <DataGridTextColumn Header="Fecha reserva" Binding="{Binding fecha_alquiler, StringFormat=dd/MM/yyyy}"/>
-                    <DataGridTextColumn Header="Fecha prevista devolución" Binding="{Binding fecha_prev_devolucion, StringFormat=dd/MM/yyyy}"/>
-                    <DataGridTextColumn Header="Fecha devolución" Binding="{Binding fecha_devolucion, StringFormat=dd/MM/yyyy}"/>
+                    <DataGridTextColumn Header="Plazo devolución" Binding="{Binding fecha_prev_devolucion, StringFormat=dd/MM/yyyy}"/>
+                    <DataGridTextColumn Header="Devuelto el día" Binding="{Binding fecha_devolucion, StringFormat=dd/MM/yyyy}"/>
 
+                    <DataGridTemplateColumn Header="Precio">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding tipo_alquiler.precio}"/>
+                                    <TextBlock Text="€"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
                     <DataGridTemplateColumn Header="Recargo">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding recargo}"/>
-                                    <TextBlock Text=" "/>
                                     <TextBlock Text="€"/>
 
                                 </StackPanel>

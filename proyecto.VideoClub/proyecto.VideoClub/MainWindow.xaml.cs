@@ -38,6 +38,24 @@ namespace proyecto.VideoClub
             vcEnt = ent;
             usuLogin = usu;
             InitializeComponent();
+
+
+            switch (usu.id_rol)
+            {
+                //Si es 3, Cliente
+                case 3:
+                    BD.Visibility = Visibility.Hidden;
+                    GestionAdm.Visibility = Visibility.Hidden;
+                    break; 
+                //Si es 2, Empleado
+                case 2:
+                    NewUser.Visibility = Visibility.Hidden;
+                    break; // Break out of the switch statement
+                           // If the number is neither 1 nor 2, execute this case
+               // default:
+               
+                   // break;
+            }
         }
 
         // CATALOGO PELICULAS

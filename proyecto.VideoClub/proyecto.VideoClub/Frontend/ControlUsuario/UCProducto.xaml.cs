@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System;
-using System.Threading.Tasks;
+﻿
 using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.Frontend.Dialogos;

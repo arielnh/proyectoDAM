@@ -1,11 +1,7 @@
 ﻿using proyecto.VideoClub.Backend.Modelo;
 using System;
-using System.Collections.Generic;
 using System.Windows;
-using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.MVVM;
-using System;
-using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace proyecto.VideoClub.Frontend.Dialogos
