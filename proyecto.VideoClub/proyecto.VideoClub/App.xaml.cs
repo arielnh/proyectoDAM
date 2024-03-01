@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyecto.VideoClub.Backend.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,6 +15,6 @@ namespace proyecto.VideoClub
     /// </summary>
     public partial class Login : Window
     {
-        
+       
     }
 }

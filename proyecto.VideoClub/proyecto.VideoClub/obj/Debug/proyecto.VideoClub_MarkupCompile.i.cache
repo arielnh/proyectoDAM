@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\App.xaml
-18-1123734167
+20-1309227325
 2709747203
-60-869164362
+62-271538699
 41-25486594
-Frontend\ControlUsuario\UCAlquiler.xaml;Frontend\ControlUsuario\UCChart.xaml;Frontend\ControlUsuario\UCDatosUsuario.xaml;Frontend\ControlUsuario\UCJuegos.xaml;Frontend\ControlUsuario\UCPeliculas.xaml;Frontend\ControlUsuario\UCProducto.xaml;Frontend\ControlUsuario\UCProxPeli.xaml;Frontend\ControlUsuario\UCUsuarios.xaml;Frontend\Dialogos\Error.xaml;Frontend\Dialogos\ErrorRegistro.xaml;Frontend\Dialogos\Login.xaml;Frontend\Dialogos\NuevaPelicula.xaml;Frontend\Dialogos\NuevoJuego.xaml;Frontend\Dialogos\NuevoProducto.xaml;Frontend\Dialogos\NuevoUsuario.xaml;Frontend\Dialogos\Reserva.xaml;Informes\UCInforme.xaml;MainWindow.xaml;
+Frontend\ControlUsuario\UCAlquiler.xaml;Frontend\ControlUsuario\UCChart.xaml;Frontend\ControlUsuario\UCDatosUsuario.xaml;Frontend\ControlUsuario\UCJuegos.xaml;Frontend\ControlUsuario\UCPeliculas.xaml;Frontend\ControlUsuario\UCProducto.xaml;Frontend\ControlUsuario\UCProxPeli.xaml;Frontend\ControlUsuario\UCUsuarios.xaml;Frontend\Dialogos\EditarMisDatos.xaml;Frontend\Dialogos\Error.xaml;Frontend\Dialogos\ErrorPermiso.xaml;Frontend\Dialogos\ErrorRegistro.xaml;Frontend\Dialogos\LoginDialog.xaml;Frontend\Dialogos\NuevaPelicula.xaml;Frontend\Dialogos\NuevoJuego.xaml;Frontend\Dialogos\NuevoProducto.xaml;Frontend\Dialogos\NuevoUsuario.xaml;Frontend\Dialogos\Reserva.xaml;Informes\UCInforme.xaml;MainWindow.xaml;
 
-False
+True
 

@@ -1,36 +1,16 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.MVVM;
 
-
-
 namespace proyecto.VideoClub.Frontend.Dialogos
 {
-    /// <summary>
-    /// Lógica de interacción para NuevoUsuario.xaml
-    /// </summary>
-    public partial class NuevoUsuario : Window
+    
+    public partial class EditarMisDatos : Window
     {
         private videoclubEntities vcEnt;
         private MVUsuario mvUsu;
         private bool editar;
-
-        public NuevoUsuario()
-        {
-            InitializeComponent();
-        }
-        public NuevoUsuario(videoclubEntities ent)
-        {
-            
-            InitializeComponent();
-            vcEnt = ent;
-            mvUsu = new MVUsuario(vcEnt);
-            DataContext = mvUsu;
-            editar = false;
-        }
-
-        public NuevoUsuario(videoclubEntities ent, usuario usu)
+        public EditarMisDatos(videoclubEntities ent, usuario usu)
         {
             InitializeComponent();
             vcEnt = ent;
@@ -38,9 +18,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             this.DataContext = mvUsu;
             mvUsu.usuarioNuevo = usu;
             editar = true;
-
         }
-
         private void btnGuardarUsuario_Click(object sender, RoutedEventArgs e)
         {
             if (!editar)

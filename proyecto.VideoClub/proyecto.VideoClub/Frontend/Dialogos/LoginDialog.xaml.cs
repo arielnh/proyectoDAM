@@ -22,13 +22,13 @@ using System.ComponentModel;
 namespace proyecto.VideoClub.Frontend.Dialogos
 {
 
-    public partial class Login : Window 
+    public partial class LoginDialog : Window 
     {
         private UsuarioServicio servUsu;
         private videoclubEntities vCEnt;
        
 
-        public Login()
+        public LoginDialog()
         {
             InitializeComponent();
             inicializar();
@@ -43,8 +43,8 @@ namespace proyecto.VideoClub.Frontend.Dialogos
            
             btnEntrar.IsEnabled = false;
         }
-            
-        
+
+       
 
 
 

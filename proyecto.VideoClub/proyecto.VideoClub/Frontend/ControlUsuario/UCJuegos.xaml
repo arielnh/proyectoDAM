@@ -22,12 +22,38 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+               
 
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.ColumnSpan="4" />
             <TextBlock Text="NUESTRO CATÁLOGO" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
-            <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+            <Separator Background="#9a010b" Grid.ColumnSpan="3" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+
+           
+            <!--Filtrar por nombre TextBox-->
+
+            <TextBlock Text="Buscar título: " 
+                   FontWeight="DemiBold" 
+                   FontSize="14" 
+                   Grid.Column="0" 
+                   HorizontalAlignment="Left"
+                   Grid.Row="1" 
+                   Margin="20" 
+                   VerticalAlignment="Center" 
+                   Foreground="#01579a" />
+            
+            <TextBox x:Name="tbTitulo" 
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 Width="120" 
+                 Margin="5,0,0,0" 
+                 Foreground="#444" 
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Text="{Binding tituloPelicula, UpdateSourceTrigger=PropertyChanged}"
+                 TextChanged="tbTitulo_TextChanged"/>
         </Grid>
 
 
@@ -36,7 +62,7 @@
         <Grid>
 
             <DataGrid x:Name="dgListaJuegos" ItemsSource="{Binding listaJuegos}"
-                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*">
 
                 <DataGrid.Columns>
 
@@ -51,15 +77,27 @@
                     </DataGridTemplateColumn>
                     
                     <!--Titulo-->
-                    <DataGridTextColumn Header="TÍTULO" Binding="{Binding titulo}" />
-                    <!--Titulo-->
+                    <DataGridTemplateColumn Header="TÍTULO" Width="160" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding titulo}" HorizontalAlignment="Left" TextWrapping="Wrap"  FontWeight="Bold" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    
+                    <!--Año-->
                     <DataGridTextColumn Header="AÑO" Binding="{Binding año,  StringFormat=dd/MM/yyyy}" />
-                    <!--Titulo-->
+                    <!--Plataforma-->
                     <DataGridTextColumn Header="PLATAFORMA" Binding="{Binding juego.plataforma, StringFormat=dd/MM/yyyy}" />
+                    
+                    <DataGridTextColumn Header="DISTRIBUIDORA" Binding="{Binding juego.distribuidora, StringFormat=dd/MM/yyyy}" />
+                    
+                    <DataGridTextColumn Header="DESAROLLADORA" Binding="{Binding juego.desarolladora, StringFormat=dd/MM/yyyy}" />
 
                     <!--Reservar-->
 
-                    <DataGridTemplateColumn Header="Reservar">
+                    <DataGridTemplateColumn Header="RESERVAR" Width="200">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical">

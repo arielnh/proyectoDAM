@@ -222,14 +222,23 @@ INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (3,4);
 -- PERMISO USUARIO PÚBLICO
 INSERT INTO videoclub.contiene_permiso (id_rol, id_permiso) VALUES (4,3);
 
--- ADMIN Y USERS
+-- ADMIN Y EMPLEADO Y CLIENTE
 
-INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Ariel','admin', 'admin', 1);
-INSERT INTO `videoclub`.`usuario` (nombre, apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Pepe','Perez', 'pepe', 'pepe', 2);
-INSERT INTO `videoclub`.`usuario` (nombre, apellido_1,`usuario`, `contraseña`, id_rol) VALUES ('Marta','Perez', 'marta', 'marta', 3);
-INSERT INTO `videoclub`.`usuario` (nombre,`usuario`, `contraseña`, id_rol) VALUES ('Publico','public', '0000', 4);
 
--- USUARIOS GENERADOS AUTO
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Ariel','Nev','Hueso', 'Calle Colon 2 puerta 1','ariel@hotmail.com','+38 666 666','1900-12-21','admin','admin',1);
+
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Pepe','Perez','Raton', 'Av. Ocultra bajo 6','pep@hotmail.com','+36 777 777','2000-12-21','pepe','pepe',2);
+
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Marta','Ratona','BLanca', 'Calle de la paz puerta 5','martita@hotmail.com','+36 777 888','2000-01-21','marta','marta',3);
+
+INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
+VALUES ('Publico','Public','Public', 'public','pub@p.com','000000','2024-01-01','public','public',4);
+
+
+-- USUARIOS GENERADOS 
 
 INSERT INTO videoclub.usuario (nombre, apellido_1, apellido_2, direccion, mail, telefono, fecha_nacimiento, usuario,contraseña,id_rol)
 VALUES ('Cinthia','Moniz','Race', '8593 Eastleigh Circle , Whitehill, Suffolk, EH4 7NE','elainalew330@yahoo.com','+32-7488-802-424','1991-08-22','ZUEKQ','hotmail',3);
@@ -428,13 +437,27 @@ insert into videoclub.actuan(id_actor, id_pelicula) values (6,6);
  VALUES ('Play Station 5', true, 'rol', 'Neowiz', 'Round 8 Studio', false); 
     
 INSERT INTO videoclub.producto (id_juego, titulo, portada,año)
-VALUES (1,'Lies of P', 'https://i.ibb.co/3vCtnbf/l.png', '2024-01-01');
+VALUES (1,'Lies of P', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6lxr.png', '2024-01-01');
 
  INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
  VALUES ('Play Station 5', true, 'rol', 'Larian Studios NV', 'Larian Studios NV', true); 
     
 INSERT INTO videoclub.producto (id_juego, titulo, portada, año)
-VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j', '2024-02-02');
+VALUES (2,'Baldurs Gate III', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co670h.png', '2024-02-02');
+
+ INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
+ VALUES ('Nintendo Switch', true, 'rol', 'Nintendo', 'Nintendo', true); 
+    
+INSERT INTO videoclub.producto (id_juego, titulo, portada, año)
+VALUES (3,'The Legend of Zelda: Second Wind', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co31di.png', '2020-04-23');
+
+INSERT INTO videoclub.juego (plataforma, doblado, genero, distribuidora, desarolladora, multijugador) 
+ VALUES ('Play Station 5', true, 'rol', 'FromSoftware', 'FromSoftware', true); 
+    
+INSERT INTO videoclub.producto (id_juego, titulo, portada, año)
+VALUES (4,'Elden Ring', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4jni.png', '2022-02-25');
+
+
 
  -- Alquiler de productos MUESTRA
  
@@ -466,6 +489,10 @@ VALUES (2,'Baldurs Gate III', 'https://slug.vercel.app/s/j', '2024-02-02');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 3, 'Alquilado');
  insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (8, 'Estantería', 3, 'Alquilado');
  
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (9, 'Estantería', 4, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (9, 'Estantería', 4, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (10, 'Estantería', 4, 'Disponible');
+ insert into videoclub.item (id_producto, ubicacion, numero,disponibilidad) values (10, 'Estantería', 4, 'Disponible');
  
  -- ALQUILER
  -- tipo alquiler

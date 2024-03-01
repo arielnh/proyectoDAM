@@ -109,7 +109,6 @@ C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\MySql.Data.xml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\Error.g.cs
-C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\Login.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\MainWindow.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\App.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub_Content.g.cs
@@ -117,7 +116,6 @@ C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub_MarkupCompile.lref
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\App.baml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\Error.baml
-C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\Login.baml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\MainWindow.baml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.g.resources
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.Properties.Resources.resources
@@ -180,8 +178,14 @@ C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCChart.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\ControlUsuario\UCChart.baml
-C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.csproj.AssemblyReference.cache
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\ErrorRegistro.g.cs
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\ErrorRegistro.baml
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\MySql.Data.dll
 C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\bin\Debug\MySql.Data.Entity.EF6.xml
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\ErrorPermiso.g.cs
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\ErrorPermiso.baml
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\EditarMisDatos.g.cs
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\EditarMisDatos.baml
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\proyecto.VideoClub.csproj.AssemblyReference.cache
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\LoginDialog.g.cs
+C:\Users\Legal\OneDrive\Documentos\_DAM\Proyecto\ProyectoDam\proyecto.VideoClub\proyecto.VideoClub\obj\Debug\Frontend\Dialogos\LoginDialog.baml

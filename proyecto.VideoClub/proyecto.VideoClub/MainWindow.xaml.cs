@@ -2,8 +2,6 @@
 using proyecto.VideoClub.Frontend.ControlUsuario;
 using proyecto.VideoClub.Frontend.Dialogos;
 using System.Windows;
-using System.Configuration;
-using System.Collections.Generic;
 using proyecto.VideoClub.Backend.Servicios;
 using proyecto.VideoClub.Informes;
 
@@ -180,7 +178,7 @@ namespace proyecto.VideoClub
         private void ListUser_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CerrarSeleccion(4);
-            UCUsuarios uc = new UCUsuarios(vcEnt);
+            UCUsuarios uc = new UCUsuarios(vcEnt,usuLogin);
             // Lo colocaremos en el panel central de nuestra aplicación
             // Si hay algo en el grid central lo borramos
             if (gridCentral.Children != null) gridCentral.Children.Clear();
@@ -268,6 +266,14 @@ namespace proyecto.VideoClub
             if (gridCentral.Children != null) gridCentral.Children.Clear();
 
             gridCentral.Children.Add(uc);
+        }
+
+        private void ListViewItemMenu_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            LoginDialog ld = new LoginDialog();
+            ld.Show();
+            this.Close();
+      
         }
     }
 }

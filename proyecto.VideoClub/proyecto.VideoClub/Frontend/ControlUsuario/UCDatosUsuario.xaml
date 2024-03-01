@@ -47,6 +47,17 @@
                     <DataGridTextColumn Header="Usuario" Binding="{Binding usuario1}" />
                     <DataGridTextColumn Header="Contraseña" Binding="{Binding contraseña}" />
                 </DataGrid.Columns>
+                <!--Click derecho para editar o borrar-->
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Editar" x:Name="Editar" Click="Editar_Click">
+                            <MenuItem.Icon>
+                                <Image  Source="/Recursos/Img/edit.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
             </DataGrid>
 
             <Separator Background="#9a010b" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
@@ -68,6 +79,8 @@
                     <DataGridTextColumn Header="Fecha de devolución" Binding="{Binding fecha_prev_devolucion, StringFormat=dd/MM/yyyy}" />
 
                 </DataGrid.Columns>
+
+                
             </DataGrid>
         </Grid>
         

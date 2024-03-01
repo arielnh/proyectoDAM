@@ -113,9 +113,13 @@ namespace proyecto.VideoClub.MVVM
         get { return titulo; }
         set { titulo = value; NotifyPropertyChanged(nameof(tituloPelicula)); }
     }
+        public string tituloJuego
+        {
+            get { return titulo; }
+            set { titulo = value; NotifyPropertyChanged(nameof(tituloJuego)); }
+        }
 
-
-    private bool FiltroCriterios(object item)
+        private bool FiltroCriterios(object item)
     {
         bool correcto = true;
         producto entity = (producto)item;
@@ -141,17 +145,31 @@ namespace proyecto.VideoClub.MVVM
         {
             addCriterios();
             listaPeliculas.Filter = predicadoFiltro;
+            
             listaPeliculasProx.Filter = predicadoFiltro;
+           
            
 
         }
 
+        public void FiltraJuegos()
+        {
+            addCriterios();
+           
+            listaJuegos.Filter = predicadoFiltro;
+         
+
+
+
+        }
         //QUITAR FILTRO
         public void QuitaFiltros()
         {
             listaPeliculas.Filter = null;
+            listaJuegos.Filter = null;
             listaPeliculasProx.Filter = null;
             tituloPelicula = "";
+            tituloJuego = "";
             directorPelicula = "";
 
         }

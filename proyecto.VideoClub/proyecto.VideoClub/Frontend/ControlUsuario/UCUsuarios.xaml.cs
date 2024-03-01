@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿
 using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.Frontend.Dialogos;
@@ -14,22 +13,29 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
     {
         private videoclubEntities vcEnt;
         private MVUsuario mvUsuario;
+        private usuario usu;
+        bool admin= true;
 
         public UCUsuarios()
         {
             InitializeComponent();
         }
-        public UCUsuarios(videoclubEntities ent)
+        public UCUsuarios(videoclubEntities ent, usuario u)
         {
             InitializeComponent();
             vcEnt = ent;
+            usu = u;
             mvUsuario = new MVUsuario(vcEnt);
             DataContext = mvUsuario;
+            if(usu.id_rol != 1)
+            { admin = false; }
+           
         }
 
         private void itemEditar_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (dgListaUsuarios.SelectedItem != null && dgListaUsuarios.SelectedItem is usuario)
+            
+            if (admin && dgListaUsuarios.SelectedItem != null && dgListaUsuarios.SelectedItem is usuario)
             {
                
                 usuario usu = (usuario)dgListaUsuarios.SelectedItem;
@@ -38,13 +44,29 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
                 dgListaUsuarios.Items.Refresh();
 
             }
+            else
+            {
+                ErrorPermiso nu = new ErrorPermiso();
+                nu.ShowDialog();
+            }
         }
 
         private void itemBorrar_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            usuario usu = (usuario)dgListaUsuarios.SelectedItem;
-            mvUsuario.BorrarUsu(usu);
-            dgListaUsuarios.ItemsSource = mvUsuario.Refresca();
+
+
+            if (admin)
+            {
+                usuario usu = (usuario)dgListaUsuarios.SelectedItem;
+                mvUsuario.BorrarUsu(usu);
+                dgListaUsuarios.ItemsSource = mvUsuario.Refresca();
+            }
+            else
+            {
+                ErrorPermiso nu = new ErrorPermiso();
+                nu.ShowDialog();
+            }
+            
            
 
         }

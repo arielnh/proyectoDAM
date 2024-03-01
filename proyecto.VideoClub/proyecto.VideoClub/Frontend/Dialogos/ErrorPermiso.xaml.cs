@@ -15,17 +15,17 @@ using System.Windows.Shapes;
 namespace proyecto.VideoClub.Frontend.Dialogos
 {
     /// <summary>
-    /// Lógica de interacción para ErrorRegistro.xaml
+    /// Lógica de interacción para ErrorPermiso.xaml
     /// </summary>
-    public partial class ErrorRegistro : Window
+    public partial class ErrorPermiso : Window
     {
-        public ErrorRegistro()
+        public ErrorPermiso()
         {
             InitializeComponent();
         }
+
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-           
             this.Close();
         }
 
@@ -50,11 +50,6 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         private void Cerrar_MouseLeave(object sender, MouseEventArgs e)
         {
             Cerrar.Opacity = 0.3;
-        }
-
-        private void btnAceptar_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

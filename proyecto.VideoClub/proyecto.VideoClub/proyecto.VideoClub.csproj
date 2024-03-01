@@ -147,7 +147,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frontend\Dialogos\EditarMisDatos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frontend\Dialogos\Error.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frontend\Dialogos\ErrorPermiso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,7 +163,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frontend\Dialogos\Login.xaml">
+    <Page Include="Frontend\Dialogos\LoginDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -280,14 +288,20 @@
     <Compile Include="Frontend\ControlUsuario\UCUsuarios.xaml.cs">
       <DependentUpon>UCUsuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Dialogos\EditarMisDatos.xaml.cs">
+      <DependentUpon>EditarMisDatos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\Dialogos\Error.xaml.cs">
       <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Dialogos\ErrorPermiso.xaml.cs">
+      <DependentUpon>ErrorPermiso.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\Dialogos\ErrorRegistro.xaml.cs">
       <DependentUpon>ErrorRegistro.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\Dialogos\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="Frontend\Dialogos\LoginDialog.xaml.cs">
+      <DependentUpon>LoginDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontend\Dialogos\NuevaPelicula.xaml.cs">
       <DependentUpon>NuevaPelicula.xaml</DependentUpon>
@@ -422,6 +436,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recursos\img\permisoadmin2.jpeg" />
     <Resource Include="Recursos\img\pen.jpeg" />
     <Resource Include="Recursos\img\film.png" />
     <Resource Include="Recursos\img\4k.png" />

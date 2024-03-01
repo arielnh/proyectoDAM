@@ -55,5 +55,10 @@ namespace proyecto.VideoClub.Frontend.ControlUsuario
                 er.Show();
             }
         }
+
+        private void tbTitulo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            mvProducto.FiltraJuegos();
+        }
     }
 }
