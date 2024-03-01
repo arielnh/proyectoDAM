@@ -25,8 +25,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             vcEnt = ent;
             usuLogin = usu;
             portada = pr.portada;
-            ReservaPortada.Source = new BitmapImage(
-     new Uri(portada));
+            ReservaPortada.Source = new BitmapImage(new Uri(portada));
 
 
             mvAlq = new MVAlquiler(vcEnt, usuLogin, pr);

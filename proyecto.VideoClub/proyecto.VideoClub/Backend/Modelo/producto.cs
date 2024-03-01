@@ -9,10 +9,12 @@
 
 namespace proyecto.VideoClub.Backend.Modelo
 {
+    using proyecto.VideoClub.MVVM;
     using System;
     using System.Collections.Generic;
-    
-    public partial class producto
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class producto:PropertyChangedDataError
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public producto()
@@ -23,8 +25,12 @@ namespace proyecto.VideoClub.Backend.Modelo
         public int id_producto { get; set; }
         public Nullable<int> id_pelicula { get; set; }
         public Nullable<int> id_juego { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [MaxLength(50)]
         public string titulo { get; set; }
         public string estado { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [MaxLength(300)]
         public string portada { get; set; }
         public Nullable<System.DateTime> año { get; set; }
         public string idioma { get; set; }

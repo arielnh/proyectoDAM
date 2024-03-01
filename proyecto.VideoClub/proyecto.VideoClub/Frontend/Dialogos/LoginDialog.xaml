@@ -82,13 +82,7 @@
                              Margin=" 0 20"
                              BorderBrush="#01579a"
                              BorderThickness="0 0 0 1.5"/>
-                     <!--          
-                    <TextBlock FontSize="11"
-                               Margin="0 20">
-                        <Run Foreground="Gray">¿Has olvidado la contraseña?</Run>
-                        <Run Foreground="#01579a" Name="ResetPss" MouseDown="ResetPss_MouseDown" MouseEnter="ResetPss_MouseEnter" MouseLeave="ResetPss_MouseLeave">Pulsa aquí.</Run>
-                    </TextBlock>
-                    -->
+                    
 
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="btnEntrar" Click="btnEntrar_Click"

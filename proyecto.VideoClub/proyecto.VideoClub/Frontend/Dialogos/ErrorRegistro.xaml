@@ -60,9 +60,9 @@
 
                 <!--Titulo-->
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="16">
-                    <TextBlock  FontSize="35" Foreground="#01579a"  FontWeight="Bold"   >No</TextBlock>
+                    <TextBlock  FontSize="35" Foreground="#9a010b"  FontWeight="Bold"   >No</TextBlock>
                     <TextBlock  FontSize="35" Foreground="#01579a"  FontWeight="Bold" Text=" "  />
-                    <TextBlock  FontSize="35" Foreground="#9a010b"  FontWeight="Bold"  >estás registrado</TextBlock>
+                    <TextBlock  FontSize="35" Foreground="#01579a"  FontWeight="Bold"  >estás registrado</TextBlock>
                 </StackPanel>
 
                 <!--Descripcion-->

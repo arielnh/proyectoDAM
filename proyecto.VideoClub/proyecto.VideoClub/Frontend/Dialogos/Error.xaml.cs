@@ -26,7 +26,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
+            LoginDialog login = new LoginDialog();
             login.Show();
             this.Close();
         }

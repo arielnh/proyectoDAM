@@ -18,7 +18,6 @@ namespace proyecto.VideoClub.MVVM
         //Servicios
         private ProductoServicio prodServ;
         private PeliculaServicio peliServ;
-        
         private JuegoServicio jueServ;
 
         private ListCollectionView listaAux;

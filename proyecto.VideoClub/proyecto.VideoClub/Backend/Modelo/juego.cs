@@ -9,10 +9,12 @@
 
 namespace proyecto.VideoClub.Backend.Modelo
 {
+    using proyecto.VideoClub.MVVM;
     using System;
     using System.Collections.Generic;
-    
-    public partial class juego
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class juego : PropertyChangedDataError
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public juego()
@@ -21,11 +23,21 @@ namespace proyecto.VideoClub.Backend.Modelo
         }
     
         public int id_juego { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [MaxLength(30)]
         public string plataforma { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public Nullable<bool> doblado { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [MaxLength(30)]
         public string genero { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [MaxLength(30)]
         public string distribuidora { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [MaxLength(30)]
         public string desarolladora { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public Nullable<bool> multijugador { get; set; }
         public string tipo_alquiler { get; set; }
     
