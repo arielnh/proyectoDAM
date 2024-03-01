@@ -19,13 +19,26 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-
             </Grid.ColumnDefinitions>
+
+            <!--ENCABEZADO-->
 
             <Border Grid.Row="0" Grid.ColumnSpan="4" />
             <TextBlock Text="USUARIOS" FontWeight="Bold" FontSize="16" Margin="10,10,0,10" Foreground="#9a010b"  />
             <Image Source="/Recursos/img/usuarios.png" Height="32" Grid.Column="0" HorizontalAlignment="Left" Margin="150,0,0,0" />
             <Separator Background="#9a010b" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
+
+            <!--FILTROS-->
+           
+            <!--Filtrar por apellido TextBox-->
+            <TextBlock Text="Buscar por apellido: " FontWeight="DemiBold" FontSize="14" Grid.Column="0" HorizontalAlignment="Left"
+                       Grid.Row="1" Margin="20" VerticalAlignment="Center" Foreground="#01579a" />
+            <TextBox x:Name="tbApellido" Grid.Row="1" Grid.Column="0" Width="180" Margin="-40,0,0,0" Foreground="#444" VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="{Binding apellidoUsuario, UpdateSourceTrigger=PropertyChanged}"
+                     TextChanged="tbApellido_TextChanged"/>
+
+            <Separator Background="#9a010b" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"  Margin="10,0,10,0"></Separator>
         </Grid>
 
 
