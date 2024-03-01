@@ -21,6 +21,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#01579a" />
 
@@ -32,22 +34,63 @@
                    FontSize="10" Margin="20,10,0,20" Grid.ColumnSpan="2"
                    FontWeight="Bold" FontStyle="Italic"/>
 
-        <!--Nombre-->
-        <TextBlock Grid.Row="2" Text="Nombre" Margin="20,10,20,0" VerticalAlignment="Center" 
+        <!--FORMULARIO-->
+        <!--Plataforma-->
+        <TextBlock Grid.Row="2" Grid.Column="0"
+                   Text="Plataforma" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtNombre" Height="30" Margin="20,10,20,0"
-                 Style="{StaticResource MaterialDesignTextBox}" Width="200"
-                 Text="{Binding usuario.nombre, ValidatesOnDataErrors=True,
-                        NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox   Grid.Row="2" Grid.Column="1" 
+                   x:Name="txtPlataforma" Height="30" Margin="20,10,20,0"
+                   Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                   Text="{Binding juegoNuevo.plataforma, ValidatesOnDataErrors=True,
+                   NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <!--Doblado-->
+        <TextBlock Grid.Row="2" Grid.Column="2"
+                   Text="Doblado al Español" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"/>
+        <CheckBox  Grid.Row="2" Grid.Column="3" x:Name="chDoblado" Height="30" Margin="20,10,20,0"
+                   Style="{StaticResource MaterialDesignCheckBox}" Width="200"
+                   IsChecked="{Binding juegoNuevo.doblado, ValidatesOnDataErrors=True,
+                   NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Genero-->
+        <TextBlock Grid.Row="3" Grid.Column="0"
+                   Text="Genero" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox   Grid.Row="3" Grid.Column="1" x:Name="txtGenero" Height="30" Margin="20,10,20,0"
+                   Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                   Text="{Binding juegoNuevo.genero, ValidatesOnDataErrors=True,
+                   NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Distribuidora-->
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="Distribuidora" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox   Grid.Row="3" Grid.Column="3" x:Name="txtDistribuidora" Height="30" Margin="20,10,20,0"
+                   Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                   Text="{Binding juegoNuevo.distribuidora, ValidatesOnDataErrors=True,
+                   NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Desarolladora-->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Desarolladora" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox   Grid.Row="4" Grid.Column="1" x:Name="txtDesarolladora" Height="30" Margin="20,10,20,0"
+                   Style="{StaticResource MaterialDesignTextBox}" Width="200"
+                   Text="{Binding juegoNuevo.desarolladora, ValidatesOnDataErrors=True,
+                   NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Multijugador-->
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="Multijugador" Margin="20,10,20,0" VerticalAlignment="Center" 
+                   FontWeight="Bold" FontStyle="Italic"/>
+        <CheckBox  Grid.Row="4" Grid.Column="3" x:Name="chMultijugador" Height="30" Margin="20,10,20,0"
+                   Style="{StaticResource MaterialDesignCheckBox}" Width="200"
+                   IsChecked="{Binding juegoNuevo.multijugador, ValidatesOnDataErrors=True,
+                   NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged}"/>
 
 
-
-
-
-
-        <Button Grid.Column="3" Grid.Row="4" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
+        <Button Grid.Row="5" Grid.Column="2" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
                 x:Name="btnGuardarJuego" Click="btnGuardarJuego_Click" Background="#01579a"  BorderBrush="Transparent"/>
-        <Button Grid.Column="3" Grid.Row="4" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
+        <Button Grid.Row="5" Grid.Column="3" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Center"
                 x:Name="btnCancelar" Click="btnCancelar_Click"
                 Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
     </Grid>

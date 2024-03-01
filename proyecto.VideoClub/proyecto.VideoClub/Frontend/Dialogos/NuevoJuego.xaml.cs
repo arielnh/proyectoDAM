@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using proyecto.VideoClub.Backend.Modelo;
+using proyecto.VideoClub.MVVM;
 
 namespace proyecto.VideoClub.Frontend.Dialogos
 {
@@ -19,14 +11,33 @@ namespace proyecto.VideoClub.Frontend.Dialogos
     /// </summary>
     public partial class NuevoJuego : Window
     {
-        public NuevoJuego(Backend.Modelo.videoclubEntities vcEnt)
+        private videoclubEntities vcEnt;
+        private MVJuego mvJue;
+        public NuevoJuego(videoclubEntities ent)
         {
             InitializeComponent();
+            vcEnt = ent;
+            mvJue = new MVJuego(vcEnt);
+            DataContext = mvJue;
+          
         }
 
         private void btnGuardarJuego_Click(object sender, RoutedEventArgs e)
         {
+            
+            if (mvJue.guarda)
+            {
+                MessageBox.Show("Todo guardado correctamente.", "Guardar Pelicula", MessageBoxButton.OK);
+                this.Close();
 
+            }
+            else
+            {
+                MessageBox.Show("Se ha producido un error.", "Guardar Pelicula", MessageBoxButton.OK, MessageBoxImage.Error);
+
+
+
+            }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

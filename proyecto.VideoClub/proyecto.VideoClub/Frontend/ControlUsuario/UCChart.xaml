@@ -8,6 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <lv:CartesianChart x:Name="lvAlquiler" />
+        <lv:PieChart x:Name="lvAlquiler" />
     </Grid>
 </UserControl>
