@@ -17,7 +17,8 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         private string portada="";
         
       
-        
+        private DateTime hoy = DateTime.Now.Date;
+       
         public Reserva(videoclubEntities ent, usuario usu, producto pr)
         {
            
@@ -26,13 +27,26 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             usuLogin = usu;
             portada = pr.portada;
             ReservaPortada.Source = new BitmapImage(new Uri(portada));
-
+           
 
             mvAlq = new MVAlquiler(vcEnt, usuLogin, pr);
             DataContext = mvAlq;
+
+            btnReserva.IsEnabled = false;
         }
 
-      
+
+        private void comprobarBtn()
+        {
+            if (txtFechaAlq.SelectedDate >= hoy && cbItem.SelectedItem != null)
+            {
+                btnReserva.IsEnabled = true;
+            }
+            else
+            {
+                btnReserva.IsEnabled = false;
+            }
+        }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
@@ -58,6 +72,16 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             {
                 MessageBox.Show("Se ha producido un error.", "Reservar", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void cbItem_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            comprobarBtn();
+        }
+
+        private void txtFechaAlq_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            comprobarBtn();
         }
     }
 }

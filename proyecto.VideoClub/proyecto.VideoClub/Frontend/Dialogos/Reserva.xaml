@@ -56,14 +56,14 @@
                    FontWeight="Bold" FontStyle="Italic"/>
 
         <DatePicker Grid.Row="3" Grid.Column="4"  x:Name="txtFechaAlq" Height="30" Margin="20,10,20,0" Language ="es-Es"
-                 Style="{StaticResource MaterialDesignDatePicker}" Width="200"
+                 Style="{StaticResource MaterialDesignDatePicker}" Width="200" SelectedDateChanged="txtFechaAlq_SelectedDateChanged"
                  SelectedDate ="{Binding alquilerNuevo.fecha_alquiler, ValidatesOnDataErrors=True,
                         NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged }"/>
 
         <!--Item-->
         <TextBlock Grid.Row="2" Text="Unidad disponible" Margin="20,10,20,0" VerticalAlignment="Center" 
                    FontWeight="Bold" FontStyle="Italic" Grid.Column="2"/>
-        <ComboBox Grid.Column="4" Grid.Row="2" x:Name="cbItem" Height="30" Margin="20,10,20,0"
+        <ComboBox Grid.Column="4" Grid.Row="2" x:Name="cbItem" Height="30" Margin="20,10,20,0" SelectionChanged="cbItem_SelectionChanged"
                  Style="{StaticResource MaterialDesignComboBox}" Width="200"
                 ItemsSource="{Binding listaItemsDisponiblesProducto}" DisplayMemberPath="id_item"/>
 
@@ -77,7 +77,7 @@
         <Button Grid.Column="3" Grid.Row="4" IsDefault="True" Margin="20,20,20,20" Content="Reservar" HorizontalAlignment="Left" 
                 x:Name="btnReserva" Click="btnReserva_Click" Background="#01579a"  BorderBrush="Transparent"/>
         <Button Grid.Column="3" Grid.Row="4" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Right"
-                x:Name="btnCancelar" Click="btnCancelar_Click"
+                x:Name="btnCancelar" Click="btnCancelar_Click" Foreground="#9a010b"
                 Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
     </Grid>
 </Window>

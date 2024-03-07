@@ -91,6 +91,7 @@
         <Button Grid.Row="5" Grid.Column="2" IsDefault="True" Margin="20,20,20,20" Content="Guardar" HorizontalAlignment="Left" 
                 x:Name="btnGuardarJuego" Click="btnGuardarJuego_Click" Background="#01579a"  BorderBrush="Transparent"/>
         <Button Grid.Row="5" Grid.Column="3" IsCancel="True" Margin="20,20,20,20" Content="Cancelar" HorizontalAlignment="Center"
+                Foreground="#9a010b"
                 x:Name="btnCancelar" Click="btnCancelar_Click"
                 Style="{StaticResource MaterialDesignFlatButton}" mat:ButtonAssist.CornerRadius="10"/>
     </Grid>

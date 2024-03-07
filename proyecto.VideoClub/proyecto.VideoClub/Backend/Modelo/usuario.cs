@@ -52,6 +52,7 @@ namespace proyecto.VideoClub.Backend.Modelo
         public virtual ICollection<alquiler> alquiler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<incidencia> incidencia { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public virtual rol rol { get; set; }
     }
 }

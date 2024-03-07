@@ -1,5 +1,6 @@
 ﻿
 using System.Windows;
+using System.Windows.Controls;
 using proyecto.VideoClub.Backend.Modelo;
 using proyecto.VideoClub.MVVM;
 
@@ -19,6 +20,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
         public NuevoUsuario()
         {
             InitializeComponent();
+            inicializa();
         }
         public NuevoUsuario(videoclubEntities ent)
         {
@@ -28,6 +30,7 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             mvUsu = new MVUsuario(vcEnt);
             DataContext = mvUsu;
             editar = false;
+            inicializa();
         }
 
         public NuevoUsuario(videoclubEntities ent, usuario usu)
@@ -38,6 +41,16 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             this.DataContext = mvUsu;
             mvUsu.usuarioNuevo = usu;
             editar = true;
+            inicializa();
+           
+
+        }
+
+        private void inicializa()
+        {
+            //Deshabilitar el boton guardar en caso de hay algun error de validacion
+            this.AddHandler(Validation.ErrorEvent, new RoutedEventHandler(mvUsu.OnErrorEvent));
+            mvUsu.btnGuardar = btnGuardarUsuario;
 
         }
 

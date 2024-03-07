@@ -44,6 +44,10 @@ namespace proyecto.VideoClub.Frontend.Dialogos
             mvJue = new MVJuego(vcEnt);
             DataContext = mvProd;
             peliculaSelect();
+
+            //Deshabilitar el boton guardar en caso de hay algun error de validacion
+            this.AddHandler(Validation.ErrorEvent, new RoutedEventHandler(mvProd.OnErrorEvent));
+            mvProd.btnGuardar = btnGuardarProd;
         }
  
 
